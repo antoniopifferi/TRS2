@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 11.0.0, 2024-03-30T09:49:13. -->
+<!-- Written by QtCreator 11.0.0, 2024-03-31T09:42:57. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -243,7 +243,6 @@
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Debug</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

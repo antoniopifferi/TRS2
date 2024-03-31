@@ -9,14 +9,14 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    main.cpp \
-    trs2.cpp
+    GenSource/main.cpp \
+    GenSource/trs2.cpp \
 
 HEADERS += \
-    trs2.h
+    GenSource/trs2.h \
 
 FORMS += \
-    trs2.ui
+    GuiSource/trs2.ui \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
