@@ -1,5 +1,7 @@
-#include "trs2.h"
+#include "GuiSource/trs2.h"
+#include "GenSource/runKernel.h"
 #include "ui_trs2.h"
+#include "GenSource/ParmS.h"
 #include <QLineEdit>
 #include <QSpinBox>
 #include <QDoubleSpinBox>
@@ -39,7 +41,7 @@ TRS2::TRS2(QWidget *parent)
         }
     }
 
-    // Connect Signals
+    // Connect Signals for Widgets
     for (const auto& iT : T) {
         if (iT.Obj) {
             if (iT.Type == "QLineEdit") {
@@ -58,6 +60,10 @@ TRS2::TRS2(QWidget *parent)
             qDebug() << "Object with name" << iT.Name << "not found.";
         }
     }
+
+    // Connect Signals for Menu
+    //connect(ui->actionKernel, &QAction::triggered, this, &TRS2::on_actionKernel_triggered);
+
 
     // LOAD SETTINGS
     loadSet("c:\\Temp\\TRS2.TRS");
@@ -212,5 +218,10 @@ void TRS2::loadSet(QString FilePath) {
     } else {
         QMessageBox::critical(nullptr, "Error", "Could not open the file for reading.");
     }
+}
+
+void TRS2::on_actionKernel_triggered()
+{
+    runKernel();
 }
 

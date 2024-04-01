@@ -21,9 +21,9 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>60</y>
       <width>1281</width>
-      <height>591</height>
+      <height>531</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -715,10 +715,17 @@
     <property name="title">
      <string>PARM</string>
     </property>
+    <addaction name="separator"/>
+    <addaction name="actionKernel"/>
    </widget>
    <addaction name="menuPARM"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionKernel">
+   <property name="text">
+    <string>Kernel</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

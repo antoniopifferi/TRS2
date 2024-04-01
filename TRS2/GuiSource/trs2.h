@@ -6,24 +6,6 @@
 #include <QMap>
 #include <vector>
 
-#define NUMLOOP 5
-
-struct LoopS {
-    int Home;
-    int First;
-    int Last;
-    int Delta;
-    int Num;
-    QString FileBreak;
-    bool Break;
-    bool Invert;
-    QString Cont;
-};
-
-struct ParmS {
-    struct LoopS Loop[NUMLOOP];
-};
-
 struct TableS {
     QString Name;
     QString Type;
@@ -51,10 +33,11 @@ private slots:
     void loadSet(QString FilePath);
     void readAll();
 
+    void on_actionKernel_triggered();
+
 private:
     Ui::TRS2 *ui;
     QMap<QString, void*> widgetToTMap;
     std::vector<TableS> T;
-    ParmS P;
 };
 #endif // TRS2_H
