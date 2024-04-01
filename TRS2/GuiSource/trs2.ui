@@ -14,7 +14,7 @@
    <string>TRS2</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QFrame" name="frame">
+   <widget class="QFrame" name="PARM">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -32,24 +32,33 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>120</x>
        <y>130</y>
-       <width>544</width>
-       <height>310</height>
+       <width>535</width>
+       <height>314</height>
       </rect>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>6</number>
+      </property>
       <property name="sizeConstraint">
        <enum>QLayout::SetFixedSize</enum>
       </property>
       <property name="leftMargin">
-       <number>5</number>
+       <number>3</number>
+      </property>
+      <property name="topMargin">
+       <number>3</number>
       </property>
       <property name="rightMargin">
-       <number>5</number>
+       <number>3</number>
+      </property>
+      <property name="bottomMargin">
+       <number>3</number>
       </property>
       <item>
        <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -139,28 +148,28 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Home_1">
+         <widget class="QSpinBox" name="LoopHome_1">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="First_1">
+         <widget class="QSpinBox" name="LoopFirst_1">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Last_1">
+         <widget class="QSpinBox" name="LoopLast_1">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Delta_1">
+         <widget class="QSpinBox" name="LoopDelta_1">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
@@ -170,7 +179,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Num_1">
+         <widget class="QSpinBox" name="LoopNum_1">
           <property name="readOnly">
            <bool>true</bool>
           </property>
@@ -183,10 +192,26 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="FileBreak_1"/>
+         <widget class="QLineEdit" name="LoopFileBreak_1"/>
         </item>
-        <item>
-         <widget class="QCheckBox" name="Break_1">
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QCheckBox" name="LoopBreak_1">
+          <property name="text">
+           <string>ON / OFF</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <property name="tristate">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QCheckBox" name="LoopInvert_1">
           <property name="text">
            <string>ON / OFF</string>
           </property>
@@ -202,23 +227,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QCheckBox" name="Break_2">
-          <property name="text">
-           <string>ON / OFF</string>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-          <property name="checked">
-           <bool>false</bool>
-          </property>
-          <property name="tristate">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBox">
+         <widget class="QComboBox" name="LoopCont_1">
           <property name="editable">
            <bool>false</bool>
           </property>
@@ -246,33 +255,33 @@
         <item>
          <widget class="QLabel" name="label_12">
           <property name="text">
-           <string>Loop1</string>
+           <string>Loop2</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Home_2">
+         <widget class="QSpinBox" name="LoopHome_2">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="First_2">
+         <widget class="QSpinBox" name="LoopFirst_2">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Last_2">
+         <widget class="QSpinBox" name="LoopLast_2">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Delta_2">
+         <widget class="QSpinBox" name="LoopDelta_2">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
@@ -282,7 +291,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Num_2">
+         <widget class="QSpinBox" name="LoopNum_2">
           <property name="readOnly">
            <bool>true</bool>
           </property>
@@ -295,10 +304,26 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="FileBreak_2"/>
+         <widget class="QLineEdit" name="LoopFileBreak_2"/>
         </item>
-        <item>
-         <widget class="QCheckBox" name="Break_3">
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QCheckBox" name="LoopBreak_2">
+          <property name="text">
+           <string>ON / OFF</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <property name="tristate">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QCheckBox" name="LoopInvert_2">
           <property name="text">
            <string>ON / OFF</string>
           </property>
@@ -314,23 +339,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QCheckBox" name="Break_4">
-          <property name="text">
-           <string>ON / OFF</string>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-          <property name="checked">
-           <bool>false</bool>
-          </property>
-          <property name="tristate">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBox_2">
+         <widget class="QComboBox" name="LoopCont_2">
           <property name="editable">
            <bool>false</bool>
           </property>
@@ -358,33 +367,33 @@
         <item>
          <widget class="QLabel" name="label_13">
           <property name="text">
-           <string>Loop1</string>
+           <string>Loop3</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Home_3">
+         <widget class="QSpinBox" name="LoopHome_3">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="First_3">
+         <widget class="QSpinBox" name="LoopFirst_3">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Last_3">
+         <widget class="QSpinBox" name="LoopLast_3">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Delta_3">
+         <widget class="QSpinBox" name="LoopDelta_3">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
@@ -394,7 +403,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Num_3">
+         <widget class="QSpinBox" name="LoopNum_3">
           <property name="readOnly">
            <bool>true</bool>
           </property>
@@ -407,10 +416,26 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="FileBreak_3"/>
+         <widget class="QLineEdit" name="LoopFileBreak_3"/>
         </item>
-        <item>
-         <widget class="QCheckBox" name="Break_5">
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QCheckBox" name="LoopBreak_3">
+          <property name="text">
+           <string>ON / OFF</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <property name="tristate">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QCheckBox" name="LoopInvert_3">
           <property name="text">
            <string>ON / OFF</string>
           </property>
@@ -426,23 +451,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QCheckBox" name="Break_6">
-          <property name="text">
-           <string>ON / OFF</string>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-          <property name="checked">
-           <bool>false</bool>
-          </property>
-          <property name="tristate">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBox_3">
+         <widget class="QComboBox" name="LoopCont_3">
           <property name="editable">
            <bool>false</bool>
           </property>
@@ -470,33 +479,33 @@
         <item>
          <widget class="QLabel" name="label_14">
           <property name="text">
-           <string>Loop1</string>
+           <string>Loop4</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Home_4">
+         <widget class="QSpinBox" name="LoopHome_4">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="First_4">
+         <widget class="QSpinBox" name="LoopFirst_4">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Last_4">
+         <widget class="QSpinBox" name="LoopLast_4">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Delta_4">
+         <widget class="QSpinBox" name="LoopDelta_4">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
@@ -506,7 +515,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Num_4">
+         <widget class="QSpinBox" name="LoopNum_4">
           <property name="readOnly">
            <bool>true</bool>
           </property>
@@ -519,10 +528,26 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="FileBreak_4"/>
+         <widget class="QLineEdit" name="LoopFileBreak_4"/>
         </item>
-        <item>
-         <widget class="QCheckBox" name="Break_7">
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QCheckBox" name="LoopBreak_4">
+          <property name="text">
+           <string>ON / OFF</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <property name="tristate">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QCheckBox" name="LoopInvert_4">
           <property name="text">
            <string>ON / OFF</string>
           </property>
@@ -538,23 +563,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QCheckBox" name="Break_8">
-          <property name="text">
-           <string>ON / OFF</string>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-          <property name="checked">
-           <bool>false</bool>
-          </property>
-          <property name="tristate">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBox_4">
+         <widget class="QComboBox" name="LoopCont_4">
           <property name="editable">
            <bool>false</bool>
           </property>
@@ -582,33 +591,33 @@
         <item>
          <widget class="QLabel" name="label_15">
           <property name="text">
-           <string>Loop1</string>
+           <string>Loop5</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Home_5">
+         <widget class="QSpinBox" name="LoopHome_5">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="First_5">
+         <widget class="QSpinBox" name="LoopFirst_5">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Last_5">
+         <widget class="QSpinBox" name="LoopLast_5">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Delta_5">
+         <widget class="QSpinBox" name="LoopDelta_5">
           <property name="buttonSymbols">
            <enum>QAbstractSpinBox::NoButtons</enum>
           </property>
@@ -618,7 +627,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="Num_5">
+         <widget class="QSpinBox" name="LoopNum_5">
           <property name="readOnly">
            <bool>true</bool>
           </property>
@@ -631,10 +640,26 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="FileBreak_5"/>
+         <widget class="QLineEdit" name="LoopFileBreak_5"/>
         </item>
-        <item>
-         <widget class="QCheckBox" name="Break_9">
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QCheckBox" name="LoopBreak_5">
+          <property name="text">
+           <string>ON / OFF</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>false</bool>
+          </property>
+          <property name="tristate">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item alignment="Qt::AlignHCenter">
+         <widget class="QCheckBox" name="LoopInvert_5">
           <property name="text">
            <string>ON / OFF</string>
           </property>
@@ -650,23 +675,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QCheckBox" name="Break_10">
-          <property name="text">
-           <string>ON / OFF</string>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-          <property name="checked">
-           <bool>false</bool>
-          </property>
-          <property name="tristate">
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="comboBox_5">
+         <widget class="QComboBox" name="LoopCont_5">
           <property name="editable">
            <bool>false</bool>
           </property>

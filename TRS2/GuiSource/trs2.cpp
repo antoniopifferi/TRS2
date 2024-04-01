@@ -1,5 +1,5 @@
-#include "Gui.h"
-//#include "./ui_test5.h"
+#include "trs2.h"
+#include "ui_trs2.h"
 #include <QLineEdit>
 #include <QSpinBox>
 #include <QDoubleSpinBox>
@@ -10,19 +10,23 @@
 #include <QTextStream>
 #include <QMessageBox>
 
-Test5::Test5(QWidget *parent)
+TRS2::TRS2(QWidget *parent)
     : QMainWindow(parent),
-    ui(new Ui::Test5)
+    ui(new Ui::TRS2)
 {
     ui->setupUi(this);
 
     // Create Table
-    for(int is=0;is<2;is++){
-        addTab("String", is, &P.vString[is]);
-        addTab("Int", is, &P.vInt[is]);
-        addTab("Double", is, &P.vDouble[is]);
-        addTab("Combo", is, &P.vCombo[is]);
-        addTab("Check", is, &P.vCheck[is]);
+    for(int il=0;il<NUMLOOP;il++){
+        addTab("LoopHome", il, &P.Loop[il].Home);
+        addTab("LoopFirst", il, &P.Loop[il].First);
+        addTab("LoopLast", il, &P.Loop[il].Last);
+        addTab("LoopDelta", il, &P.Loop[il].Delta);
+        addTab("LoopNum", il, &P.Loop[il].Num);
+        addTab("LoopFileBreak", il, &P.Loop[il].FileBreak);
+        addTab("LoopBreak", il, &P.Loop[il].Break);
+        addTab("LoopInvert", il, &P.Loop[il].Invert);
+        addTab("LoopCont", il, &P.Loop[il].Cont);
     }
 
     // Complete Table
@@ -31,67 +35,89 @@ Test5::Test5(QWidget *parent)
         if (obj) {
             const QMetaObject* meta = obj->metaObject();
             iT.Type = meta->className();
+            iT.Obj = obj;
         }
     }
 
     // Connect Signals
     for (const auto& iT : T) {
-        QObject* obj = findChild<QObject*>(iT.Name);
-        if (obj) {
+        if (iT.Obj) {
             if (iT.Type == "QLineEdit") {
-                connect(obj, SIGNAL(editingFinished()), this, SLOT(updateTFromUI()));
+                connect(iT.Obj, SIGNAL(editingFinished()), this, SLOT(updateTFromUI()));
             } else if (iT.Type == "QSpinBox"){
-                connect(obj, SIGNAL(valueChanged(int)), this, SLOT(updateTFromUI()));
+                connect(iT.Obj, SIGNAL(valueChanged(int)), this, SLOT(updateTFromUI()));
             } else if (iT.Type == "QDoubleSpinBox") {
-                connect(obj, SIGNAL(valueChanged(double)), this, SLOT(updateTFromUI()));
+                connect(iT.Obj, SIGNAL(valueChanged(double)), this, SLOT(updateTFromUI()));
             } else if (iT.Type == "QComboBox") {
-                connect(obj, SIGNAL(currentIndexChanged(int)), this, SLOT(updateTFromUI()));
+                connect(iT.Obj, SIGNAL(currentIndexChanged(int)), this, SLOT(updateTFromUI()));
             } else if (iT.Type == "QCheckBox") {
-                connect(obj, SIGNAL(clicked()), this, SLOT(updateTFromUI()));
+                connect(iT.Obj, SIGNAL(clicked()), this, SLOT(updateTFromUI()));
             }
+        } else {
+            // Handle cases where the object with the specified name is not found
+            qDebug() << "Object with name" << iT.Name << "not found.";
         }
     }
 
     // LOAD SETTINGS
-    loadSet("c:\\Temp\\TRS.TRS");
+    loadSet("c:\\Temp\\TRS2.TRS");
+
+    // READ ALL
+    readAll();
+
+    // PRINT P
+    printP();
+
 }
 
-Test5::~Test5()
+TRS2::~TRS2()
 {
-    saveSet("c:\\Temp\\TRS.TRS");
+    saveSet("c:\\Temp\\TRS2.TRS");
     delete ui;
 }
 
-void Test5::updateTFromUI() {
+void TRS2::updateTFromUI() {
     for (const auto& iT : T) {
-        QObject* obj = findChild<QObject*>(iT.Name);
-        if (obj && obj == sender()) {
+        if (iT.Obj == sender()) {
             if (iT.Type == "QLineEdit") {
-                *static_cast<QString*>(iT.Var) = qobject_cast<QLineEdit*>(obj)->text();
+                *static_cast<QString*>(iT.Var) = qobject_cast<QLineEdit*>(iT.Obj)->text();
             } else if (iT.Type == "QSpinBox") {
-                *static_cast<int*>(iT.Var) = qobject_cast<QSpinBox*>(obj)->value();
+                *static_cast<int*>(iT.Var) = qobject_cast<QSpinBox*>(iT.Obj)->value();
             } else if (iT.Type == "QDoubleSpinBox") {
-                *static_cast<double*>(iT.Var) = qobject_cast<QDoubleSpinBox*>(obj)->value();
+                *static_cast<double*>(iT.Var) = qobject_cast<QDoubleSpinBox*>(iT.Obj)->value();
             } else if (iT.Type == "QComboBox") {
-                *static_cast<QString*>(iT.Var) = qobject_cast<QComboBox*>(obj)->currentText();
+                *static_cast<QString*>(iT.Var) = qobject_cast<QComboBox*>(iT.Obj)->currentText();
             } else if (iT.Type == "QCheckBox") {
-                *static_cast<bool*>(iT.Var) = qobject_cast<QCheckBox*>(obj)->isChecked();
+                *static_cast<bool*>(iT.Var) = qobject_cast<QCheckBox*>(iT.Obj)->isChecked();
             }
             break;
         }
     }
-    printP();
 }
 
-void Test5::printP() {
-    qDebug() << "vInt:" << P.vInt[1];
-    qDebug() << "vDouble:" << P.vDouble[1];
-    qDebug() << "vString:" << P.vString[1];
-    qDebug() << "vCombo:" << P.vCombo[1];
-    qDebug() << "vCheck:" << P.vCheck[1];
+void TRS2::readAll() {
+    for (const auto& iT : T) {
+        if (iT.Obj) {
+            if (iT.Type == "QLineEdit") {
+                *static_cast<QString*>(iT.Var) = qobject_cast<QLineEdit*>(iT.Obj)->text();
+            } else if (iT.Type == "QSpinBox") {
+                *static_cast<int*>(iT.Var) = qobject_cast<QSpinBox*>(iT.Obj)->value();
+            } else if (iT.Type == "QDoubleSpinBox") {
+                *static_cast<double*>(iT.Var) = qobject_cast<QDoubleSpinBox*>(iT.Obj)->value();
+            } else if (iT.Type == "QComboBox") {
+                *static_cast<QString*>(iT.Var) = qobject_cast<QComboBox*>(iT.Obj)->currentText();
+            } else if (iT.Type == "QCheckBox") {
+                *static_cast<bool*>(iT.Var) = qobject_cast<QCheckBox*>(iT.Obj)->isChecked();
+            }
+        }
+    }
 }
 
-void Test5::addTab(QString Prefix, int Id, void* Var) {
+void TRS2::printP() {
+    qDebug() << "Loop2Num" << P.Loop[1].Num;
+}
+
+void TRS2::addTab(QString Prefix, int Id, void* Var) {
     QString Name;
     if(Id==-1) // just single element
         Name=Prefix;
@@ -99,13 +125,14 @@ void Test5::addTab(QString Prefix, int Id, void* Var) {
         Name=Prefix+"_"+QString::number(Id+1);
 
     QObject* obj = findChild<QObject*>(Name);
+    if(obj==nullptr) QMessageBox::information(nullptr, "Error Creating GUI Table", "Object with name "+Name+" not found in GUI");
     const QMetaObject* meta = obj->metaObject();
     QString Type = meta->className();
 
     T.push_back({Name,Type,Var});
 }
 
-void Test5::saveSet(QString FilePath){
+void TRS2::saveSet(QString FilePath){
     QFile file(FilePath);
     if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         QTextStream out(&file);
@@ -139,7 +166,7 @@ void Test5::saveSet(QString FilePath){
     }
 }
 
-void Test5::loadSet(QString FilePath) {
+void TRS2::loadSet(QString FilePath) {
     QFile file(FilePath);
     if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream in(&file);
@@ -186,3 +213,4 @@ void Test5::loadSet(QString FilePath) {
         QMessageBox::critical(nullptr, "Error", "Could not open the file for reading.");
     }
 }
+
