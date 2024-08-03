@@ -1,7 +1,7 @@
 #include "GuiSource/trs2.h"
 #include "GenSource/runKernel.h"
 #include "ui_trs2.h"
-#include "GenSource/ParmS.h"
+#include "GenSource/Parm.h"
 #include <QLineEdit>
 #include <QSpinBox>
 #include <QDoubleSpinBox>
@@ -19,7 +19,7 @@ TRS2::TRS2(QWidget *parent)
     ui->setupUi(this);
 
     // Create Table
-    for(int il=0;il<NUMLOOP;il++){
+    for(int il=0;il<MAXLOOP;il++){
         addTab("LoopHome", il, &P.Loop[il].Home);
         addTab("LoopFirst", il, &P.Loop[il].First);
         addTab("LoopLast", il, &P.Loop[il].Last);
@@ -92,7 +92,8 @@ void TRS2::updateTFromUI() {
             } else if (iT.Type == "QDoubleSpinBox") {
                 *static_cast<double*>(iT.Var) = qobject_cast<QDoubleSpinBox*>(iT.Obj)->value();
             } else if (iT.Type == "QComboBox") {
-                *static_cast<QString*>(iT.Var) = qobject_cast<QComboBox*>(iT.Obj)->currentText();
+                std::string stringValue = qobject_cast<QComboBox*>(iT.Obj)->currentText().toStdString();
+                *static_cast<std::string*>(iT.Var) = stringValue;
             } else if (iT.Type == "QCheckBox") {
                 *static_cast<bool*>(iT.Var) = qobject_cast<QCheckBox*>(iT.Obj)->isChecked();
             }
@@ -111,7 +112,8 @@ void TRS2::readAll() {
             } else if (iT.Type == "QDoubleSpinBox") {
                 *static_cast<double*>(iT.Var) = qobject_cast<QDoubleSpinBox*>(iT.Obj)->value();
             } else if (iT.Type == "QComboBox") {
-                *static_cast<QString*>(iT.Var) = qobject_cast<QComboBox*>(iT.Obj)->currentText();
+                std::string stringValue = qobject_cast<QComboBox*>(iT.Obj)->currentText().toStdString();
+                *static_cast<std::string*>(iT.Var) = stringValue;
             } else if (iT.Type == "QCheckBox") {
                 *static_cast<bool*>(iT.Var) = qobject_cast<QCheckBox*>(iT.Obj)->isChecked();
             }

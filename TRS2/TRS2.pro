@@ -9,13 +9,18 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    GenSource/ParmS.cpp \
+    DevSource/MicroStep.cpp \
+    GenSource/Parm.cpp \
+    GenSource/Step.cpp \
     GenSource/runKernel.cpp \
     GuiSource/main.cpp \
     GuiSource/trs2.cpp
 
 HEADERS += \
-    GenSource/ParmS.h \
+    DevSource/MicroStep.h \
+    GenSource/Const.h \
+    GenSource/Parm.h \
+    GenSource/Step.h \
     GenSource/runKernel.h \
     GuiSource/trs2.h
 

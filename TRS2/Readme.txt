@@ -1,0 +1,2 @@
+- P ParmS (ParmS.h): only parameters derived from UIR - Immutable at run time
+- class Step (Step.h): all general variables and function needed during operation 
