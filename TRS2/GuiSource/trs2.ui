@@ -17,6 +17,9 @@
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
       <widget class="QWidget" name="Parm">
        <widget class="QWidget" name="layoutWidget_3">
         <property name="geometry">
@@ -577,7 +580,7 @@
            <item>
             <widget class="QLabel" name="label_45">
              <property name="text">
-              <string>Loop5</string>
+              <string>Loop1</string>
              </property>
             </widget>
            </item>
@@ -687,7 +690,1567 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QWidget" name="page_2"/>
+      <widget class="QWidget" name="Step">
+       <widget class="QWidget" name="layoutWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>10</y>
+          <width>975</width>
+          <height>575</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="sizeConstraint">
+          <enum>QLayout::SetFixedSize</enum>
+         </property>
+         <property name="leftMargin">
+          <number>6</number>
+         </property>
+         <property name="topMargin">
+          <number>6</number>
+         </property>
+         <property name="rightMargin">
+          <number>6</number>
+         </property>
+         <property name="bottomMargin">
+          <number>6</number>
+         </property>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_22">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_23">
+             <item>
+              <widget class="QLabel" name="label_46">
+               <property name="text">
+                <string>Step</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_47">
+               <property name="text">
+                <string>Type</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_48">
+               <property name="text">
+                <string>Com</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_49">
+               <property name="text">
+                <string>Axis</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_50">
+               <property name="text">
+                <string>Mode</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_51">
+               <property name="text">
+                <string>Sign</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_52">
+               <property name="text">
+                <string>Loop</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_53">
+               <property name="text">
+                <string>Hold</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_54">
+               <property name="text">
+                <string>Lcd</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_55">
+               <property name="text">
+                <string>File</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Min</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>Max</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>FreqMin</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>FreqMax</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>FreqDelta</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>Freq</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>Factor</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_8">
+               <property name="text">
+                <string>Sort</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_24">
+           <property name="sizeConstraint">
+            <enum>QLayout::SetDefaultConstraint</enum>
+           </property>
+           <item>
+            <widget class="QLabel" name="label_56">
+             <property name="text">
+              <string>Step1</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepType_1">
+             <item>
+              <property name="text">
+               <string>NONE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MICRO</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ARD</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepSpin_1"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepAxis_1">
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepMode_1">
+             <item>
+              <property name="text">
+               <string>SINGLE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MULTI</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>CONT</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepSign_1">
+             <item>
+              <property name="text">
+               <string>POS</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>NEG</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepLoop_1">
+             <item>
+              <property name="text">
+               <string>LOOP1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP5</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepHold_1">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepLcd_1">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="StepFile_1"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepMin_1">
+             <property name="minimum">
+              <number>-999999999</number>
+             </property>
+             <property name="maximum">
+              <number>999999999</number>
+             </property>
+             <property name="value">
+              <number>-999999999</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepMax_1">
+             <property name="minimum">
+              <number>-999999999</number>
+             </property>
+             <property name="maximum">
+              <number>999999999</number>
+             </property>
+             <property name="value">
+              <number>999999999</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqMin_1">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqMax_1">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqDelta_1">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>10</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreq_1">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="StepFactor_1">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="maximum">
+              <double>1000000000.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepSort_1">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_25">
+           <item>
+            <widget class="QLabel" name="label_57">
+             <property name="text">
+              <string>Step2</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepType_2">
+             <item>
+              <property name="text">
+               <string>NONE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MICRO</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ARD</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepSpin_2"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepAxis_2">
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepMode_2">
+             <item>
+              <property name="text">
+               <string>SINGLE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MULTI</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>CONT</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepSign_2">
+             <item>
+              <property name="text">
+               <string>POS</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>NEG</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepLoop_2">
+             <item>
+              <property name="text">
+               <string>LOOP1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP5</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepHold_2">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepLcd_2">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="StepFile_2"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepMin_2">
+             <property name="minimum">
+              <number>-999999999</number>
+             </property>
+             <property name="maximum">
+              <number>999999999</number>
+             </property>
+             <property name="value">
+              <number>-999999999</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepMax_2">
+             <property name="minimum">
+              <number>-999999999</number>
+             </property>
+             <property name="maximum">
+              <number>999999999</number>
+             </property>
+             <property name="value">
+              <number>999999999</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqMin_2">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqMax_2">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqDelta_2">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>10</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreq_2">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="StepFactor_2">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="maximum">
+              <double>1000000000.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepSort_2">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_26">
+           <item>
+            <widget class="QLabel" name="label_58">
+             <property name="text">
+              <string>Step3</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepType_3">
+             <item>
+              <property name="text">
+               <string>NONE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MICRO</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ARD</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepSpin_3"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepAxis_3">
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepMode_3">
+             <item>
+              <property name="text">
+               <string>SINGLE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MULTI</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>CONT</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepSign_3">
+             <item>
+              <property name="text">
+               <string>POS</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>NEG</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepLoop_3">
+             <item>
+              <property name="text">
+               <string>LOOP1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP5</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepHold_3">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepLcd_3">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="StepFile_3"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepMin_3">
+             <property name="minimum">
+              <number>-999999999</number>
+             </property>
+             <property name="maximum">
+              <number>999999999</number>
+             </property>
+             <property name="value">
+              <number>-999999999</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepMax_3">
+             <property name="minimum">
+              <number>-999999999</number>
+             </property>
+             <property name="maximum">
+              <number>999999999</number>
+             </property>
+             <property name="value">
+              <number>999999999</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqMin_3">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqMax_3">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqDelta_3">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>10</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreq_3">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="StepFactor_3">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="maximum">
+              <double>1000000000.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepSort_3">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_27">
+           <item>
+            <widget class="QLabel" name="label_59">
+             <property name="text">
+              <string>Step4</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepType_4">
+             <item>
+              <property name="text">
+               <string>NONE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MICRO</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ARD</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepSpin_4"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepAxis_4">
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepMode_4">
+             <item>
+              <property name="text">
+               <string>SINGLE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MULTI</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>CONT</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepSign_4">
+             <item>
+              <property name="text">
+               <string>POS</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>NEG</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepLoop_4">
+             <item>
+              <property name="text">
+               <string>LOOP1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP5</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepHold_4">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepLcd_4">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="StepFile_4"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepMin_4">
+             <property name="minimum">
+              <number>-999999999</number>
+             </property>
+             <property name="maximum">
+              <number>999999999</number>
+             </property>
+             <property name="value">
+              <number>-999999999</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepMax_4">
+             <property name="minimum">
+              <number>-999999999</number>
+             </property>
+             <property name="maximum">
+              <number>999999999</number>
+             </property>
+             <property name="value">
+              <number>999999999</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqMin_4">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqMax_4">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqDelta_4">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>10</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreq_4">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="StepFactor_4">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="maximum">
+              <double>1000000000.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepSort_4">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_28">
+           <item>
+            <widget class="QLabel" name="label_60">
+             <property name="text">
+              <string>Step5</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepType_5">
+             <item>
+              <property name="text">
+               <string>NONE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MICRO</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ARD</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepSpin_5"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepAxis_5">
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepMode_5">
+             <item>
+              <property name="text">
+               <string>SINGLE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MULTI</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>CONT</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepSign_5">
+             <item>
+              <property name="text">
+               <string>POS</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>NEG</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepLoop_5">
+             <item>
+              <property name="text">
+               <string>LOOP1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP5</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepHold_5">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepLcd_5">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="StepFile_5"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepMin_5">
+             <property name="minimum">
+              <number>-999999999</number>
+             </property>
+             <property name="maximum">
+              <number>999999999</number>
+             </property>
+             <property name="value">
+              <number>-999999999</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepMax_5">
+             <property name="minimum">
+              <number>-999999999</number>
+             </property>
+             <property name="maximum">
+              <number>999999999</number>
+             </property>
+             <property name="value">
+              <number>999999999</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqMin_5">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqMax_5">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqDelta_5">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>10</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreq_5">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="StepFactor_5">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="maximum">
+              <double>1000000000.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepSort_5">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_29">
+           <item>
+            <widget class="QLabel" name="label_61">
+             <property name="text">
+              <string>Step6</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepType_6">
+             <item>
+              <property name="text">
+               <string>NONE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MICRO</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ARD</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepSpin_6"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepAxis_6">
+             <property name="value">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepMode_6">
+             <item>
+              <property name="text">
+               <string>SINGLE</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MULTI</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>CONT</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepSign_6">
+             <item>
+              <property name="text">
+               <string>POS</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>NEG</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="StepLoop_6">
+             <item>
+              <property name="text">
+               <string>LOOP1</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP2</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP3</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP4</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>LOOP5</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepHold_6">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepLcd_6">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="StepFile_6"/>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepMin_6">
+             <property name="minimum">
+              <number>-999999999</number>
+             </property>
+             <property name="maximum">
+              <number>999999999</number>
+             </property>
+             <property name="value">
+              <number>-999999999</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepMax_6">
+             <property name="minimum">
+              <number>-999999999</number>
+             </property>
+             <property name="maximum">
+              <number>999999999</number>
+             </property>
+             <property name="value">
+              <number>999999999</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqMin_6">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqMax_6">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreqDelta_6">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>10</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="StepFreq_6">
+             <property name="maximum">
+              <number>1000000000</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="StepFactor_6">
+             <property name="decimals">
+              <number>4</number>
+             </property>
+             <property name="maximum">
+              <double>1000000000.000000000000000</double>
+             </property>
+             <property name="value">
+              <double>1.000000000000000</double>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="StepSort_6">
+             <property name="text">
+              <string>ON / OFF</string>
+             </property>
+             <property name="checkable">
+              <bool>true</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="tristate">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -701,19 +2264,37 @@
      <height>26</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuPARM">
+   <widget class="QMenu" name="menuRun">
     <property name="title">
-     <string>PARM</string>
+     <string>Run</string>
     </property>
     <addaction name="separator"/>
-    <addaction name="actionKernel"/>
+    <addaction name="actionMeasure"/>
    </widget>
-   <addaction name="menuPARM"/>
+   <widget class="QMenu" name="menuWindow">
+    <property name="title">
+     <string>Window</string>
+    </property>
+    <addaction name="actionParm"/>
+    <addaction name="actionStep"/>
+   </widget>
+   <addaction name="menuRun"/>
+   <addaction name="menuWindow"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionKernel">
+  <action name="actionMeasure">
    <property name="text">
     <string>Kernel</string>
+   </property>
+  </action>
+  <action name="actionParm">
+   <property name="text">
+    <string>Parm</string>
+   </property>
+  </action>
+  <action name="actionStep">
+   <property name="text">
+    <string>Step</string>
    </property>
   </action>
  </widget>

@@ -2,6 +2,8 @@
 #include "GenSource/runKernel.h"
 #include "ui_trs2.h"
 #include "GenSource/Parm.h"
+#include "GuiSource/Table.h"
+
 #include <QLineEdit>
 #include <QSpinBox>
 #include <QDoubleSpinBox>
@@ -18,28 +20,14 @@ TRS2::TRS2(QWidget *parent)
 {
     ui->setupUi(this);
 
-    // Create Table
-    for(int il=0;il<MAXLOOP;il++){
-        addTab("LoopHome", il, &P.Loop[il].Home);
-        addTab("LoopFirst", il, &P.Loop[il].First);
-        addTab("LoopLast", il, &P.Loop[il].Last);
-        addTab("LoopDelta", il, &P.Loop[il].Delta);
-        addTab("LoopNum", il, &P.Loop[il].Num);
-        addTab("LoopFileBreak", il, &P.Loop[il].FileBreak);
-        addTab("LoopBreak", il, &P.Loop[il].Break);
-        addTab("LoopInvert", il, &P.Loop[il].Invert);
-        addTab("LoopCont", il, &P.Loop[il].Cont);
-    }
+    // set display panel from menu
+    connect(ui->actionMeasure, &QAction::triggered, this, []() { runKernel(); });
+    connect(ui->actionParm, &QAction::triggered, this, [this]() { displayPanel("Parm"); });
+    connect(ui->actionStep, &QAction::triggered, this, [this]() { displayPanel("Step"); });
 
-    // Complete Table
-    for (auto& iT : T) {
-        QObject* obj = findChild<QObject*>(iT.Name);
-        if (obj) {
-            const QMetaObject* meta = obj->metaObject();
-            iT.Type = meta->className();
-            iT.Obj = obj;
-        }
-    }
+    // create and update Table
+    createTable();
+    completeTable();
 
     // Connect Signals for Widgets
     for (const auto& iT : T) {
@@ -80,6 +68,17 @@ TRS2::~TRS2()
 {
     saveSet("c:\\Temp\\TRS2.TRS");
     delete ui;
+}
+
+void TRS2::completeTable() {
+    for (auto& iT : T) {
+        QObject* obj = findChild<QObject*>(iT.Name);
+        if (obj) {
+            const QMetaObject* meta = obj->metaObject();
+            iT.Type = meta->className();
+            iT.Obj = obj;
+        }
+    }
 }
 
 void TRS2::updateTFromUI() {
@@ -222,8 +221,13 @@ void TRS2::loadSet(QString FilePath) {
     }
 }
 
-void TRS2::on_actionKernel_triggered()
+void TRS2::displayPanel(const QString &namePanel)
 {
-    runKernel();
+    QWidget *widget = ui->stackedWidget->findChild<QWidget*>(namePanel);
+    if (widget) {
+        int index = ui->stackedWidget->indexOf(widget);
+        if (index != -1) {
+            ui->stackedWidget->setCurrentIndex(index);
+        }
+    }
 }
-

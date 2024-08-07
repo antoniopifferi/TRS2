@@ -32,8 +32,9 @@ private slots:
     void saveSet(QString FilePath);
     void loadSet(QString FilePath);
     void readAll();
-
-    void on_actionKernel_triggered();
+    void displayPanel(const QString &namePanel);
+    void createTable();
+    void completeTable();
 
 private:
     Ui::TRS2 *ui;

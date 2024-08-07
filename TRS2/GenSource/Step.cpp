@@ -9,6 +9,7 @@
 
 #include "GenSource/Step.h"
 #include "DevSource/MicroStep.h"
+#include "DevSource/ArdStep.h"
 #include "GenSource/Parm.h"
 //#include "MonoStep.h"
 
@@ -24,10 +25,11 @@ void Passed() {
 }
 
 Step* Step::createStep(int iS) {
-    if (P.Step[iS].Type == "Micro")
+    auto type=P.Step[iS].Type;
+    if (type == "MICRO")
         return new MicroStep(iS);
-    //else if (stepType == MONO)
-    //    return new MonoStep(step);
+    else if (type == "ARD")
+        return new ArdStep(iS);
     else
         return nullptr; // or throw an exception for invalid type
 }

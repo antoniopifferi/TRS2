@@ -6,9 +6,9 @@
 
 void runKernel() {
     for (int iS=0;iS<MAXSTEP;iS++) P.Step[iS].Type="Micro";
-    Step* step1 = new MicroStep(1); // Polymorphic usage
+        Step* step1 = new MicroStep(1); // Polymorphic usage
     //Step* step1=Step::createStep(1);
-    Step* step2=Step::createStep(2);
+//    Step* step1=Step::createStep(1);
 
     for (P.Loop[0].Actual = P.Loop[0].First; P.Loop[0].Actual <= P.Loop[0].Last; P.Loop[0].Actual += P.Loop[0].Delta) {
         for (P.Loop[1].Actual = P.Loop[1].First; P.Loop[1].Actual <= P.Loop[1].Last; P.Loop[1].Actual += P.Loop[1].Delta) {
