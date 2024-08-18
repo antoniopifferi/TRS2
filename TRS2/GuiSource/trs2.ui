@@ -885,7 +885,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QSpinBox" name="StepSpin_1"/>
+            <widget class="QSpinBox" name="StepCom_1"/>
            </item>
            <item>
             <widget class="QSpinBox" name="StepAxis_1">
@@ -928,32 +928,16 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="StepLoop_1">
-             <item>
-              <property name="text">
-               <string>LOOP1</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP2</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP3</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP4</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP5</string>
-              </property>
-             </item>
+            <widget class="QSpinBox" name="StepLoop_1">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>5</number>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
             </widget>
            </item>
            <item>
@@ -989,7 +973,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="StepFile_1"/>
+            <widget class="QLineEdit" name="StepFName_1"/>
            </item>
            <item>
             <widget class="QSpinBox" name="StepMin_1">
@@ -1117,7 +1101,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QSpinBox" name="StepSpin_2"/>
+            <widget class="QSpinBox" name="StepCom_2"/>
            </item>
            <item>
             <widget class="QSpinBox" name="StepAxis_2">
@@ -1160,32 +1144,16 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="StepLoop_2">
-             <item>
-              <property name="text">
-               <string>LOOP1</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP2</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP3</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP4</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP5</string>
-              </property>
-             </item>
+            <widget class="QSpinBox" name="StepLoop_2">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>5</number>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
             </widget>
            </item>
            <item>
@@ -1221,7 +1189,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="StepFile_2"/>
+            <widget class="QLineEdit" name="StepFName_2"/>
            </item>
            <item>
             <widget class="QSpinBox" name="StepMin_2">
@@ -1349,7 +1317,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QSpinBox" name="StepSpin_3"/>
+            <widget class="QSpinBox" name="StepCom_3"/>
            </item>
            <item>
             <widget class="QSpinBox" name="StepAxis_3">
@@ -1392,32 +1360,16 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="StepLoop_3">
-             <item>
-              <property name="text">
-               <string>LOOP1</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP2</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP3</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP4</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP5</string>
-              </property>
-             </item>
+            <widget class="QSpinBox" name="StepLoop_3">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>5</number>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
             </widget>
            </item>
            <item>
@@ -1453,7 +1405,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="StepFile_3"/>
+            <widget class="QLineEdit" name="StepFName_3"/>
            </item>
            <item>
             <widget class="QSpinBox" name="StepMin_3">
@@ -1581,7 +1533,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QSpinBox" name="StepSpin_4"/>
+            <widget class="QSpinBox" name="StepCom_4"/>
            </item>
            <item>
             <widget class="QSpinBox" name="StepAxis_4">
@@ -1624,32 +1576,16 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="StepLoop_4">
-             <item>
-              <property name="text">
-               <string>LOOP1</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP2</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP3</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP4</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP5</string>
-              </property>
-             </item>
+            <widget class="QSpinBox" name="StepLoop_4">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>5</number>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
             </widget>
            </item>
            <item>
@@ -1685,7 +1621,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="StepFile_4"/>
+            <widget class="QLineEdit" name="StepFName_4"/>
            </item>
            <item>
             <widget class="QSpinBox" name="StepMin_4">
@@ -1813,7 +1749,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QSpinBox" name="StepSpin_5"/>
+            <widget class="QSpinBox" name="StepCom_5"/>
            </item>
            <item>
             <widget class="QSpinBox" name="StepAxis_5">
@@ -1856,32 +1792,16 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="StepLoop_5">
-             <item>
-              <property name="text">
-               <string>LOOP1</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP2</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP3</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP4</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP5</string>
-              </property>
-             </item>
+            <widget class="QSpinBox" name="StepLoop_5">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>5</number>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
             </widget>
            </item>
            <item>
@@ -1917,7 +1837,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="StepFile_5"/>
+            <widget class="QLineEdit" name="StepFName_5"/>
            </item>
            <item>
             <widget class="QSpinBox" name="StepMin_5">
@@ -2045,7 +1965,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QSpinBox" name="StepSpin_6"/>
+            <widget class="QSpinBox" name="StepCom_6"/>
            </item>
            <item>
             <widget class="QSpinBox" name="StepAxis_6">
@@ -2088,32 +2008,16 @@
             </widget>
            </item>
            <item>
-            <widget class="QComboBox" name="StepLoop_6">
-             <item>
-              <property name="text">
-               <string>LOOP1</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP2</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP3</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP4</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>LOOP5</string>
-              </property>
-             </item>
+            <widget class="QSpinBox" name="StepLoop_6">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>5</number>
+             </property>
+             <property name="value">
+              <number>1</number>
+             </property>
             </widget>
            </item>
            <item>
@@ -2149,7 +2053,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QLineEdit" name="StepFile_6"/>
+            <widget class="QLineEdit" name="StepFName_6"/>
            </item>
            <item>
             <widget class="QSpinBox" name="StepMin_6">

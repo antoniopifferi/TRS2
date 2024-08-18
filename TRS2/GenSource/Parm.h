@@ -34,11 +34,11 @@ struct StepS {
     std::string Type;
     int Step;
     int Loop;
-    int Dir;
-    char Sign;
+//    int Dir;
+    std::string Sign;
     char Speed;
-    char Mode;
-    char Sort;
+    std::string Mode;
+    bool Sort;
 //    char Moving;
 //    char Started;
 //    char DiffHome;

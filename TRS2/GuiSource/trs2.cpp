@@ -14,6 +14,8 @@
 #include <QTextStream>
 #include <QMessageBox>
 
+#include <typeinfo>
+
 TRS2::TRS2(QWidget *parent)
     : QMainWindow(parent),
     ui(new Ui::TRS2)

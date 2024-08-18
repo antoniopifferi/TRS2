@@ -23,6 +23,7 @@ HEADERS += \
     GenSource/Const.h \
     GenSource/Parm.h \
     GenSource/Step.h \
+    GenSource/Var.h \
     GenSource/runKernel.h \
     GuiSource/Table.h \
     GuiSource/trs2.h

@@ -7,8 +7,6 @@
 // ADDED CONSTANTS
 #define STEP_NONE "None"
 
-
-
 // VERSION
 #define MESSAGE_ABOUT   "Copyright: POLITECNICO DI MILANO\nVersion: 18.0\nDate: November 2020"
 
@@ -154,7 +152,7 @@
 #define FACTOR_NEWP    1		// Loop Step (um)	#1000
 #define FACTOR_TIO     2	   //Loop Step factor with TIO board
 #define MAXITERNEWP	   10    // Maximum number of iterations in MoveNewp to reach Goal
-#define MAX_STEP	   11
+#define MAX_STEP	   6
 
 #define LPT1 		   888	 // PARALLEL PORT ADDRESS (PIN 11,17-25 -> GND)
 #define STEP_LPT_ON_1  0x01	 // LSB 	-> PIN 2	(Axis1)

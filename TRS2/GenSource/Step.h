@@ -17,15 +17,36 @@ public:
     bool moving;
     long home;
     long delta;
+        //    char Started;
+    double freqActual;
+    int dir;
+
+    std::string Type;
+    int Com;
+    int Axis;
+    std::string Mode;
+    std::string Sign;
+    int Loop;
+    bool Hold;
+    bool Lcd;
+    std::string FName;
+    long Min;
+    long Max;
+    long FreqMin;
+    long FreqMax;
+    long FreqDelta;
+    long Freq;
+    double Factor;
+    bool Sort;
 
     // Functions
-    static Step* createStep(int iS);
+    static std::unique_ptr<Step> createStep(int iS);
 
     virtual ~Step() {
         std::cout << "Step destructor called" << std::endl;
     };
 
-    void moveStep(long *Actual, long Goal, int Step, bool Wait, bool Status);
+    void moveStep(long *Actual, long Goal, bool Wait, bool Status);
 
     virtual void moveStepDev(long goal) = 0;
 
@@ -35,7 +56,7 @@ public:
 
     void initStep(int Step);
 
-    long calcGoal(char Step);
+    long calcGoal(int Step);
 };
 
 #endif // STEP_H

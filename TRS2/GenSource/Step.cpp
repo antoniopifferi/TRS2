@@ -5,12 +5,14 @@
 #include <sstream>
 #include <vector>
 #include <string>
-
+#include <memory>
 
 #include "GenSource/Step.h"
 #include "DevSource/MicroStep.h"
 #include "DevSource/ArdStep.h"
 #include "GenSource/Parm.h"
+#include "GenSource/Var.h"
+
 //#include "MonoStep.h"
 
 
@@ -24,20 +26,57 @@ void Passed() {
     std::cout << "Operation Passed" << std::endl;
 }
 
-Step* Step::createStep(int iS) {
-    auto type=P.Step[iS].Type;
-    if (type == "MICRO")
-        return new MicroStep(iS);
-    else if (type == "ARD")
-        return new ArdStep(iS);
-    else
-        return nullptr; // or throw an exception for invalid type
+std::unique_ptr<Step> Step::createStep(int iS) {
+    std::unique_ptr<Step> step = nullptr;
+    auto type = P.Step[iS].Type;
+
+    if (type == "MICRO") {
+        step = std::make_unique<MicroStep>(iS);
+    } else if (type == "ARD") {
+        step = std::make_unique<ArdStep>(iS);
+    }
+
+    if(step){
+        step->Type=P.Step[iS].Type;
+        step->Com=P.Step[iS].Com;
+        step->Axis=P.Step[iS].Axis;
+        step->Mode=P.Step[iS].Mode;
+        step->Sign=P.Step[iS].Sign;
+        step->Loop=P.Step[iS].Loop-1;
+        step->Hold=P.Step[iS].Hold;
+        step->Lcd=P.Step[iS].Lcd;
+        step->FName=P.Step[iS].FName;
+        step->Min=P.Step[iS].Min;
+        step->Max=P.Step[iS].Max;
+        step->FreqMin=P.Step[iS].FreqMin;
+        step->FreqMax=P.Step[iS].FreqMax;
+        step->FreqDelta=P.Step[iS].FreqDelta;
+        step->Freq=P.Step[iS].Freq;
+        step->Factor=P.Step[iS].Factor;
+        step->Sort=P.Step[iS].Sort;
+        step->iS=iS;
+    }
+
+    if(step)
+        step->initPos();
+
+    return step;
 }
+
+//Step* Step::createStep(int iS) {
+//    auto type=P.Step[iS].Type;
+//    if (type == "MICRO")
+//        return new MicroStep(iS);
+//    else if (type == "ARD")
+//        return new ArdStep(iS);
+//    else
+//        return nullptr; // or throw an exception for invalid type
+//}
 
 void Step::initPos(void){
     bool sethome = false;
     int numread = 0;
-    int loop=P.Step[this->iS].Loop;
+    int loop=this->Loop;
     long num=P.Loop[loop].Num;
 
     diffHome=false;
@@ -48,9 +87,9 @@ void Step::initPos(void){
 
     // if FName empty, then fill start/stop with loop
     if(P.Step[iS].FName.empty()){
-        home = (long)(P.Loop[loop].Home*P.Step[iS].Factor);
+        home = (long)(P.Loop[loop].Home*this->Factor);
         for(int il=0;il<num;il++){
-            this->start[il]=(long)(P.Step[iS].Factor*(P.Loop[loop].First+il*P.Loop[loop].Delta));
+            this->start[il]=(long)(this->Factor*(P.Loop[loop].First+il*P.Loop[loop].Delta));
 //            this->stop[il]=(long)(P.Step[iS].Factor*(P.Loop[loop].First+(il+1)*P.Loop[loop].Delta));
         }
     }
@@ -107,62 +146,24 @@ void Step::initPos(void){
 }
 
 /* MOVE STEPPER MOTOR */
-void Step::moveStep(long *Actual,long Goal,int Step,bool Wait,bool Status){
-//void Step::moveStep(long Goal){
-    char dir;
+void Step::moveStep(long *Actual,long Goal,bool Wait,bool Status){
     long delta;
-    int is;
-    char on = FALSE;
     if (*Actual==Goal) return;
     moving=true;
-//++    P.Step[Step].Moving = TRUE;
     delta=Goal-*Actual;
     dir=(delta>0?1:-1);
-    P.Step[Step].Dir=dir;
-    Goal=(dir>0?std::min(Goal,P.Step[Step].Max):std::max(Goal,P.Step[Step].Min));
+    Goal=(dir>0?std::min(Goal,Max):std::max(Goal,Min));
+    bool on=false;
+
     moveStepDev(Goal);
-    //    if(Status) SetCtrlVal (hDisplay, DISPLAY_MOVE, ON);
-    //    switch (P.Step[Step].Type){
-    //    case LPT:  MoveLpt(Step,abs(delta),dir); break;
-    //    case NEWP: MoveNewp(Step,Goal,delta,P.Step[Step].Axis,P.Step[Step].Speed,Wait); break;
-    //    case MM4005: MoveNewp4005(Step,Goal,delta,P.Step[Step].Axis,P.Step[Step].Speed,Wait); break;
-    //    case TIO:  MoveTio(Step,abs(delta),dir,Wait);break;
-    //    case MIO:  MoveMio(Step,Goal);break;
-    //    case MICRO2:
-    //    case MICRO: MoveMicro(Step,Goal,Wait); break;
-    //    case PWM: MovePwm(Step,Goal,Wait); break;
-    //    case MONO: MoveMono(Step,Goal,Wait); break;
-    //    case MONO_TCP: MoveMonoTcp(Step,Goal,Wait); break;
-    //    case PI1: MovePi(Step,Goal,Wait); break;
-    //    case FPM: MoveFpm(Step, Goal); break;	/* Fiber power monitor: actually read Power  */
-    //    case DELAYER: MoveDelayer(Step, Goal); break;
-    //    case AOTF_FREQ: SetFreqNI_USB6229(Step, Goal); break;
-    //    case AOTF_POW: SetVoltNI_USB6221(Step, Goal); break;
-    //    case DELAYER_GATE: MoveDelayerGate(Step, Goal); break;
-    //    case STANDA: MoveStanda(Step,Goal,Wait); break;
-    //    case NKT_LAMBDA: SetNKTLambda(Step,Goal);break;
-    //    case NKT_POW:	 SetNKTPow(Step,Goal);break;
-    //    case ESP300: MoveEsp300(Step,Goal,Wait); break;
-    //    case LT900: MoveLt900(Step,Goal); break;
-    //    case CHAMALEON: MoveCham(Step,Goal,Wait); break;
-    //    case STEP_STANDA2: MoveStanda2(Step,Goal,Wait); break;
-    //    case ATT_LUCA: MoveAttLuca(Step,Goal,Wait); break;
-    //    case BCD_SYNC: MoveBcdSync(Step,Goal,FALSE); break;
-    //    case BCD_PIX: MoveBcdPix(Step,Goal,FALSE); break;
-    //    case DMD_TX: MoveDmdTx(Step,Goal,Wait); break;
-    //    case ARD_FLOW:
-    //    case ARD_STEP: MoveArd(Step,Goal,Wait); break;
-    //    default:;
-    //    }
     P.Spc.Trash=TRUE;
     if(Wait) return;
     //if(Status) SetCtrlVal (hDisplay, P.Step[Step].Control, (P.Step[Step].Actual/(1.0*P.Step[Step].Factor)));//TODO: Check for TRIM
     moving=false;
     if(Status){
-        for(is=0;is<MAX_STEP;is++)
-            if(P.Step[is].Step)
-                //++ on |= P.Step[is].Moving;
-                on |= moving;
+        for(int iS=0;iS<MAX_STEP;iS++)
+            if(Steps[iS])
+                on |= Steps[iS]->moving;
         //        if(!on) SetCtrlVal (hDisplay, DISPLAY_MOVE, OFF);
     }
 }
@@ -274,7 +275,7 @@ void Step::initStep(int Step){
 //    case ARD_STEP:  InitArd(Step); break;
 //    default:;
 //    }
-    if(P.Step[Step].Mode==STEP_CONT) setVel(Step,fabs(P.Step[Step].Delta/(P.Spc.TimeM*P.Loop[P.Step[Step].Loop].Num)));
+    if(P.Step[Step].Mode=="CONT") setVel(Step,fabs(P.Step[Step].Delta/(P.Spc.TimeM*P.Loop[P.Step[Step].Loop].Num)));
     else setVel(Step, P.Step[Step].Freq);
 
 }
@@ -366,11 +367,11 @@ void InvertIndex(void){
 
 
 /* CALCULATE GOAL FOR STEPPER */
-long Step::calcGoal(char Step){
-    char loop = P.Step[Step].Loop;
-    long index;
-    index = P.Loop[loop].Actual;
-    return(start[index]);
+long Step::calcGoal(int Step){
+    int loop = Steps[Step]->Loop;
+    long index = P.Loop[loop].Actual;
+    long goal = Steps[Step]->start[index];
+    return(goal);
 }
 
 
@@ -428,7 +429,7 @@ void WaitPos(char Step,long Goal){
     is_first=TRUE;
     do{
         TellPos(Step,&pa);
-        is_success=((P.Step[Step].Dir==1)?(pa>=Goal):(pa<=Goal));
+        is_success=((Steps[Step]->dir==1)?(pa>=Goal):(pa<=Goal));
         is_equal=(pa==last);
         if(!is_equal) is_first=TRUE;
         last=pa;
