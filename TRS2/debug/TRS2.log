@@ -1,0 +1,34 @@
+﻿   Qt/MSBuild: 3.3.1.1
+  Reading Qt configuration (C:/Qt/6.5.2/msvc2019_64/bin/qmake)
+   Qt: 6.5.2
+  ArdStep.cpp
+  MicroStep.cpp
+  Parm.cpp
+  Step.cpp
+  main.cpp
+  runKernel.cpp
+  trs2.cpp
+DevSource\ArdStep.cpp(5,22): warning C4100: 'iS': unreferenced formal parameter
+DevSource\MicroStep.cpp(5,26): warning C4100: 'iS': unreferenced formal parameter
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Const.h(695,1): warning C4005: 'INFINITY': macro redefinition (compiling source file GenSource\Parm.cpp)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88,1): message : see previous definition of 'INFINITY' (compiling source file GenSource\Parm.cpp)
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Parm.h(668,2): warning C4091: 'typedef ': ignored on left of 'RingBufferMA' when no variable is declared (compiling source file GenSource\Parm.cpp)
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Const.h(695,1): warning C4005: 'INFINITY': macro redefinition (compiling source file GenSource\runKernel.cpp)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88,1): message : see previous definition of 'INFINITY' (compiling source file GenSource\runKernel.cpp)
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Parm.h(668,2): warning C4091: 'typedef ': ignored on left of 'RingBufferMA' when no variable is declared (compiling source file GenSource\runKernel.cpp)
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Const.h(695,1): warning C4005: 'INFINITY': macro redefinition (compiling source file GenSource\Step.cpp)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88,1): message : see previous definition of 'INFINITY' (compiling source file GenSource\Step.cpp)
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Parm.h(668,2): warning C4091: 'typedef ': ignored on left of 'RingBufferMA' when no variable is declared (compiling source file GenSource\Step.cpp)
+GenSource\Step.cpp(285,21): warning C4100: 'Step': unreferenced formal parameter
+GenSource\Step.cpp(380,20): warning C4100: 'Step': unreferenced formal parameter
+GenSource\Step.cpp(401,30): warning C4100: 'Position': unreferenced formal parameter
+GenSource\Step.cpp(401,19): warning C4100: 'Step': unreferenced formal parameter
+GenSource\Step.cpp(456,53): warning C4100: 'Status': unreferenced formal parameter
+GenSource\Step.cpp(456,43): warning C4100: 'Step': unreferenced formal parameter
+GenSource\Step.cpp(456,33): warning C4100: 'Goal': unreferenced formal parameter
+GenSource\Step.cpp(456,21): warning C4100: 'Actual': unreferenced formal parameter
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Const.h(695,1): warning C4005: 'INFINITY': macro redefinition (compiling source file GuiSource\trs2.cpp)
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88,1): message : see previous definition of 'INFINITY' (compiling source file GuiSource\trs2.cpp)
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Parm.h(668,2): warning C4091: 'typedef ': ignored on left of 'RingBufferMA' when no variable is declared (compiling source file GuiSource\trs2.cpp)
+  moc_trs2.cpp
+  TRS2.vcxproj -> C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\debug\TRS2.exe
