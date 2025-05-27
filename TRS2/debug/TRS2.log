@@ -1,34 +1,99 @@
-﻿   Qt/MSBuild: 3.3.1.1
+﻿   Qt/MSBuild: 3.4.0.1
   Reading Qt configuration (C:/Qt/6.5.2/msvc2019_64/bin/qmake)
    Qt: 6.5.2
-  ArdStep.cpp
-  MicroStep.cpp
-  Parm.cpp
-  Step.cpp
-  main.cpp
-  runKernel.cpp
-  trs2.cpp
-DevSource\ArdStep.cpp(5,22): warning C4100: 'iS': unreferenced formal parameter
-DevSource\MicroStep.cpp(5,26): warning C4100: 'iS': unreferenced formal parameter
-C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Const.h(695,1): warning C4005: 'INFINITY': macro redefinition (compiling source file GenSource\Parm.cpp)
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88,1): message : see previous definition of 'INFINITY' (compiling source file GenSource\Parm.cpp)
-C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Parm.h(668,2): warning C4091: 'typedef ': ignored on left of 'RingBufferMA' when no variable is declared (compiling source file GenSource\Parm.cpp)
-C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Const.h(695,1): warning C4005: 'INFINITY': macro redefinition (compiling source file GenSource\runKernel.cpp)
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88,1): message : see previous definition of 'INFINITY' (compiling source file GenSource\runKernel.cpp)
-C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Parm.h(668,2): warning C4091: 'typedef ': ignored on left of 'RingBufferMA' when no variable is declared (compiling source file GenSource\runKernel.cpp)
-C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Const.h(695,1): warning C4005: 'INFINITY': macro redefinition (compiling source file GenSource\Step.cpp)
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88,1): message : see previous definition of 'INFINITY' (compiling source file GenSource\Step.cpp)
-C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Parm.h(668,2): warning C4091: 'typedef ': ignored on left of 'RingBufferMA' when no variable is declared (compiling source file GenSource\Step.cpp)
-GenSource\Step.cpp(285,21): warning C4100: 'Step': unreferenced formal parameter
-GenSource\Step.cpp(380,20): warning C4100: 'Step': unreferenced formal parameter
-GenSource\Step.cpp(401,30): warning C4100: 'Position': unreferenced formal parameter
-GenSource\Step.cpp(401,19): warning C4100: 'Step': unreferenced formal parameter
-GenSource\Step.cpp(456,53): warning C4100: 'Status': unreferenced formal parameter
-GenSource\Step.cpp(456,43): warning C4100: 'Step': unreferenced formal parameter
-GenSource\Step.cpp(456,33): warning C4100: 'Goal': unreferenced formal parameter
-GenSource\Step.cpp(456,21): warning C4100: 'Actual': unreferenced formal parameter
-C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Const.h(695,1): warning C4005: 'INFINITY': macro redefinition (compiling source file GuiSource\trs2.cpp)
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88,1): message : see previous definition of 'INFINITY' (compiling source file GuiSource\trs2.cpp)
-C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource/Parm.h(668,2): warning C4091: 'typedef ': ignored on left of 'RingBufferMA' when no variable is declared (compiling source file GuiSource\trs2.cpp)
-  moc_trs2.cpp
-  TRS2.vcxproj -> C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\debug\TRS2.exe
+  Scanning sources for module dependencies...
+  Compiling...
+  Step.ixx
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(3,10): warning C5244: '#include <string>' in the purview of module 'Step' appears erroneous.  Consider moving that directive before the module declaration, or replace the textual inclusion with 'import <string>;'.
+      C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(1,8):
+      see module 'Step' declaration
+  
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(4,10): warning C5244: '#include <vector>' in the purview of module 'Step' appears erroneous.  Consider moving that directive before the module declaration, or replace the textual inclusion with 'import <vector>;'.
+      C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(1,8):
+      see module 'Step' declaration
+  
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(5,10): warning C5244: '#include <chrono>' in the purview of module 'Step' appears erroneous.  Consider moving that directive before the module declaration, or replace the textual inclusion with 'import <chrono>;'.
+      C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(1,8):
+      see module 'Step' declaration
+  
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(6,10): warning C5244: '#include <iostream>' in the purview of module 'Step' appears erroneous.  Consider moving that directive before the module declaration, or replace the textual inclusion with 'import <iostream>;'.
+      C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(1,8):
+      see module 'Step' declaration
+  
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Parm.h(7,10): warning C5244: '#include <QMainWindow>' in the purview of module 'Step' appears erroneous.  Consider moving that directive before the module declaration, or replace the textual inclusion with 'import <QMainWindow>;'.
+  (compiling source file 'GenSource/Step.ixx')
+      C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(1,8):
+      see module 'Step' declaration
+  
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Parm.h(8,10): warning C5244: '#include <QString>' in the purview of module 'Step' appears erroneous.  Consider moving that directive before the module declaration, or replace the textual inclusion with 'import <QString>;'.
+  (compiling source file 'GenSource/Step.ixx')
+      C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(1,8):
+      see module 'Step' declaration
+  
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Parm.h(9,10): warning C5244: '#include <QMap>' in the purview of module 'Step' appears erroneous.  Consider moving that directive before the module declaration, or replace the textual inclusion with 'import <QMap>;'.
+  (compiling source file 'GenSource/Step.ixx')
+      C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(1,8):
+      see module 'Step' declaration
+  
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Parm.h(11,10): warning C5244: '#include <mutex>' in the purview of module 'Step' appears erroneous.  Consider moving that directive before the module declaration, or replace the textual inclusion with 'import <mutex>;'.
+  (compiling source file 'GenSource/Step.ixx')
+      C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(1,8):
+      see module 'Step' declaration
+  
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Parm.h(12,10): warning C5244: '#include <condition_variable>' in the purview of module 'Step' appears erroneous.  Consider moving that directive before the module declaration, or replace the textual inclusion with 'import <condition_variable>;'.
+  (compiling source file 'GenSource/Step.ixx')
+      C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(1,8):
+      see module 'Step' declaration
+  
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Const.h(695,9): warning C4005: 'INFINITY': macro redefinition
+  (compiling source file 'GenSource/Step.ixx')
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\ucrt\corecrt_math.h(88,9):
+      see previous definition of 'INFINITY'
+  
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Parm.h(665,16): warning C4091: 'typedef ': ignored on left of 'RingBufferMA' when no variable is declared
+  (compiling source file 'GenSource/Step.ixx')
+  
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(12,14): error C2011: 'Step': 'class' type redefinition
+      C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.h(9,7):
+      see declaration of 'Step'
+  
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(58,29): error C2027: use of undefined type 'Step'
+      C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.h(9,7):
+      see declaration of 'Step'
+  
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(60,32): error C2440: 'initializing': cannot convert from 'nullptr' to 'std::unique_ptr<Step,std::default_delete<Step>>'
+      C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(60,32):
+      'std::unique_ptr<Step,std::default_delete<Step>>::unique_ptr(const std::unique_ptr<Step,std::default_delete<Step>> &)': cannot convert argument 1 from 'nullptr' to 'const std::unique_ptr<Step,std::default_delete<Step>> &'
+          C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(60,34):
+          Reason: cannot convert from 'nullptr' to 'const std::unique_ptr<Step,std::default_delete<Step>>'
+          C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(60,34):
+          Conversion requires a second user-defined-conversion operator or constructor
+          C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3393,5):
+          could be 'std::unique_ptr<Step,std::default_delete<Step>>::unique_ptr(std::unique_ptr<_Ux,_Dx> &&) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3385,5):
+          or       'std::unique_ptr<Step,std::default_delete<Step>>::unique_ptr(std::unique_ptr<Step,std::default_delete<Step>> &&) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3382,5):
+          or       'std::unique_ptr<Step,std::default_delete<Step>>::unique_ptr(Step *,std::default_delete<Step> &&)'
+          C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3377,5):
+          or       'std::unique_ptr<Step,std::default_delete<Step>>::unique_ptr(Step *,_Dx &&) noexcept'
+          with
+          [
+              _Dx=std::default_delete<Step>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3373,5):
+          or       'std::unique_ptr<Step,std::default_delete<Step>>::unique_ptr(Step *,const _Dx &) noexcept'
+          with
+          [
+              _Dx=std::default_delete<Step>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3360,5):
+          or       'std::unique_ptr<Step,std::default_delete<Step>>::unique_ptr(std::nullptr_t) noexcept'
+          C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\include\memory(3357,5):
+          or       'std::unique_ptr<Step,std::default_delete<Step>>::unique_ptr(void) noexcept'
+          C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(60,32):
+          while trying to match the argument list '(nullptr)'
+  
+C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.ixx(65,12): error C2027: use of undefined type 'Step'
+      C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\GenSource\Step.h(9,7):
+      see declaration of 'Step'
+  

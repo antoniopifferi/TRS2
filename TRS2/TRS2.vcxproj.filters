@@ -58,6 +58,8 @@
     <ClCompile Include="GuiSource\trs2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DevSource\ArdStep.ixx" />
+    <ClCompile Include="GenSource\Step.ixx" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DevSource\ArdStep.h">

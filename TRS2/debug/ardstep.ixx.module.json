@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "debug\\ArdStep.ixx.obj",
+            "outputs": [
+                "debug\\ArdStep.sbr",
+                "C:\\OD\\OneDrive - Politecnico di Milano\\Beta\\Programs\\TRS2\\TRS2\\debug\\vc143.pdb",
+                "debug\\",
+                "C:\\OD\\OneDrive - Politecnico di Milano\\Beta\\Programs\\TRS2\\TRS2\\debug\\ArdStep.ixx.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "ArdStep",
+                    "source-path": "c:\\od\\onedrive - politecnico di milano\\beta\\programs\\trs2\\trs2\\devsource\\ardstep.ixx",
+                    "is-interface": true
+                }
+            ],
+            "requires": []
+        }
+    ]
+}
