@@ -172,10 +172,8 @@
 #define EXP_STEP	   1.0
 #define SLEEP_MIN_MVIS 0.005 //0.010
 #define SLEEP_MAX_MVIS 0.020 //0.040
-//**#define SLEEP_MIN_MNIR 0.002 //0.010
-//**#define SLEEP_MAX_MNIR 0.008 //0.040
-/**/#define SLEEP_MIN_MNIR 0.0025 //0.010
-/**/#define SLEEP_MAX_MNIR 0.0025 //0.040
+#define SLEEP_MIN_MNIR 0.0025 //0.010
+#define SLEEP_MAX_MNIR 0.0025 //0.040
 #define SLEEP_MIN_TUNE 0.002 //0.002
 #define SLEEP_MAX_TUNE 0.002 //0.002
 #define SPEED          30  // Newport velocity (mm/s)
@@ -288,7 +286,6 @@
 #define ESP300_STATUS	"TS"
 #define ESP300_STAGE	"ID"
 #define ESP300_QUITPROG	"QP" // Quit Program mode (just in case)
-//#define ESP300_CHECKGROUP	"HB" //
 #define ESP300_TRAJTRAP	"TJ1" // Define Trapezoidal velocity profile (trajectory)
 #define ESP300_TRAJS	"TJ2" // Define S-Shape velocity profile (trajectory)
 
@@ -333,9 +330,6 @@
 #define PI_BAUDRATE 	9600
 
 #define PI_DEVICE	1
-//#define PI_PARITY 	0
-//#define PI_DATABITS	8
-//#define PI_STOPBITS	1
 
 
 // AOTF CONSTANTS
@@ -359,7 +353,6 @@
 #define NKT_U8			1
 #define NKT_U16			2
 #define NKT_U32			3
-
 #define NKT_DESTINATION 6
 #define NKT_READ_REG	0x04
 #define NKT_WRITE_REG	0x05
@@ -506,7 +499,6 @@
 #define SYNC_CONT	 3
 #define SYNC_LPT	 2
 #define SYNC_USB	 3
-//#define SYNC_USB_BAUD 110
 
 
 
@@ -668,7 +660,6 @@
 
 /* SPC CONSTANTS */
 #define MAX_BOARD	4
-//#define MAX_DET	64 /* per continuos flow � poco */
 #define MAX_DET		256
 #define MAX_PAGE	256*32
 #define MAX_FRAME	1024
