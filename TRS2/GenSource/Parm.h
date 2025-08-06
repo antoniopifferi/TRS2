@@ -12,7 +12,7 @@
 #include <condition_variable>
 #include <thread>
 
-#include "GenSource/Const.h"
+import Const;
 
 struct LoopS {
     int Home;
@@ -917,7 +917,7 @@ VER_MAMM_HEADER (qualenumero?)
 togliere commenti su INIT_SPC (per me)
 */
 
-#pragma pack(push,1)
+/*++#pragma pack(push,1)
 T_HEAD{
     short Ver[2];
     long SubHeader;
@@ -953,9 +953,9 @@ T_HEAD{
     long MammIdxTop[D2];
     long MammRateMid[D2];
     long MammRateHigh[D2];
-};
+};*/
 
-T_SUB{
+/*++T_SUB{
     char Geom;
     char Source;
     char Fiber;
@@ -984,7 +984,7 @@ T_SUB{
     double RoiLambda[MAX_ROI_SUB];
     double RoiPower[MAX_ROI_SUB];
 };
-#pragma pack(pop)
+#pragma pack(pop)*/
 
 struct InfoS {
     char Kind;
@@ -1089,7 +1089,7 @@ struct ParmS {
 
 // Data Structures
 struct DataS {
-    T_HEAD Head;		// D.Head
+    /*++T_HEAD Head;		// D.Head
     T_SUB **Sub;		// D.Sub[P.Frame.Num][P.Num.Page]
     T_DATA ***Data;		// D.Data[P.Frame.Num][P.Num.Page][P.Num.Chann]
     T_DATA **Osc;		// D.Osc[P.Num.Board*P.Num.Det][P.Num.Chann]
@@ -1098,6 +1098,7 @@ struct DataS {
     T_DATA *Curve;		// D.Curve[P.Num.Chann]
     T_DATA *Last;		// D.Last[P.Num.Chann]
     SC1000_TYPE ***BufferTDC;
+    */
 };
 
 

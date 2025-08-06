@@ -194,6 +194,7 @@
   <ItemGroup>
     <ClCompile Include="DevSource\ArdStep.cpp" />
     <ClCompile Include="DevSource\MicroStep.cpp" />
+    <ClCompile Include="GenSource\Const.ixx" />
     <ClCompile Include="GenSource\Parm.cpp" />
     <ClCompile Include="GenSource\Step.cpp" />
     <ClCompile Include="GuiSource\main.cpp" />
@@ -202,7 +203,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DevSource\ArdStep.h" />
-    <ClInclude Include="GenSource\Const.h" />
     <ClInclude Include="DevSource\MicroStep.h" />
     <ClInclude Include="GenSource\Parm.h" />
     <ClInclude Include="GenSource\Step.h" />
