@@ -1,0 +1,32 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\od\\onedrive - politecnico di milano\\beta\\programs\\trs2\\trs2\\devsource\\microstep.ixx",
+        "ProvidedModule": "MicroStep",
+        "Includes": [],
+        "ImportedModules": [
+            {
+                "Name": "Step",
+                "BMI": "C:\\OD\\OneDrive - Politecnico di Milano\\Beta\\Programs\\TRS2\\TRS2\\debug\\Step.ixx.ifc"
+            }
+        ],
+        "ImportedHeaderUnits": [
+            {
+                "Header": "c:\\program files\\microsoft visual studio\\2022\\enterprise\\vc\\tools\\msvc\\14.44.35207\\include\\iostream",
+                "BMI": "C:\\OD\\OneDrive - Politecnico di Milano\\Beta\\Programs\\TRS2\\TRS2\\debug\\iostream_98GV5KL97365F4TL.ifc"
+            },
+            {
+                "Header": "c:\\qt\\6.5.2\\msvc2019_64\\include\\qtcore\\qmap",
+                "BMI": "C:\\OD\\OneDrive - Politecnico di Milano\\Beta\\Programs\\TRS2\\TRS2\\debug\\qmap_12BDVTW8DWBTZXW6.ifc"
+            },
+            {
+                "Header": "c:\\program files\\microsoft visual studio\\2022\\enterprise\\vc\\tools\\msvc\\14.44.35207\\include\\thread",
+                "BMI": "C:\\OD\\OneDrive - Politecnico di Milano\\Beta\\Programs\\TRS2\\TRS2\\debug\\thread_WLQTKY397DQ54D43.ifc"
+            },
+            {
+                "Header": "c:\\program files\\microsoft visual studio\\2022\\enterprise\\vc\\tools\\msvc\\14.44.35207\\include\\condition_variable",
+                "BMI": "C:\\OD\\OneDrive - Politecnico di Milano\\Beta\\Programs\\TRS2\\TRS2\\debug\\condition_variable_11V9R8GZLRLT2VF8.ifc"
+            }
+        ]
+    }
+}

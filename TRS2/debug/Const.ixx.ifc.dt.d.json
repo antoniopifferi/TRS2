@@ -1,0 +1,10 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "c:\\od\\onedrive - politecnico di milano\\beta\\programs\\trs2\\trs2\\gensource\\const.ixx",
+        "ProvidedModule": "Const",
+        "Includes": [],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
