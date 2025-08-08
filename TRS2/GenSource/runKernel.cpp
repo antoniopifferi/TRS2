@@ -2,8 +2,12 @@
 #include <memory>
 
 #include "GenSource/runKernel.h"
-#include "GenSource/Parm.h"
+//#include "GenSource/Parm.h"
 #include "GenSource/Var.h"
+
+import Const;
+import Globals;
+
 
 
 std::unique_ptr<Step> Steps[MAX_STEP];

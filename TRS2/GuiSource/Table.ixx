@@ -1,13 +1,28 @@
-#ifndef TABLE_H
-#define TABLE_H
+// Table.ixx — C++23 module (implementation unit) for MSVC
 
-import Const;
-import Globals;
+//------------------------------
+// Global module fragment
+// (only for legacy headers)
+//------------------------------
+module;
+#include "TRS2.h"   // declares class TRS2 and addTab(...)
+
+//------------------------------
+// Module unit (not exported)
+//------------------------------
+module Table;
+
+// Import modules used by the implementation
+import Const;       // MAX_LOOP, MAX_STEP, etc.
+import Globals;     // if your project still uses this for P/structs
+
+// If TRS2 is a module instead of a header, prefer:
+// import TRS2;
 
 void TRS2::createTable() {
 
     // Loop
-    for(int iL=0;iL<MAX_LOOP;iL++){
+    for (int iL = 0; iL < MAX_LOOP; ++iL) {
         addTab("LoopHome", iL, &P.Loop[iL].Home);
         addTab("LoopFirst", iL, &P.Loop[iL].First);
         addTab("LoopLast", iL, &P.Loop[iL].Last);
@@ -20,7 +35,7 @@ void TRS2::createTable() {
     }
 
     // Step
-    for(int iS=0;iS<MAX_STEP;iS++){
+    for (int iS = 0; iS < MAX_STEP; ++iS) {
         addTab("StepType", iS, &P.Step[iS].Type);
         addTab("StepCom", iS, &P.Step[iS].Com);
         addTab("StepAxis", iS, &P.Step[iS].Axis);
@@ -39,7 +54,4 @@ void TRS2::createTable() {
         addTab("StepFactor", iS, &P.Step[iS].Factor);
         addTab("StepSort", iS, &P.Step[iS].Sort);
     }
-
 }
-
-#endif // TABLE_H

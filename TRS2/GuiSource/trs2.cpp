@@ -1,8 +1,9 @@
 #include "GuiSource/trs2.h"
 #include "GenSource/runKernel.h"
 #include "ui_trs2.h"
-#include "GenSource/Parm.h"
+//#include "GenSource/Parm.h"
 #include "GuiSource/Table.h"
+import Globals;
 
 #include <QLineEdit>
 #include <QSpinBox>

@@ -43,9 +43,6 @@
     <ClCompile Include="DevSource\MicroStep.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GenSource\Parm.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GenSource\Step.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -59,6 +56,10 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GenSource\Const.ixx" />
+    <ClCompile Include="GenSource\Globals.ixx" />
+    <ClCompile Include="GenSource\Globals.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DevSource\ArdStep.h">
@@ -67,13 +68,7 @@
     <ClInclude Include="DevSource\MicroStep.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GenSource\Parm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GenSource\Step.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GuiSource\Table.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GenSource\Var.h">
@@ -85,6 +80,9 @@
     <QtMoc Include="GuiSource\trs2.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <ClInclude Include="GuiSource\Table.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">

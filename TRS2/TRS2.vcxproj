@@ -195,7 +195,8 @@
     <ClCompile Include="DevSource\ArdStep.cpp" />
     <ClCompile Include="DevSource\MicroStep.cpp" />
     <ClCompile Include="GenSource\Const.ixx" />
-    <ClCompile Include="GenSource\Parm.cpp" />
+    <ClCompile Include="GenSource\Globals.cpp" />
+    <ClCompile Include="GenSource\Globals.ixx" />
     <ClCompile Include="GenSource\Step.cpp" />
     <ClCompile Include="GuiSource\main.cpp" />
     <ClCompile Include="GenSource\runKernel.cpp" />
@@ -204,11 +205,10 @@
   <ItemGroup>
     <ClInclude Include="DevSource\ArdStep.h" />
     <ClInclude Include="DevSource\MicroStep.h" />
-    <ClInclude Include="GenSource\Parm.h" />
     <ClInclude Include="GenSource\Step.h" />
-    <ClInclude Include="GuiSource\Table.h" />
     <ClInclude Include="GenSource\Var.h" />
     <ClInclude Include="GenSource\runKernel.h" />
+    <ClInclude Include="GuiSource\Table.h" />
     <QtMoc Include="GuiSource\trs2.h" />
   </ItemGroup>
   <ItemGroup>

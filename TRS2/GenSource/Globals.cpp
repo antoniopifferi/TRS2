@@ -1,0 +1,2 @@
+module Globals;
+ParmS P{};
