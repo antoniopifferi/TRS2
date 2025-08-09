@@ -60,6 +60,10 @@
     <ClCompile Include="GenSource\Globals.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Step\Step.ixx" />
+    <ClCompile Include="src\Step\ArdStep.ixx" />
+    <ClCompile Include="src\Step\MicroStep.ixx" />
+    <ClCompile Include="src\Step\StepFactory.ixx" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DevSource\ArdStep.h">

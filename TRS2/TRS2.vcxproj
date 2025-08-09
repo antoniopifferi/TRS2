@@ -201,6 +201,10 @@
     <ClCompile Include="GuiSource\main.cpp" />
     <ClCompile Include="GenSource\runKernel.cpp" />
     <ClCompile Include="GuiSource\trs2.cpp" />
+    <ClCompile Include="src\Step\ArdStep.ixx" />
+    <ClCompile Include="src\Step\MicroStep.ixx" />
+    <ClCompile Include="src\Step\Step.ixx" />
+    <ClCompile Include="src\Step\StepFactory.ixx" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DevSource\ArdStep.h" />
