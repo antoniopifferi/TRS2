@@ -22,6 +22,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
@@ -36,6 +37,7 @@ public:
     QAction *actionMeasure;
     QAction *actionParm;
     QAction *actionStep;
+    QAction *actionOutput;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QStackedWidget *stackedWidget;
@@ -246,6 +248,8 @@ public:
     QSpinBox *StepFreq_6;
     QDoubleSpinBox *StepFactor_6;
     QCheckBox *StepSort_6;
+    QWidget *Output;
+    QPlainTextEdit *outputText;
     QMenuBar *menubar;
     QMenu *menuRun;
     QMenu *menuWindow;
@@ -262,6 +266,8 @@ public:
         actionParm->setObjectName("actionParm");
         actionStep = new QAction(TRS2);
         actionStep->setObjectName("actionStep");
+        actionOutput = new QAction(TRS2);
+        actionOutput->setObjectName("actionOutput");
         centralwidget = new QWidget(TRS2);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -1614,6 +1620,12 @@ public:
         horizontalLayout_4->addLayout(verticalLayout_29);
 
         stackedWidget->addWidget(Step);
+        Output = new QWidget();
+        Output->setObjectName("Output");
+        outputText = new QPlainTextEdit(Output);
+        outputText->setObjectName("outputText");
+        outputText->setGeometry(QRect(270, 300, 761, 221));
+        stackedWidget->addWidget(Output);
 
         gridLayout->addWidget(stackedWidget, 0, 0, 1, 1);
 
@@ -1636,10 +1648,11 @@ public:
         menuRun->addAction(actionMeasure);
         menuWindow->addAction(actionParm);
         menuWindow->addAction(actionStep);
+        menuWindow->addAction(actionOutput);
 
         retranslateUi(TRS2);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(TRS2);
@@ -1651,6 +1664,7 @@ public:
         actionMeasure->setText(QCoreApplication::translate("TRS2", "Kernel", nullptr));
         actionParm->setText(QCoreApplication::translate("TRS2", "Parm", nullptr));
         actionStep->setText(QCoreApplication::translate("TRS2", "Step", nullptr));
+        actionOutput->setText(QCoreApplication::translate("TRS2", "Output", nullptr));
         label_31->setText(QCoreApplication::translate("TRS2", "Loop", nullptr));
         label_32->setText(QCoreApplication::translate("TRS2", "Home", nullptr));
         label_33->setText(QCoreApplication::translate("TRS2", "First", nullptr));

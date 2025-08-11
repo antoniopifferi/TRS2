@@ -35,6 +35,7 @@ private slots:
     void displayPanel(const QString &namePanel);
     void createTable();
     void completeTable();
+    void appendOutput(const QString& msg);
 
 private:
     Ui::TRS2 *ui;

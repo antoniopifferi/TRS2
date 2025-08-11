@@ -3,6 +3,7 @@
 #include "ui_trs2.h"
 //#include "GenSource/Parm.h"
 #include "GuiSource/Table.h"
+#include "AppLogger.h"
 import Globals;
 
 #include <QLineEdit>
@@ -27,6 +28,10 @@ TRS2::TRS2(QWidget *parent)
     connect(ui->actionMeasure, &QAction::triggered, this, []() { runKernel(); });
     connect(ui->actionParm, &QAction::triggered, this, [this]() { displayPanel("Parm"); });
     connect(ui->actionStep, &QAction::triggered, this, [this]() { displayPanel("Step"); });
+    connect(ui->actionOutput, &QAction::triggered, this, [this]() { displayPanel("Output"); });
+
+    // Connect logger to the Output box (queued == thread-safe)
+    connect(&AppLogger::instance(), &AppLogger::message,this, &TRS2::appendOutput,Qt::QueuedConnection);
 
     // create and update Table
     createTable();
@@ -124,7 +129,8 @@ void TRS2::readAll() {
 }
 
 void TRS2::printP() {
-    qDebug() << "Loop2Num" << P.Loop[1].Num;
+    //qDebug() << "Loop2Num" << P.Loop[1].Num;
+    outText("Starting process...");
 }
 
 void TRS2::addTab(QString Prefix, int Id, void* Var) {
@@ -233,4 +239,10 @@ void TRS2::displayPanel(const QString &namePanel)
             ui->stackedWidget->setCurrentIndex(index);
         }
     }
+}
+
+// Append output to the Output panel
+void TRS2::appendOutput(const QString& msg)
+{
+    ui->outputText->appendPlainText(msg);
 }

@@ -18,7 +18,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="Parm">
        <widget class="QWidget" name="layoutWidget_3">
@@ -2155,6 +2155,18 @@
         </layout>
        </widget>
       </widget>
+      <widget class="QWidget" name="Output">
+       <widget class="QPlainTextEdit" name="outputText">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>300</y>
+          <width>761</width>
+          <height>221</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -2181,6 +2193,7 @@
     </property>
     <addaction name="actionParm"/>
     <addaction name="actionStep"/>
+    <addaction name="actionOutput"/>
    </widget>
    <addaction name="menuRun"/>
    <addaction name="menuWindow"/>
@@ -2199,6 +2212,11 @@
   <action name="actionStep">
    <property name="text">
     <string>Step</string>
+   </property>
+  </action>
+  <action name="actionOutput">
+   <property name="text">
+    <string>Output</string>
    </property>
   </action>
  </widget>
