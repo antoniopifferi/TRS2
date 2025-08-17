@@ -46,69 +46,44 @@ public:
 // Implementations
 // ------------------------------
 
-void Step::initPos(void){
-    bool sethome = false;
-    int numread = 0;
-    int loop= P.Step[iS].Loop;
-    long num=P.Loop[loop].Num;
+void Step::initPos(void) {
+    moving = false;
 
-    diffHome=false;
-    std::cout << "Initializing Array Position for Stepper # " << static_cast<int>(iS + 1) << std::endl;
-    this->start.resize(num);
-
-    if(P.Step[iS].FName.empty()){
-        home = static_cast<long>(P.Loop[loop].Home* P.Step[iS].Factor);
-        for(long il=0; il<num; ++il){
-            this->start[il] = static_cast<long>(P.Step[iS].Factor * (P.Loop[loop].First + il*P.Loop[loop].Delta));
-        }
-    } else {
-        std::ifstream fpos(P.Step[iS].FPath);
-        if (!fpos.is_open()) {
-            std::cerr << "Error: unable to open file " << P.Step[iS].FPath << std::endl;
-            return;
-        }
-
-        std::string line;
-        while (std::getline(fpos, line)) {
-            std::istringstream iss(line);
-            long label;
-            double value;
-            char delimiter;
-
-            if (!(iss >> label >> delimiter >> value)) {
-                std::cerr << "Error: Unable to parse line: " << line << std::endl;
-                continue;
-            }
-
-            if(label==P.Loop[loop].Home) {
-                if(!sethome){
-                    this->home = static_cast<long>(value*P.Step[iS].Factor + 0.5);
-                    sethome = true;
-                } else {
-                    this->diffHome=true;
-                }
-            }
-
-            for(long il=0; il<num; ++il){
-                if(label==(P.Loop[loop].First+il*P.Loop[loop].Delta)){
-                    long pos = static_cast<long>(value*P.Step[this->iS].Factor + 0.5);
-                    this->start[il] = pos;
-                    numread++;
-                }
-            }
-        }
-
-        fpos.close();
-        if (numread < (num - 1)) {
-            std::cerr << "Error: Not Enough Points on File Pos" << std::endl;
-        }
+    // 1) Guard the step index
+    if (iS < 0 || iS >= MAX_STEP) {
+        // optional: log
+        return;
     }
 
-    actual = home;
-    std::cout << "Home = " << static_cast<int>(home) << std::endl;
-    std::cout << "PASSED" << std::endl;
-}
+    // 2) Get loop index and guard it
+    int loop = P.Step[iS].Loop;                           // if UI is 1-based, this may be 1..MAX
+    if (loop < 0 || loop >= MAX_LOOP) {
+        // optional: log
+        start.clear();
+        home = actual = 0;
+        return;
+    }
 
+    // 3) Number of points and guard it
+    long num = P.Loop[loop].Num;
+    if (num <= 0) {
+        start.clear();
+        home = actual = 0;
+        return;
+    }
+
+    // 4) Build default positions (file-reading path still commented; ok)
+    start.resize(static_cast<size_t>(num));
+    home = static_cast<long>(P.Loop[loop].Home * P.Step[iS].Factor);
+
+    for (long il = 0; il < num; ++il) {
+        const long label = P.Loop[loop].First + il * P.Loop[loop].Delta;
+        start[static_cast<size_t>(il)] =
+            static_cast<long>(P.Step[iS].Factor * label);
+    }
+
+    actual = home; // start from home
+}
 void Step::initStep(){
     moving=false;
 
@@ -125,24 +100,34 @@ void Step::setVel(double Freq){
     P.Step[this->iS].FreqActual = Freq;
 }
 
-void Step::moveStep(long *Actual,long Goal,bool Wait,bool /*Status*/){
-    if (*Actual==Goal) return;
-    moving=true;
-    const long delta=Goal-*Actual;
-    dir=(delta>0?1:-1);
-    Goal=(dir>0?std::min(Goal, P.Step[iS].Max):std::max(Goal, P.Step[iS].Min));
+#include <algorithm> // Ensure this is included for std::min and std::max
+
+void Step::moveStep(long *Actual, long Goal, bool Wait, bool /*Status*/) {
+    if (*Actual == Goal) return;
+    moving = true;
+    const long delta = Goal - *Actual;
+    dir = (delta > 0 ? 1 : -1);
+
+    Goal = (dir > 0 ? std::min<long>(Goal, P.Step[iS].Max) : std::max<long>(Goal, P.Step[iS].Min));
 
     moveStepDev(Goal);
 
-    P.Spc.Trash=true;
+    P.Spc.Trash = true;
 
-    if(Wait) return;
+    if (Wait) return;
 
-    moving=false;
+    moving = false;
 }
 
-long Step::calcGoal(){
-    const int  loop  = P.Step[iS].Loop;
-    const long index = P.Loop[loop].Actual;
-    return this->start[index];
+long Step::calcGoal() {
+    int loop = P.Step[iS].Loop;
+    // If loop is 1-based in UI, use: loop -= 1;
+
+    if (loop < 0 || loop >= MAX_LOOP) return 0;
+
+    long index = P.Loop[loop].Actual;
+    if (index < 0 || static_cast<size_t>(index) >= start.size())
+        return start.empty() ? 0 : start.back();
+
+    return start[static_cast<size_t>(index)];
 }

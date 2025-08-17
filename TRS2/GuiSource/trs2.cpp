@@ -2,9 +2,11 @@
 #include "GenSource/runKernel.h"
 #include "ui_trs2.h"
 //#include "GenSource/Parm.h"
-#include "GuiSource/Table.h"
+//#include "GuiSource/Table.h"
 #include "AppLogger.h"
+
 import Globals;
+import Const;
 
 #include <QLineEdit>
 #include <QSpinBox>
@@ -17,6 +19,14 @@ import Globals;
 #include <QMessageBox>
 
 #include <typeinfo>
+
+// Always "<Prefix>_<1-based>"
+template <class T>
+bool bindIdx1(qtbind::Binder& b, const char* prefix, int zeroBasedIdx, T& var) {
+    const QString name = QString::fromLatin1(prefix) + "_" + QString::number(zeroBasedIdx + 1);
+    return b.bind(name, var);
+}
+
 
 TRS2::TRS2(QWidget *parent)
     : QMainWindow(parent),
@@ -33,46 +43,54 @@ TRS2::TRS2(QWidget *parent)
     // Connect logger to the Output box (queued == thread-safe)
     connect(&AppLogger::instance(), &AppLogger::message,this, &TRS2::appendOutput,Qt::QueuedConnection);
 
-    // create and update Table
-    createTable();
-    completeTable();
 
-    // Connect Signals for Widgets
-    for (const auto& iT : T) {
-        if (iT.Obj) {
-            if (iT.Type == "QLineEdit") {
-                connect(iT.Obj, SIGNAL(editingFinished()), this, SLOT(updateTFromUI()));
-            } else if (iT.Type == "QSpinBox"){
-                connect(iT.Obj, SIGNAL(valueChanged(int)), this, SLOT(updateTFromUI()));
-            } else if (iT.Type == "QDoubleSpinBox") {
-                connect(iT.Obj, SIGNAL(valueChanged(double)), this, SLOT(updateTFromUI()));
-            } else if (iT.Type == "QComboBox") {
-                // Choose the right overload based on the bound variable's type:
-                if (iT.TypeVar == typeid(int)) {
-                    // using the combo as an index
-                    connect(iT.Obj, SIGNAL(currentIndexChanged(int)),
-                        this, SLOT(updateTFromUI()));
-                }
-                else {
-                    // using the combo as the selected text/content
-                    connect(iT.Obj, SIGNAL(currentIndexChanged(const QString&)),
-                        this, SLOT(updateTFromUI()));
-                }
-            } else if (iT.Type == "QCheckBox") {
-                connect(iT.Obj, SIGNAL(clicked()), this, SLOT(updateTFromUI()));
-            }
-        } else {
-            // Handle cases where the object with the specified name is not found
-            qDebug() << "Object with name" << iT.Name << "not found.";
-        }
+    // Create binder
+    binder_ = std::make_unique<qtbind::Binder>(ui->centralwidget);
+
+    // === BINDINGS (underscore + 1-based) ==========================
+    // LOOP
+    for (int iL = 0; iL < MAX_LOOP; ++iL) {
+        bindIdx1(*binder_, "LoopHome", iL, P.Loop[iL].Home);
+        bindIdx1(*binder_, "LoopFirst", iL, P.Loop[iL].First);
+        bindIdx1(*binder_, "LoopLast", iL, P.Loop[iL].Last);
+        bindIdx1(*binder_, "LoopDelta", iL, P.Loop[iL].Delta);
+        bindIdx1(*binder_, "LoopNum", iL, P.Loop[iL].Num);
+        bindIdx1(*binder_, "LoopFileBreak", iL, P.Loop[iL].FileBreak);   // QString (QLineEdit)
+        bindIdx1(*binder_, "LoopBreak", iL, P.Loop[iL].Break);       // bool (QCheckBox)
+        bindIdx1(*binder_, "LoopInvert", iL, P.Loop[iL].Invert);      // bool
+        // LoopCont: choose one style — index (int) or label (QString):
+        // bindIdx1(*binder_, "LoopCont",     iL, P.Loop[iL].LoopContIndex);   // int (QComboBox index)
+        bindIdx1(*binder_, "LoopCont",     iL, P.Loop[iL].Cont);            // QString (QComboBox text)
     }
+    // Mirrors your old Loop table list. :contentReference[oaicite:6]{index=6}
+    
+    // STEP
+    for (int iS = 0; iS < MAX_STEP; ++iS) {
+        // Keep as int (index) if that’s how you used them before:
+        bindIdx1(*binder_, "StepType", iS, P.Step[iS].Type);
+        bindIdx1(*binder_, "StepCom", iS, P.Step[iS].Com);
+        bindIdx1(*binder_, "StepAxis", iS, P.Step[iS].Axis);
+        bindIdx1(*binder_, "StepMode", iS, P.Step[iS].Mode);   
+        bindIdx1(*binder_, "StepSign", iS, P.Step[iS].Sign);   
+        bindIdx1(*binder_, "StepLoop", iS, P.Step[iS].Loop);
+        bindIdx1(*binder_, "StepHold", iS, P.Step[iS].Hold);        // bool
+        bindIdx1(*binder_, "StepLcd", iS, P.Step[iS].Lcd);         // bool
+        bindIdx1(*binder_, "StepFName", iS, P.Step[iS].FName);       // QString (QLineEdit)
+        bindIdx1(*binder_, "StepMin", iS, P.Step[iS].Min);         // int (QSpinBox)
+        bindIdx1(*binder_, "StepMax", iS, P.Step[iS].Max);         // int
+        bindIdx1(*binder_, "StepFreqMin", iS, P.Step[iS].FreqMin);     // double (QDoubleSpinBox)
+        bindIdx1(*binder_, "StepFreqMax", iS, P.Step[iS].FreqMax);     // double
+        bindIdx1(*binder_, "StepFreqDelta", iS, P.Step[iS].FreqDelta);   // double
+        bindIdx1(*binder_, "StepFreq", iS, P.Step[iS].Freq);        // double
+        bindIdx1(*binder_, "StepFactor", iS, P.Step[iS].Factor);      // double
+        bindIdx1(*binder_, "StepSort", iS, P.Step[iS].Sort);        // bool
+    }
+    // Matches your Step table entries. :contentReference[oaicite:7]{index=7}
+    // ===============================================================
 
-    // Connect Signals for Menu
-    //connect(ui->actionKernel, &QAction::triggered, this, &TRS2::on_actionKernel_triggered);
 
-
-    // LOAD SETTINGS
-    loadSet("c:\\Temp\\TRS2.TRS");
+    // LOAD SETTINGS (INI, as requested)
+    loadIni("c:\\Temp\\TRS2.ini");
 
     // READ ALL
     readAll();
@@ -84,58 +102,37 @@ TRS2::TRS2(QWidget *parent)
 
 TRS2::~TRS2()
 {
-    saveSet("c:\\Temp\\TRS2.TRS");
+    saveIni("c:\\Temp\\TRS2.ini");
     delete ui;
 }
 
-void TRS2::completeTable() {
-    for (auto& iT : T) {
-        QObject* obj = findChild<QObject*>(iT.Name);
-        if (obj) {
-            const QMetaObject* meta = obj->metaObject();
-            iT.Type = meta->className();
-            iT.Obj = obj;
-        }
-    }
-}
-
-void TRS2::updateTFromUI() {
-    for (const auto& iT : T) {
-        if (iT.Obj == sender()) {
-            if (iT.Type == "QLineEdit") {
-                *static_cast<QString*>(iT.Var) = qobject_cast<QLineEdit*>(iT.Obj)->text();
-            } else if (iT.Type == "QSpinBox") {
-                *static_cast<int*>(iT.Var) = qobject_cast<QSpinBox*>(iT.Obj)->value();
-            } else if (iT.Type == "QDoubleSpinBox") {
-                *static_cast<double*>(iT.Var) = qobject_cast<QDoubleSpinBox*>(iT.Obj)->value();
-            } else if (iT.Type == "QComboBox") {
-                std::string stringValue = qobject_cast<QComboBox*>(iT.Obj)->currentText().toStdString();
-                *static_cast<std::string*>(iT.Var) = stringValue;
-            } else if (iT.Type == "QCheckBox") {
-                *static_cast<bool*>(iT.Var) = qobject_cast<QCheckBox*>(iT.Obj)->isChecked();
-            }
-            break;
-        }
-    }
-}
-
+// widgets -> variables
 void TRS2::readAll() {
-    for (const auto& iT : T) {
-        if (iT.Obj) {
-            if (iT.Type == "QLineEdit") {
-                *static_cast<QString*>(iT.Var) = qobject_cast<QLineEdit*>(iT.Obj)->text();
-            } else if (iT.Type == "QSpinBox") {
-                *static_cast<int*>(iT.Var) = qobject_cast<QSpinBox*>(iT.Obj)->value();
-            } else if (iT.Type == "QDoubleSpinBox") {
-                *static_cast<double*>(iT.Var) = qobject_cast<QDoubleSpinBox*>(iT.Obj)->value();
-            } else if (iT.Type == "QComboBox") {
-                std::string stringValue = qobject_cast<QComboBox*>(iT.Obj)->currentText().toStdString();
-                *static_cast<std::string*>(iT.Var) = stringValue;
-            } else if (iT.Type == "QCheckBox") {
-                *static_cast<bool*>(iT.Var) = qobject_cast<QCheckBox*>(iT.Obj)->isChecked();
-            }
-        }
-    }
+    if (binder_) binder_->readAll();
+}
+
+// variables -> widgets
+void TRS2::writeAll() {
+    if (binder_) binder_->writeAll();
+}
+
+// single widget -> variables
+void TRS2::readSingle(const QString& name) {
+    if (binder_) binder_->readSingle(name);
+}
+
+// variables -> single widget
+void TRS2::writeSingle(const QString& name) {
+    if (binder_) binder_->writeSingle(name);
+}
+
+// INI save/load
+void TRS2::saveIni(const QString& path) {
+    if (binder_) binder_->saveIni(path);
+}
+
+void TRS2::loadIni(const QString& path) {
+    if (binder_) binder_->loadIni(path);
 }
 
 void TRS2::printP() {
@@ -143,102 +140,6 @@ void TRS2::printP() {
     outText("Starting process...");
 }
 
-void TRS2::addTab(QString Prefix, int Id, void* Var, std::type_index TypeVar) {
-    QString Name;
-    if(Id==-1) // just single element
-        Name=Prefix;
-    else
-        Name=Prefix+"_"+QString::number(Id+1);
-
-    QObject* obj = findChild<QObject*>(Name);
-    if(obj==nullptr) QMessageBox::information(nullptr, "Error Creating GUI Table", "Object with name "+Name+" not found in GUI");
-    const QMetaObject* meta = obj->metaObject();
-    QString Type = meta->className();
-
-    T.push_back({Name,Type,Var,obj,TypeVar});
-}
-
-void TRS2::saveSet(QString FilePath){
-    QFile file(FilePath);
-    if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        QTextStream out(&file);
-
-        // Write header if needed
-        out << "Name\tValue\n";
-
-        // Write data to the file
-        for (const auto& iT : T) {
-            out << iT.Name << "\t";
-
-            // Check the type and cast accordingly
-            QObject* obj = findChild<QObject*>(iT.Name);
-            if (iT.Type == "QLineEdit"){
-                out << qobject_cast<QLineEdit*>(obj)->text();
-            } else if (iT.Type == "QSpinBox") {
-                out << qobject_cast<QSpinBox*>(obj)->value();
-            } else if (iT.Type == "QDoubleSpinBox") {
-                out << qobject_cast<QDoubleSpinBox*>(obj)->value();
-            } else if (iT.Type == "QComboBox") {
-                out << qobject_cast<QComboBox*>(obj)->currentText();
-            } else if (iT.Type == "QCheckBox") {
-                out << qobject_cast<QCheckBox*>(obj)->isChecked();
-            }
-            out << "\n";
-        }
-        file.close();
-        QMessageBox::information(nullptr, "File saved", "File saved successfully.");
-    } else {
-        QMessageBox::critical(nullptr, "Error", "Could not open the file for writing.");
-    }
-}
-
-void TRS2::loadSet(QString FilePath) {
-    QFile file(FilePath);
-    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        QTextStream in(&file);
-
-        // Read and ignore the header line if present
-        QString header = in.readLine(); // Read the header line
-        // Assuming the header line contains "Name\tValue", ignore it
-
-        // Read data from the file
-        while (!in.atEnd()) {
-            QString line = in.readLine(); // Read each line
-            QStringList parts = line.split("\t"); // Split by tab delimiter
-
-            if (parts.length() == 2) {
-                QString name = parts[0]; // Name of the setting
-                QString value = parts[1]; // Value of the setting
-
-                // Find the corresponding widget by name
-                QObject* obj = findChild<QObject*>(name);
-
-                if (obj != nullptr) {
-                    // Check the type and set the value accordingly
-                    if (QLineEdit* lineEdit = qobject_cast<QLineEdit*>(obj)) {
-                        lineEdit->setText(value);
-                    } else if (QSpinBox* spinBox = qobject_cast<QSpinBox*>(obj)) {
-                        spinBox->setValue(value.toInt());
-                    } else if (QDoubleSpinBox* doubleSpinBox = qobject_cast<QDoubleSpinBox*>(obj)) {
-                        doubleSpinBox->setValue(value.toDouble());
-                    } else if (QComboBox* comboBox = qobject_cast<QComboBox*>(obj)) {
-                        comboBox->setCurrentText(value);
-                    } else if (QCheckBox* checkBox = qobject_cast<QCheckBox*>(obj)) {
-                        checkBox->setChecked(value.toInt() != 0);
-                    }
-                } else {
-                    // Handle cases where the object with the specified name is not found
-                    qDebug() << "Object with name" << name << "not found.";
-                }
-            }
-        }
-
-        file.close();
-        QMessageBox::information(nullptr, "File loaded", "File loaded successfully.");
-    } else {
-        QMessageBox::critical(nullptr, "Error", "Could not open the file for reading.");
-    }
-}
 
 void TRS2::displayPanel(const QString &namePanel)
 {

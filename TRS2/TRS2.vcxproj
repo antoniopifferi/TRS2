@@ -210,6 +210,7 @@
     <ClInclude Include="DevSource\MicroStep.h" />
     <ClInclude Include="GenSource\runKernel.h" />
     <QtMoc Include="GuiSource\AppLogger.h" />
+    <ClInclude Include="GuiSource\Binder.h" />
     <ClInclude Include="GuiSource\Table.h" />
     <QtMoc Include="GuiSource\trs2.h" />
   </ItemGroup>

@@ -12,7 +12,7 @@ module;
 // If you truly need Qt here, include it in the global fragment.
 // (Not used in the declarations below, so omitted.)
 // #include <QMainWindow>
-// #include <QString>
+#include <QString>
 // #include <QMap>
 
 //------------------------------
@@ -68,11 +68,11 @@ export struct StepS {
     bool Sort;
     bool Lcd;
     bool Hold;
-    long Actual;
-    long Delta;
-    long Home;
-    long Min;
-    long Max;
+    int Actual;
+    int Delta;
+    int Home;
+    int Min;
+    int Max;
     double Factor;
     double FreqMax;
     double FreqMin;

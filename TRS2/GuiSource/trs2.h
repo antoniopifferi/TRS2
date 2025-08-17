@@ -7,13 +7,7 @@
 #include <vector>
 #include <typeindex>
 
-struct TableS {
-    QString Name;
-    QString Type;
-    void* Var;
-    QObject* Obj;
-    std::type_index TypeVar{ typeid(void) };   // store the type of Var
-};
+#include "Binder.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class TRS2; }
@@ -28,20 +22,19 @@ public:
     ~TRS2();
 
 private slots:
-    void updateTFromUI();
+    void readAll();                          // widgets -> vars
+    void writeAll();                         // vars -> widgets
+    void readSingle(const QString & name);    // one widget -> vars
+    void writeSingle(const QString & name);   // vars -> one widget
+    void saveIni(const QString & path);
+    void loadIni(const QString & path);
     void printP();
-    void addTab(QString Prefix, int Id, void* Var, std::type_index TypeVar);
-    void saveSet(QString FilePath);
-    void loadSet(QString FilePath);
-    void readAll();
+
     void displayPanel(const QString &namePanel);
-    void createTable();
-    void completeTable();
     void appendOutput(const QString& msg);
 
 private:
     Ui::TRS2 *ui;
-    QMap<QString, void*> widgetToTMap;
-    std::vector<TableS> T;
+    std::unique_ptr<qtbind::Binder> binder_;
 };
 #endif // TRS2_H

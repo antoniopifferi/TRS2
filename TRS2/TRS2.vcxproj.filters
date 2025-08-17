@@ -78,6 +78,9 @@
     <ClInclude Include="GuiSource\Table.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
+    <ClInclude Include="GuiSource\Binder.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">

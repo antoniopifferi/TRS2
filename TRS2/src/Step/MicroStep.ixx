@@ -9,6 +9,8 @@ public:
     explicit MicroStep(int idx) {
         std::cout << "MicroStep constructor called" << std::endl;
         this->iS = idx;
+        initPos();             // <-- add this
+        // initStep();         // optional
     }
     ~MicroStep() override {
         std::cout << "MicroStep destructor called" << std::endl;
