@@ -16,7 +16,11 @@ DEFINITION AND DECLARATIONS:
 MODULE INTERFACES:
 - use a single file for definitions and declarations
 - Must use C++20 or later
+- #include: can be used for legacy code, but must stay at the top of the file after the module declaration and before export module
 
 GLOBAL VARIABLES:
 - you can declare global variables in .ixx, but you cannot define them there. The definition must be in a .cpp file with the same name as the module.
 - you must use `export` to make the global variable available outside the module.
+
+QT AND C++20 MODULES:
+- for the time being, better using old .h .cpp files in GUI

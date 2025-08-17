@@ -26,24 +26,6 @@ public:
     double freqActual{};
     int dir{};
 
-    std::string Type;
-    int         Com{};
-    int         Axis{};
-    std::string Mode;
-    std::string Sign;
-    int         Loop{};     // 0-based loop index
-    bool        Hold{};
-    bool        Lcd{};
-    std::string FName;
-    long        Min{};
-    long        Max{};
-    long        FreqMin{};
-    long        FreqMax{};
-    long        FreqDelta{};
-    long        Freq{};
-    double      Factor{1.0};
-    bool        Sort{};
-
     // Factory (defined in StepFactory.ixx to avoid module cycles)
     static std::unique_ptr<Step> createStep(int iS);
 
@@ -51,10 +33,10 @@ public:
 
     // High-level ops
     void moveStep(long* Actual, long Goal, bool Wait, bool Status);
-    void setVel(int Step, double Freq);
+    void setVel(double Freq);
     void initPos(void);
-    void initStep(int Step);
-    long calcGoal(int Step);
+    void initStep();
+    long calcGoal();
 
     // Device-specific primitive
     virtual void moveStepDev(long goal) = 0;
@@ -67,7 +49,7 @@ public:
 void Step::initPos(void){
     bool sethome = false;
     int numread = 0;
-    int loop=this->Loop;
+    int loop= P.Step[iS].Loop;
     long num=P.Loop[loop].Num;
 
     diffHome=false;
@@ -75,9 +57,9 @@ void Step::initPos(void){
     this->start.resize(num);
 
     if(P.Step[iS].FName.empty()){
-        home = static_cast<long>(P.Loop[loop].Home*this->Factor);
+        home = static_cast<long>(P.Loop[loop].Home* P.Step[iS].Factor);
         for(long il=0; il<num; ++il){
-            this->start[il] = static_cast<long>(this->Factor * (P.Loop[loop].First + il*P.Loop[loop].Delta));
+            this->start[il] = static_cast<long>(P.Step[iS].Factor * (P.Loop[loop].First + il*P.Loop[loop].Delta));
         }
     } else {
         std::ifstream fpos(P.Step[iS].FPath);
@@ -127,20 +109,20 @@ void Step::initPos(void){
     std::cout << "PASSED" << std::endl;
 }
 
-void Step::initStep(int Step){
+void Step::initStep(){
     moving=false;
 
-    if(P.Step[Step].Mode=="CONT") {
-        const double freq = std::fabs(P.Step[Step].Delta/(P.Spc.TimeM*P.Loop[P.Step[Step].Loop].Num));
-        setVel(Step, freq);
+    if(P.Step[iS].Mode=="CONT") {
+        const double freq = std::fabs(P.Step[this->iS].Delta/(P.Spc.TimeM*P.Loop[P.Step[this->iS].Loop].Num));
+        setVel(freq);
     } else {
-        setVel(Step, P.Step[Step].Freq);
+        setVel(P.Step[this->iS].Freq);
     }
 }
 
-void Step::setVel(int Step, double Freq){
+void Step::setVel(double Freq){
     Freq = std::fabs(Freq);
-    P.Step[Step].FreqActual = Freq;
+    P.Step[this->iS].FreqActual = Freq;
 }
 
 void Step::moveStep(long *Actual,long Goal,bool Wait,bool /*Status*/){
@@ -148,7 +130,7 @@ void Step::moveStep(long *Actual,long Goal,bool Wait,bool /*Status*/){
     moving=true;
     const long delta=Goal-*Actual;
     dir=(delta>0?1:-1);
-    Goal=(dir>0?std::min(Goal,Max):std::max(Goal,Min));
+    Goal=(dir>0?std::min(Goal, P.Step[iS].Max):std::max(Goal, P.Step[iS].Min));
 
     moveStepDev(Goal);
 
@@ -159,8 +141,8 @@ void Step::moveStep(long *Actual,long Goal,bool Wait,bool /*Status*/){
     moving=false;
 }
 
-long Step::calcGoal(int /*Step*/){
-    const int  loop  = this->Loop;
+long Step::calcGoal(){
+    const int  loop  = P.Step[iS].Loop;
     const long index = P.Loop[loop].Actual;
     return this->start[index];
 }

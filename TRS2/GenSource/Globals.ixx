@@ -7,6 +7,7 @@
 module;
 #include <stdio.h>                 // brings plain FILE into global namespace
 #include <stddef.h>                // size_t etc., just in case
+//#include <GenSource/Step.h>
 
 // If you truly need Qt here, include it in the global fragment.
 // (Not used in the declarations below, so omitted.)
@@ -19,6 +20,8 @@ module;
 //------------------------------
 export module Globals;
 
+import Const;
+
 // Standard library imports used in exported declarations
 import <string>;
 import <cstdint>;
@@ -26,14 +29,18 @@ import <vector>;
 import <mutex>;
 import <condition_variable>;
 import <thread>;
+import <memory>;
 
 // Your constants/types come from this module.
 // Re-export so importers of Parm see them without importing Const separately.
-export import Const;
+//export import Const;
 
 //------------------------------
 // Exported declarations
 //------------------------------
+
+//export extern std::unique_ptr<Step> Steps[];
+
 
 export struct LoopS {
     int Home;

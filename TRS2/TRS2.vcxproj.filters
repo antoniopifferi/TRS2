@@ -43,9 +43,6 @@
     <ClCompile Include="DevSource\MicroStep.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GenSource\Step.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GuiSource\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -70,12 +67,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DevSource\MicroStep.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GenSource\Step.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GenSource\Var.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GenSource\runKernel.h">

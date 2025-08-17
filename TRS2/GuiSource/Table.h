@@ -4,7 +4,7 @@
 import Const;
 import Globals;
 
-void TRS2::createTable() {
+inline void TRS2::createTable() {
 
     // Loop
     for(int iL=0;iL<MAX_LOOP;iL++){
