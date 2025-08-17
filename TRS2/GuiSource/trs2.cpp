@@ -47,7 +47,17 @@ TRS2::TRS2(QWidget *parent)
             } else if (iT.Type == "QDoubleSpinBox") {
                 connect(iT.Obj, SIGNAL(valueChanged(double)), this, SLOT(updateTFromUI()));
             } else if (iT.Type == "QComboBox") {
-                connect(iT.Obj, SIGNAL(currentIndexChanged(int)), this, SLOT(updateTFromUI()));
+                // Choose the right overload based on the bound variable's type:
+                if (iT.TypeVar == typeid(int)) {
+                    // using the combo as an index
+                    connect(iT.Obj, SIGNAL(currentIndexChanged(int)),
+                        this, SLOT(updateTFromUI()));
+                }
+                else {
+                    // using the combo as the selected text/content
+                    connect(iT.Obj, SIGNAL(currentIndexChanged(const QString&)),
+                        this, SLOT(updateTFromUI()));
+                }
             } else if (iT.Type == "QCheckBox") {
                 connect(iT.Obj, SIGNAL(clicked()), this, SLOT(updateTFromUI()));
             }
@@ -133,7 +143,7 @@ void TRS2::printP() {
     outText("Starting process...");
 }
 
-void TRS2::addTab(QString Prefix, int Id, void* Var) {
+void TRS2::addTab(QString Prefix, int Id, void* Var, std::type_index TypeVar) {
     QString Name;
     if(Id==-1) // just single element
         Name=Prefix;
@@ -145,7 +155,7 @@ void TRS2::addTab(QString Prefix, int Id, void* Var) {
     const QMetaObject* meta = obj->metaObject();
     QString Type = meta->className();
 
-    T.push_back({Name,Type,Var});
+    T.push_back({Name,Type,Var,obj,TypeVar});
 }
 
 void TRS2::saveSet(QString FilePath){

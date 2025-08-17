@@ -12,11 +12,11 @@ export class ArdStep : public Step {
 public:
     explicit ArdStep(int idx) {
         //std::cout << "ArdStep constructor called" << std::endl;
-        //outText("ArdStep constructor called");
+        outText("ArdStep constructor called");
         this->iS = idx;
     }
     ~ArdStep() override {
-        //outText("ArdStep destructor called");
+        outText("ArdStep destructor called");
     }
     void moveStepDev(long goal) override {
         std::cout << "ArdStep moving step device to goal: " << goal << std::endl;

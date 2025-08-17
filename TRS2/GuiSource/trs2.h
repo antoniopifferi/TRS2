@@ -5,12 +5,14 @@
 #include <QString>
 #include <QMap>
 #include <vector>
+#include <typeindex>
 
 struct TableS {
     QString Name;
     QString Type;
     void* Var;
     QObject* Obj;
+    std::type_index TypeVar{ typeid(void) };   // store the type of Var
 };
 
 QT_BEGIN_NAMESPACE
@@ -28,7 +30,7 @@ public:
 private slots:
     void updateTFromUI();
     void printP();
-    void addTab(QString Prefix, int Id, void* Var);
+    void addTab(QString Prefix, int Id, void* Var, std::type_index TypeVar);
     void saveSet(QString FilePath);
     void loadSet(QString FilePath);
     void readAll();
