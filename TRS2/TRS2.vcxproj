@@ -192,22 +192,19 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GenSource\Const.ixx" />
-    <ClCompile Include="GenSource\Globals.cpp" />
-    <ClCompile Include="GenSource\Globals.ixx" />
-    <ClCompile Include="GuiSource\main.cpp" />
-    <ClCompile Include="GenSource\runKernel.cpp" />
-    <ClCompile Include="GuiSource\trs2.cpp" />
-    <ClCompile Include="src\Step\ArdStep.ixx" />
-    <ClCompile Include="src\Step\MicroStep.ixx" />
-    <ClCompile Include="src\Step\Step.ixx" />
-    <ClCompile Include="src\Step\StepFactory.ixx" />
+    <ClCompile Include="src\gen\Const.ixx" />
+    <ClCompile Include="src\gen\Globals.cpp" />
+    <ClCompile Include="src\gen\Globals.ixx" />
+    <ClCompile Include="src\gui\main.cpp" />
+    <ClCompile Include="src\gui\trs2.cpp" />
+    <ClCompile Include="src\run\runKernel.cpp" />
+    <ClCompile Include="src\step\ArdStep.ixx" />
+    <ClCompile Include="src\step\MicroStep.ixx" />
+    <ClCompile Include="src\step\Step.ixx" />
+    <ClCompile Include="src\step\StepFactory.ixx" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GenSource\runKernel.h" />
-    <QtMoc Include="GuiSource\AppLogger.h" />
-    <ClInclude Include="GuiSource\Binder.h" />
-    <QtMoc Include="GuiSource\trs2.h" />
+    <QtMoc Include="src\gui\AppLogger.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -226,7 +223,12 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="GuiSource\trs2.ui" />
+    <ClInclude Include="src\gui\Binder.h" />
+    <ClInclude Include="src\run\runKernel.h" />
+    <QtMoc Include="src\gui\trs2.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="src\gui\trs2.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />

@@ -24,3 +24,20 @@ GLOBAL VARIABLES:
 
 QT AND C++20 MODULES:
 - for the time being, better using old .h .cpp files in GUI
+
+FILE DIRECTORY STRUCTURE:
+- src: contains all source files
+- lib: contains all libraries
+- bin: contains all executable files
+- tests: contains all test files
+- docs: contains all documentation files
+- examples: contains example files
+- build: contains build files and configurations
+- dist: contains distribution files and packages
+- logs: contains log files generated during the execution of the application
+
+CHANGING FILE DIRECTORY STRUCTURE:
+- remember to delete or exclude the old files from the project
+- if problems, you have to edit the .vcxproj and remove all old directories/includes with wrong names
+- Show the real error inputs: Build → Build with MSBuild output set to Detailed (Tools → Options → Projects and Solutions → Build and Run → MSBuild project build output verbosity: Detailed). Look at the compiler command line for /I ... entries pointing to old paths.
+

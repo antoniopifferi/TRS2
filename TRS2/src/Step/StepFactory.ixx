@@ -1,5 +1,5 @@
 module;                              // global module fragment starts
-#include "GuiSource/AppLogger.h"     // <-- legacy include goes here
+#include "src/gui/AppLogger.h"     // <-- legacy include goes here
 // (you can also put other #includes here if needed)
 
 export module StepFactory;
