@@ -832,6 +832,7 @@ public:
         StepType_1->addItem(QString());
         StepType_1->addItem(QString());
         StepType_1->addItem(QString());
+        StepType_1->addItem(QString());
         StepType_1->setObjectName("StepType_1");
 
         verticalLayout_24->addWidget(StepType_1);
@@ -962,6 +963,7 @@ public:
         verticalLayout_25->addWidget(label_57);
 
         StepType_2 = new QComboBox(layoutWidget_4);
+        StepType_2->addItem(QString());
         StepType_2->addItem(QString());
         StepType_2->addItem(QString());
         StepType_2->addItem(QString());
@@ -1098,6 +1100,7 @@ public:
         StepType_3->addItem(QString());
         StepType_3->addItem(QString());
         StepType_3->addItem(QString());
+        StepType_3->addItem(QString());
         StepType_3->setObjectName("StepType_3");
 
         verticalLayout_26->addWidget(StepType_3);
@@ -1228,6 +1231,7 @@ public:
         verticalLayout_27->addWidget(label_59);
 
         StepType_4 = new QComboBox(layoutWidget_4);
+        StepType_4->addItem(QString());
         StepType_4->addItem(QString());
         StepType_4->addItem(QString());
         StepType_4->addItem(QString());
@@ -1364,6 +1368,7 @@ public:
         StepType_5->addItem(QString());
         StepType_5->addItem(QString());
         StepType_5->addItem(QString());
+        StepType_5->addItem(QString());
         StepType_5->setObjectName("StepType_5");
 
         verticalLayout_28->addWidget(StepType_5);
@@ -1494,6 +1499,7 @@ public:
         verticalLayout_29->addWidget(label_61);
 
         StepType_6 = new QComboBox(layoutWidget_4);
+        StepType_6->addItem(QString());
         StepType_6->addItem(QString());
         StepType_6->addItem(QString());
         StepType_6->addItem(QString());
@@ -1652,7 +1658,7 @@ public:
 
         retranslateUi(TRS2);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(TRS2);
@@ -1732,6 +1738,7 @@ public:
         StepType_1->setItemText(0, QCoreApplication::translate("TRS2", "NONE", nullptr));
         StepType_1->setItemText(1, QCoreApplication::translate("TRS2", "MICRO", nullptr));
         StepType_1->setItemText(2, QCoreApplication::translate("TRS2", "ARD", nullptr));
+        StepType_1->setItemText(3, QCoreApplication::translate("TRS2", "TEST", nullptr));
 
         StepMode_1->setItemText(0, QCoreApplication::translate("TRS2", "SINGLE", nullptr));
         StepMode_1->setItemText(1, QCoreApplication::translate("TRS2", "MULTI", nullptr));
@@ -1747,6 +1754,7 @@ public:
         StepType_2->setItemText(0, QCoreApplication::translate("TRS2", "NONE", nullptr));
         StepType_2->setItemText(1, QCoreApplication::translate("TRS2", "MICRO", nullptr));
         StepType_2->setItemText(2, QCoreApplication::translate("TRS2", "ARD", nullptr));
+        StepType_2->setItemText(3, QCoreApplication::translate("TRS2", "TEST", nullptr));
 
         StepMode_2->setItemText(0, QCoreApplication::translate("TRS2", "SINGLE", nullptr));
         StepMode_2->setItemText(1, QCoreApplication::translate("TRS2", "MULTI", nullptr));
@@ -1762,6 +1770,7 @@ public:
         StepType_3->setItemText(0, QCoreApplication::translate("TRS2", "NONE", nullptr));
         StepType_3->setItemText(1, QCoreApplication::translate("TRS2", "MICRO", nullptr));
         StepType_3->setItemText(2, QCoreApplication::translate("TRS2", "ARD", nullptr));
+        StepType_3->setItemText(3, QCoreApplication::translate("TRS2", "TEST", nullptr));
 
         StepMode_3->setItemText(0, QCoreApplication::translate("TRS2", "SINGLE", nullptr));
         StepMode_3->setItemText(1, QCoreApplication::translate("TRS2", "MULTI", nullptr));
@@ -1777,6 +1786,7 @@ public:
         StepType_4->setItemText(0, QCoreApplication::translate("TRS2", "NONE", nullptr));
         StepType_4->setItemText(1, QCoreApplication::translate("TRS2", "MICRO", nullptr));
         StepType_4->setItemText(2, QCoreApplication::translate("TRS2", "ARD", nullptr));
+        StepType_4->setItemText(3, QCoreApplication::translate("TRS2", "TEST", nullptr));
 
         StepMode_4->setItemText(0, QCoreApplication::translate("TRS2", "SINGLE", nullptr));
         StepMode_4->setItemText(1, QCoreApplication::translate("TRS2", "MULTI", nullptr));
@@ -1792,6 +1802,7 @@ public:
         StepType_5->setItemText(0, QCoreApplication::translate("TRS2", "NONE", nullptr));
         StepType_5->setItemText(1, QCoreApplication::translate("TRS2", "MICRO", nullptr));
         StepType_5->setItemText(2, QCoreApplication::translate("TRS2", "ARD", nullptr));
+        StepType_5->setItemText(3, QCoreApplication::translate("TRS2", "TEST", nullptr));
 
         StepMode_5->setItemText(0, QCoreApplication::translate("TRS2", "SINGLE", nullptr));
         StepMode_5->setItemText(1, QCoreApplication::translate("TRS2", "MULTI", nullptr));
@@ -1807,6 +1818,7 @@ public:
         StepType_6->setItemText(0, QCoreApplication::translate("TRS2", "NONE", nullptr));
         StepType_6->setItemText(1, QCoreApplication::translate("TRS2", "MICRO", nullptr));
         StepType_6->setItemText(2, QCoreApplication::translate("TRS2", "ARD", nullptr));
+        StepType_6->setItemText(3, QCoreApplication::translate("TRS2", "TEST", nullptr));
 
         StepMode_6->setItemText(0, QCoreApplication::translate("TRS2", "SINGLE", nullptr));
         StepMode_6->setItemText(1, QCoreApplication::translate("TRS2", "MULTI", nullptr));

@@ -18,7 +18,7 @@
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Parm">
        <widget class="QWidget" name="layoutWidget_3">
@@ -882,6 +882,11 @@
                <string>ARD</string>
               </property>
              </item>
+             <item>
+              <property name="text">
+               <string>TEST</string>
+              </property>
+             </item>
             </widget>
            </item>
            <item>
@@ -1096,6 +1101,11 @@
              <item>
               <property name="text">
                <string>ARD</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>TEST</string>
               </property>
              </item>
             </widget>
@@ -1314,6 +1324,11 @@
                <string>ARD</string>
               </property>
              </item>
+             <item>
+              <property name="text">
+               <string>TEST</string>
+              </property>
+             </item>
             </widget>
            </item>
            <item>
@@ -1528,6 +1543,11 @@
              <item>
               <property name="text">
                <string>ARD</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>TEST</string>
               </property>
              </item>
             </widget>
@@ -1746,6 +1766,11 @@
                <string>ARD</string>
               </property>
              </item>
+             <item>
+              <property name="text">
+               <string>TEST</string>
+              </property>
+             </item>
             </widget>
            </item>
            <item>
@@ -1960,6 +1985,11 @@
              <item>
               <property name="text">
                <string>ARD</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>TEST</string>
               </property>
              </item>
             </widget>

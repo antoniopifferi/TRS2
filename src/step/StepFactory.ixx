@@ -13,6 +13,7 @@ import Globals;
 import MicroStep;
 import ArdStep;
 import MicroStep;
+import TestStep;
 
 // Ensure the correct namespace is used for unique_ptr
 export std::unique_ptr<Step> Step::createStep(int iS)
@@ -25,6 +26,9 @@ export std::unique_ptr<Step> Step::createStep(int iS)
     }
     else if (type == "ARD") {
         return std::make_unique<ArdStep>(iS); // Use std::make_unique for better clarity and safety
+    }
+    else if (type == "TEST") {
+        return std::make_unique<TestStep>(iS); // Use std::make_unique for better clarity and safety
     }
     return nullptr;
 }
