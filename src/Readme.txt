@@ -41,3 +41,6 @@ CHANGING FILE DIRECTORY STRUCTURE:
 - if problems, you have to edit the .vcxproj and remove all old directories/includes with wrong names
 - Show the real error inputs: Build → Build with MSBuild output set to Detailed (Tools → Options → Projects and Solutions → Build and Run → MSBuild project build output verbosity: Detailed). Look at the compiler command line for /I ... entries pointing to old paths.
 
+USE OF FORMAT IN C++20 MODULES:
+- Format is not supported in C++20 modules. You can use the `std::format` library, but it requires C++20 support and may not be available in all compilers. If you need to format strings, consider using `std::ostringstream` or other string manipulation techniques instead.
+- outText(std::format("Stepper {} ({}) moved to position = {}", this->iS, P.Step[this->iS].Type, this->actual));
