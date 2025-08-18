@@ -1,0 +1,41 @@
+STYLE INSTRUCTION FOR COLLABORATORS IN TRS2
+
+IMPORTANT: I kindly ask all collaborators to try to adhere to these programming style requirements. These are relavant to keep consistency through the programme.
+
+LANGUAGE:
+- C++ with standard 2023 (at least C++20 for module interfaces .ixx)
+- QT6 for GUI
+- whenever possible use standard libraries stl::
+- build with makefile (ongoing)
+- developed using QT Designer for GUI and Visual Studio for the rest
+
+GITHUB
+- always use git for versioning
+- repo on GitHub: TRS2 by antoniopifferi
+- ask to be inserted as collaborator
+- clone directly from GitHub
+- create a branch from the most-updated running version (ask Antonio)
+- always commit at important steps and push to itHub repo
+- I use GitKraken, but any git is OK
+
+SUBCLASSES IMPLEMENTING DEVICES
+- follow the scheme of other device classes (e.g. TestStep as a template for step objects)
+- keep your subclass in a single module interface file (.ixx) with no header
+- put your subclass under src/class where Class is the name of the directory corresponding to the specific base class (e.g. step)
+- almost all of your code will go to the subclass.ixx. Stay in a single file. Avoid multiple files. insert there any tool functions unless really of interest for everybody (ask Antonio)
+- insert there also your specific constants (to be confirmed - ongoing)
+- the subclass object is instantiated in the ClassFactory (e.g. StepFactory.ixx) with a simple line - see example
+
+GENERAL STYLE PREFERENCES
+- do not put material in the common (abstract) files, unless absolutely necessarily
+- be always parametric: every number should be a CONSTANT defined in the beginning of the file (example soon)
+- be SHORT, SIMPLE and ELEGANT
+- avoid verbose names or processes
+- be smart: think well before coding
+- try to follow the style of other classes/functions
+- not verbose in comments: few of them as needed
+- name variables that are self-explicative, but not too long
+- privilege compact code
+- keep the GUI minimalist and basic
+- try to separate GUI (only startup and visualization) from execution
+

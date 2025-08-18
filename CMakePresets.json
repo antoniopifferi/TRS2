@@ -1,0 +1,83 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 29,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "vs2022-x64",
+      "displayName": "Visual Studio 2022 (x64)",
+      "generator": "Visual Studio 17 2022",
+      "binaryDir": "build/vs2022",
+      "cacheVariables": {
+        "CMAKE_CONFIGURATION_TYPES": "Debug;Release",
+        "CMAKE_POLICY_DEFAULT_CMP0141": "NEW"
+      }
+    },
+    {
+      "name": "ninja-msvc",
+      "displayName": "Ninja (MSVC, multi-config)",
+      "generator": "Ninja Multi-Config",
+      "binaryDir": "build/ninja-msvc",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl",
+        "CMAKE_CXX_COMPILER": "cl",
+        "CMAKE_CONFIGURATION_TYPES": "Debug;Release",
+        "CMAKE_POLICY_DEFAULT_CMP0141": "NEW"
+      }
+    },
+    {
+      "name": "unix-makefiles",
+      "displayName": "Unix Makefiles (single-config)",
+      "generator": "Unix Makefiles",
+      "binaryDir": "build/make",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "build-vs-Debug",
+      "configurePreset": "vs2022-x64",
+      "configuration": "Debug"
+    },
+    {
+      "name": "build-vs-Release",
+      "configurePreset": "vs2022-x64",
+      "configuration": "Release"
+    },
+    {
+      "name": "build-ninja-Debug",
+      "configurePreset": "ninja-msvc",
+      "configuration": "Debug"
+    },
+    {
+      "name": "build-ninja-Release",
+      "configurePreset": "ninja-msvc",
+      "configuration": "Release"
+    },
+    {
+      "name": "build-make",
+      "configurePreset": "unix-makefiles"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "ctest-vs-Debug",
+      "configurePreset": "vs2022-x64",
+      "configuration": "Debug"
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "vs-Debug",
+      "steps": [
+        { "type": "configure", "name": "vs2022-x64" },
+        { "type": "build", "name": "build-vs-Debug" }
+      ]
+    }
+  ]
+}
