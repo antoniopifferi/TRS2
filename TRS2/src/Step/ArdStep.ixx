@@ -11,9 +11,9 @@ import Step;
 export class ArdStep : public Step {
 public:
     explicit ArdStep(int idx) {
-        outText("ArdStep constructor called");
+        outText("ArdStep constructor called"); // <-- restore this line
         this->iS = idx;
-        initPos();             // <-- add this
+        //initPos();             // <-- add this
         // initStep();         // optional, if you want velocity set here
     }
     ~ArdStep() override {

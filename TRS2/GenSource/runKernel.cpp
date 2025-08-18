@@ -9,6 +9,8 @@
 import Const;
 import Globals;
 import Step;
+import ArdStep;
+import MicroStep;
 
 
 
@@ -16,15 +18,24 @@ import Step;
 void runKernel() {
     std::unique_ptr<Step> steps[MAX_STEP];
 
-    // InitLoop
-    for(int iL=0;iL<5;iL++) P.Loop[iL].Num=(P.Loop[iL].Last-P.Loop[iL].First)/P.Loop[iL].Delta+1;
+    //auto d = std::make_unique<MicroStep>(0); // derived delete path
 
-	// InitSteps
-  for (int iS = 0; iS < MAX_STEP; ++iS) {
+    // InitLoop
+    //for(int iL=0;iL<5;iL++) P.Loop[iL].Num=(P.Loop[iL].Last-P.Loop[iL].First)/P.Loop[iL].Delta+1;
+
+	 //InitSteps
+    for (int iS = 0; iS < MAX_STEP; ++iS) {
         steps[iS] = Step::createStep(iS);
- //       if(steps[iS]) steps[iS]->initStep();
- //       if(steps[iS]) steps[iS]->initPos();
+        //if(steps[iS]) steps[iS]->initStep();
+        //if(steps[iS]) steps[iS]->initPos();
         }
+
+  //for (int iS = 0; iS < MAX_STEP; ++iS) {
+      // Optional trace here to see the index
+      // std::cout << "Destroying step " << iS << std::endl;
+    //  steps[iS].reset();  // destructor now
+  //}
+
 
  //   for (P.Loop[0].Actual = P.Loop[0].First; P.Loop[0].Actual <= P.Loop[0].Last; P.Loop[0].Actual += P.Loop[0].Delta) {
  //       for (P.Loop[1].Actual = P.Loop[1].First; P.Loop[1].Actual <= P.Loop[1].Last; P.Loop[1].Actual += P.Loop[1].Delta) {

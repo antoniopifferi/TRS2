@@ -37,12 +37,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DevSource\ArdStep.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DevSource\MicroStep.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GuiSource\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -63,21 +57,12 @@
     <ClCompile Include="src\Step\StepFactory.ixx" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DevSource\ArdStep.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DevSource\MicroStep.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GenSource\runKernel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <QtMoc Include="GuiSource\trs2.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <ClInclude Include="GuiSource\Table.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="GuiSource\Binder.h">
       <Filter>Generated Files</Filter>
     </ClInclude>

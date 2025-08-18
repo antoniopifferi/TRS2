@@ -137,7 +137,7 @@ void TRS2::loadIni(const QString& path) {
 
 void TRS2::printP() {
     //qDebug() << "Loop2Num" << P.Loop[1].Num;
-    outText("Starting process...");
+    //outText("Starting process...");
 }
 
 

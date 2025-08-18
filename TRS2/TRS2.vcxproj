@@ -192,8 +192,6 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DevSource\ArdStep.cpp" />
-    <ClCompile Include="DevSource\MicroStep.cpp" />
     <ClCompile Include="GenSource\Const.ixx" />
     <ClCompile Include="GenSource\Globals.cpp" />
     <ClCompile Include="GenSource\Globals.ixx" />
@@ -206,12 +204,9 @@
     <ClCompile Include="src\Step\StepFactory.ixx" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DevSource\ArdStep.h" />
-    <ClInclude Include="DevSource\MicroStep.h" />
     <ClInclude Include="GenSource\runKernel.h" />
     <QtMoc Include="GuiSource\AppLogger.h" />
     <ClInclude Include="GuiSource\Binder.h" />
-    <ClInclude Include="GuiSource\Table.h" />
     <QtMoc Include="GuiSource\trs2.h" />
   </ItemGroup>
   <ItemGroup>
