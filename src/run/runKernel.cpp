@@ -3,8 +3,7 @@
 #include <vector>
 
 #include "src/run/runKernel.h"
-//#include "GenSource/Parm.h"
-//#include "GenSource/Var.h"
+#include "src/gui/AppLogger.h"
 
 import Const;
 import Globals;
@@ -17,6 +16,9 @@ import MicroStep;
 
 void runKernel() {
     std::unique_ptr<Step> steps[MAX_STEP];
+
+    // display Output
+    displayPanel("Output");
 
     // InitLoop
     for(int iL=0;iL<5;iL++) P.Loop[iL].Num=(P.Loop[iL].Last-P.Loop[iL].First)/P.Loop[iL].Delta+1;
@@ -43,4 +45,5 @@ void runKernel() {
             }
         }
     }
+    displayPanel("Parm");
 }

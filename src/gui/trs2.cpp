@@ -42,6 +42,7 @@ TRS2::TRS2(QWidget *parent)
 
     // Connect logger to the Output box (queued == thread-safe)
     connect(&AppLogger::instance(), &AppLogger::message,this, &TRS2::appendOutput,Qt::QueuedConnection);
+    connect(&AppLogger::instance(), &AppLogger::showPanel, this, &TRS2::displayPanel, Qt::QueuedConnection);
 
 
     // Create binder
