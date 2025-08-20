@@ -64,6 +64,9 @@
     <ClCompile Include="src\step\Step.ixx" />
     <ClCompile Include="src\step\StepFactory.ixx" />
     <ClCompile Include="src\step\TestStep.ixx" />
+    <ClCompile Include="src\spc\Spc.ixx" />
+    <ClCompile Include="src\spc\SpcFactory.ixx" />
+    <ClCompile Include="src\spc\TestSpc.ixx" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\gui\AppLogger.h">

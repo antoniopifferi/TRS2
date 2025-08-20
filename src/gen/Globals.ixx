@@ -554,7 +554,7 @@ export struct MharpS {
 };
 
 export struct SpcS {
-    char   Type;
+    std::string Type;
     char   Control;
     char   Trash;
     char   Started;
@@ -838,13 +838,11 @@ export struct ParmS {
     FlowS Flow;
 };
 
-// Optional placeholder for future data container
-export struct DataS {
-    // Intentionally empty (commented out in original header)
-};
-
 // Export the external declaration; define it in a module implementation unit:
 // module Parm;  ParmS P{};
 export extern ParmS P;
 
 export extern TRS2* GUI;
+
+export extern std::vector<long> Data;
+export void InitData();

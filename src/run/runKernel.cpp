@@ -14,7 +14,17 @@ import MicroStep;
 
 
 void runKernel() {
+
+    // GUI
+    P.Num.Board = 1;
+	P.Num.Det = 1;
+	P.Chann.Num = 1024;
+	P.Spc.Type = "TEST";
+
+
     std::unique_ptr<Step> steps[MAX_STEP];
+    //std::vector<long> Data(P.Chann.Num);
+    InitData();
 
     // update all GUI
     GUI->readAll();

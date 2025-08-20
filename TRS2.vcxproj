@@ -198,6 +198,9 @@
     <ClCompile Include="src\gui\main.cpp" />
     <ClCompile Include="src\gui\trs2.cpp" />
     <ClCompile Include="src\run\runKernel.cpp" />
+    <ClCompile Include="src\spc\Spc.ixx" />
+    <ClCompile Include="src\spc\SpcFactory.ixx" />
+    <ClCompile Include="src\spc\TestSpc.ixx" />
     <ClCompile Include="src\step\ArdStep.ixx" />
     <ClCompile Include="src\step\MicroStep.ixx" />
     <ClCompile Include="src\step\Step.ixx" />
