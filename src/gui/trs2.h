@@ -20,18 +20,16 @@ class TRS2 : public QMainWindow
 public:
     TRS2(QWidget *parent = nullptr);
     ~TRS2();
+    void readAll();                          // widgets -> vars
+    void displayPanel(const QString& namePanel);
+    void writeAll();                         // vars -> widgets
+    void readSingle(const QString& name);    // one widget -> vars
+    void writeSingle(const QString& name);   // vars -> one widget
+    void saveIni(const QString& path);
+    void loadIni(const QString& path);
+    void appendOutput(const QString& msg);
 
 private slots:
-    void readAll();                          // widgets -> vars
-    void writeAll();                         // vars -> widgets
-    void readSingle(const QString & name);    // one widget -> vars
-    void writeSingle(const QString & name);   // vars -> one widget
-    void saveIni(const QString & path);
-    void loadIni(const QString & path);
-    void printP();
-
-    void displayPanel(const QString &namePanel);
-    void appendOutput(const QString& msg);
 
 private:
     Ui::TRS2 *ui;

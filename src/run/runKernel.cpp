@@ -4,6 +4,7 @@
 
 #include "src/run/runKernel.h"
 #include "src/gui/AppLogger.h"
+#include "src/gui/trs2.h"
 
 import Const;
 import Globals;
@@ -12,13 +13,14 @@ import ArdStep;
 import MicroStep;
 
 
-
-
 void runKernel() {
     std::unique_ptr<Step> steps[MAX_STEP];
 
+    // update all GUI
+    GUI->readAll();
+
     // display Output
-    displayPanel("Output");
+    GUI->displayPanel("Output");
 
     // InitLoop
     for(int iL=0;iL<5;iL++) P.Loop[iL].Num=(P.Loop[iL].Last-P.Loop[iL].First)/P.Loop[iL].Delta+1;

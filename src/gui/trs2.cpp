@@ -63,7 +63,6 @@ TRS2::TRS2(QWidget *parent)
         // bindIdx1(*binder_, "LoopCont",     iL, P.Loop[iL].LoopContIndex);   // int (QComboBox index)
         bindIdx1(*binder_, "LoopCont",     iL, P.Loop[iL].Cont);            // QString (QComboBox text)
     }
-    // Mirrors your old Loop table list. :contentReference[oaicite:6]{index=6}
     
     // STEP
     for (int iS = 0; iS < MAX_STEP; ++iS) {
@@ -95,9 +94,6 @@ TRS2::TRS2(QWidget *parent)
 
     // READ ALL
     readAll();
-
-    // PRINT P
-    printP();
 
 }
 
@@ -135,12 +131,6 @@ void TRS2::saveIni(const QString& path) {
 void TRS2::loadIni(const QString& path) {
     if (binder_) binder_->loadIni(path);
 }
-
-void TRS2::printP() {
-    //qDebug() << "Loop2Num" << P.Loop[1].Num;
-    //outText("Starting process...");
-}
-
 
 void TRS2::displayPanel(const QString &namePanel)
 {

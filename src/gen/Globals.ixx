@@ -9,6 +9,8 @@ module;
 #include <stddef.h>                // size_t etc., just in case
 //#include <GenSource/Step.h>
 
+#include "src/gui/trs2.h"
+
 // If you truly need Qt here, include it in the global fragment.
 // (Not used in the declarations below, so omitted.)
 // #include <QMainWindow>
@@ -844,3 +846,5 @@ export struct DataS {
 // Export the external declaration; define it in a module implementation unit:
 // module Parm;  ParmS P{};
 export extern ParmS P;
+
+export extern TRS2* GUI;
