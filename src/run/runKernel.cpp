@@ -11,6 +11,8 @@ import Globals;
 import Step;
 import ArdStep;
 import MicroStep;
+import Spc;
+import TestSpc;
 
 
 void runKernel() {
@@ -20,9 +22,13 @@ void runKernel() {
 	P.Num.Det = 1;
 	P.Chann.Num = 1024;
 	P.Spc.Type = "TEST";
+    P.Spc.Factor = 1.0; // ps/bin
+	P.Spc.TimeO = 1.0; // s
+	P.Spc.TimeM = 1.0; // s
 
-
+    // define variables
     std::unique_ptr<Step> steps[MAX_STEP];
+    std::unique_ptr<Spc> spc[1];
     //std::vector<long> Data(P.Chann.Num);
     InitData();
 
@@ -42,6 +48,10 @@ void runKernel() {
         if(steps[iS]) steps[iS]->initPos();
         }
 
+	// InitSpc
+    spc[0] = Spc::createSpc();
+    if (spc[0]) spc[0]->init();
+
     for (P.Loop[0].Actual = P.Loop[0].First; P.Loop[0].Actual <= P.Loop[0].Last; P.Loop[0].Actual += P.Loop[0].Delta) {
         for (P.Loop[1].Actual = P.Loop[1].First; P.Loop[1].Actual <= P.Loop[1].Last; P.Loop[1].Actual += P.Loop[1].Delta) {
             for (P.Loop[2].Actual = P.Loop[2].First; P.Loop[2].Actual <= P.Loop[2].Last; P.Loop[2].Actual += P.Loop[2].Delta) {
@@ -52,6 +62,10 @@ void runKernel() {
                         for (auto& s : steps) {  
                             if (s) s->moveStep(&s->actual, s->calcGoal(), P.Step[s->iS].Mode != "MULTI", status);  
                         }
+                        if (spc[0]) spc[0]->get();
+						for (int ib = 0; ib < P.Chann.Num; ib++)
+							//outText("Data[" + std::to_string(ib) + "] = " + std::to_string(Data[ib]) + "\n");
+						    outText(std::format("Data[{}] = {}\n", ib, Data[ib]));
                     }
                 }
             }
