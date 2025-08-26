@@ -1,37 +1,40 @@
-QT       += core gui
+TEMPLATE = app
+TARGET = TRS2
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT += widgets
+CONFIG += qt warn_on
 
-CONFIG += c++20
+# C++23 setup
+win32:msvc: CONFIG += c++latest      # maps to /std:c++latest
+!msvc: QMAKE_CXXFLAGS += -std=c++23  # GCC/Clang
 
-# You can make your code fail to compile if it uses deprecated APIs.
-# In order to do so, uncomment the following line.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+# Treat .ixx files as C++ sources (MSVC will compile them as C++20 modules)
+QMAKE_EXT_CPP += ixx
 
 SOURCES += \
-    DevSource/ArdStep.cpp \
-    DevSource/MicroStep.cpp \
-    GenSource/Parm.cpp \
-    GenSource/Step.cpp \
-    GenSource/runKernel.cpp \
-    GuiSource/main.cpp \
-    GuiSource/trs2.cpp
+    src/gui/main.cpp \
+    src/gui/trs2.cpp \
+    src/run/runKernel.cpp \
+    src/gen/Globals.cpp \
+    src/gen/Const.ixx \
+    src/gen/Globals.ixx \
+    src/step/ArdStep.ixx \
+    src/step/MicroStep.ixx \
+    src/step/Step.ixx \
+    src/step/StepFactory.ixx \
+    src/step/TestStep.ixx \
+    src/spc/Spc.ixx \
+    src/spc/SpcFactory.ixx \
+    src/spc/TestSpc.ixx
 
 HEADERS += \
-    DevSource/ArdStep.h \
-    DevSource/MicroStep.h \
-    GenSource/Const.h \
-    GenSource/Parm.h \
-    GenSource/Step.h \
-    GenSource/Var.h \
-    GenSource/runKernel.h \
-    GuiSource/Table.h \
-    GuiSource/trs2.h
+    src/gui/AppLogger.h \
+    src/gui/trs2.h \
+    src/gui/Binder.h \
+    src/run/runKernel.h
 
 FORMS += \
-    GuiSource/trs2.ui \
+    src/gui/trs2.ui
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+# Windows GUI subsystem
+win32:CONFIG += windows

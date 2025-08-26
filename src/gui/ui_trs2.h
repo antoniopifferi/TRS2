@@ -253,8 +253,6 @@ public:
     QPlainTextEdit *outputText;
     QGraphicsView *displayPlot;
     QComboBox *comboBox;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
     QMenuBar *menubar;
     QMenu *menuRun;
     QMenu *menuWindow;
@@ -1642,12 +1640,6 @@ public:
         comboBox = new QComboBox(Output);
         comboBox->setObjectName("comboBox");
         comboBox->setGeometry(QRect(30, 0, 68, 22));
-        lineEdit = new QLineEdit(Output);
-        lineEdit->setObjectName("lineEdit");
-        lineEdit->setGeometry(QRect(50, 100, 113, 25));
-        lineEdit_2 = new QLineEdit(Output);
-        lineEdit_2->setObjectName("lineEdit_2");
-        lineEdit_2->setGeometry(QRect(60, 170, 113, 25));
         stackedWidget->addWidget(Output);
 
         gridLayout->addWidget(stackedWidget, 0, 0, 1, 1);
@@ -1655,7 +1647,7 @@ public:
         TRS2->setCentralWidget(centralwidget);
         menubar = new QMenuBar(TRS2);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1321, 26));
+        menubar->setGeometry(QRect(0, 0, 1321, 22));
         menuRun = new QMenu(menubar);
         menuRun->setObjectName("menuRun");
         menuWindow = new QMenu(menubar);

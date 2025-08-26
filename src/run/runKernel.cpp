@@ -14,23 +14,22 @@ import MicroStep;
 import Spc;
 import TestSpc;
 
-
 void runKernel() {
 
     // GUI
     P.Num.Board = 1;
-	P.Num.Det = 1;
-	P.Chann.Num = 1024;
-	P.Spc.Type = "TEST";
+    P.Num.Det = 1;
+    P.Chann.Num = 1024;
+    P.Spc.Type = "TEST";
     P.Spc.Factor = 1.0; // ps/bin
-	P.Spc.TimeO = 1.0; // s
-	P.Spc.TimeM = 1.0; // s
+    P.Spc.TimeO = 1.0;  // s
+    P.Spc.TimeM = 1.0;  // s
 
     // define variables
     std::unique_ptr<Step> steps[MAX_STEP];
     std::unique_ptr<Spc> spc[1];
-    //std::vector<long> Data(P.Chann.Num);
     InitData();
+    std::vector<long> t(P.Chann.Num);
 
     // update all GUI
     GUI->readAll();
@@ -39,16 +38,16 @@ void runKernel() {
     GUI->displayPanel("Output");
 
     // InitLoop
-    for(int iL=0;iL<5;iL++) P.Loop[iL].Num=(P.Loop[iL].Last-P.Loop[iL].First)/P.Loop[iL].Delta+1;
+    for (int iL = 0; iL < 5; iL++) P.Loop[iL].Num = (P.Loop[iL].Last - P.Loop[iL].First) / P.Loop[iL].Delta + 1;
 
-	 //InitSteps
+    // InitSteps
     for (int iS = 0; iS < MAX_STEP; ++iS) {
         steps[iS] = Step::createStep(iS);
-        if(steps[iS]) steps[iS]->initStep();
-        if(steps[iS]) steps[iS]->initPos();
-        }
+        if (steps[iS]) steps[iS]->initStep();
+        if (steps[iS]) steps[iS]->initPos();
+    }
 
-	// InitSpc
+    // InitSpc
     spc[0] = Spc::createSpc();
     if (spc[0]) spc[0]->init();
 
@@ -57,15 +56,21 @@ void runKernel() {
             for (P.Loop[2].Actual = P.Loop[2].First; P.Loop[2].Actual <= P.Loop[2].Last; P.Loop[2].Actual += P.Loop[2].Delta) {
                 for (P.Loop[3].Actual = P.Loop[3].First; P.Loop[3].Actual <= P.Loop[3].Last; P.Loop[3].Actual += P.Loop[3].Delta) {
                     for (P.Loop[4].Actual = P.Loop[4].First; P.Loop[4].Actual <= P.Loop[4].Last; P.Loop[4].Actual += P.Loop[4].Delta) {
-                        bool status=false;
+                        bool status = false;
 
-                        for (auto& s : steps) {  
-                            if (s) s->moveStep(&s->actual, s->calcGoal(), P.Step[s->iS].Mode != "MULTI", status);  
+                        for (auto& s : steps) {
+                            if (s) s->moveStep(&s->actual, s->calcGoal(), P.Step[s->iS].Mode != "MULTI", status);
                         }
                         if (spc[0]) spc[0]->get();
-						for (int ib = 0; ib < P.Chann.Num; ib++)
-							//outText("Data[" + std::to_string(ib) + "] = " + std::to_string(Data[ib]) + "\n");
-						    outText(std::format("Data[{}] = {}\n", ib, Data[ib]));
+
+                        for (int ib = 0; ib < P.Chann.Num; ib++)
+                            outText(std::format("Data[{}] = {}\n", ib, Data[ib]));
+
+                        for (int ib = 0; ib < P.Chann.Num; ib++)
+                            t[ib] = (ib + 0.5) * P.Spc.Factor;
+
+                        // === This triggers a full, one-shot refresh of the scatter series ===
+                        GUI->plot(Data, t);
                     }
                 }
             }
