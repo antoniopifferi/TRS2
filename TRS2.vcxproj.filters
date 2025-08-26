@@ -35,6 +35,74 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\gen\Globals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\run\runKernel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\trs2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\gui\AppLogger.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\step\ArdStep.ixx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\Binder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gen\Globals.ixx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spc\Spc.ixx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spc\SpcFactory.ixx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step\Step.ixx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step\StepFactory.ixx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\spc\TestSpc.ixx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\step\TestStep.ixx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\run\runKernel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <QtMoc Include="src\gui\trs2.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <ClInclude Include="src\gui\ui_trs2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -45,48 +113,19 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\gen\Const.ixx" />
-    <ClCompile Include="src\gen\Globals.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gen\Globals.ixx" />
-    <ClCompile Include="src\gui\main.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\gui\trs2.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\run\runKernel.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\step\ArdStep.ixx" />
-    <ClCompile Include="src\step\MicroStep.ixx" />
-    <ClCompile Include="src\step\Step.ixx" />
-    <ClCompile Include="src\step\StepFactory.ixx" />
-    <ClCompile Include="src\step\TestStep.ixx" />
-    <ClCompile Include="src\spc\Spc.ixx" />
-    <ClCompile Include="src\spc\SpcFactory.ixx" />
-    <ClCompile Include="src\spc\TestSpc.ixx" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="src\gui\AppLogger.h">
-      <Filter>Generated Files</Filter>
-    </QtMoc>
-    <QtMoc Include="src\gui\trs2.h">
-      <Filter>Generated Files</Filter>
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\gui\Binder.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\run\runKernel.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <QtUic Include="src\gui\trs2.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\gen\Const.ixx">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="src\gen\Data.ixx">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="src\step\MicroStep.ixx">
+      <Filter>Distribution Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

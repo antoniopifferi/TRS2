@@ -1,14 +1,18 @@
 <FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" FontFamily="Segoe UI" FontSize="12">
   <FlowDocument.Tag><![CDATA[{
-  "timestamp": "2024-12-27 16:20:53",
+  "timestamp": "2025-08-26 17:15:39",
   "files": {
-    "C:\\OD\\OneDrive - Politecnico di Milano\\Beta\\Programs\\TRS2\\TRS2\\TRS2.vcxproj": {
-      "before": "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",
-      "after": "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"
+    "C:\\OD\\OneDrive - Politecnico di Milano\\Beta\\Programs\\TRS2\\TRS2.vcxproj": {
+      "before": "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",
+      "after": "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"
     },
-    "C:\\OD\\OneDrive - Politecnico di Milano\\Beta\\Programs\\TRS2\\TRS2\\TRS2.vcxproj.filters": {
-      "before": "5VhNb5tAEO25UqX+BOT7GgzYhoAdeW1Io6pSpLQ9RYowjMNGfHV3iSxV/e9df7EkODJNyiGtZR9Ywbx9M+/NLD77+O6de75OE+UBKCN5NukN+lpPgSzMI5LdTXolXyGrdz798N69ovk9hFwRt2ds0os5L85UlYUxpAHrpySkOctXvB/mqRrBAyR5AVRN2bIkSaTqmmb0RBhFcS85pBc0L4vtpVjwScKBKpdZmJQRTHp+TlNFLALbPaGIj/stIz9KuIwg42RFgE5/2rZh2pZmo+EQz5C5tCOE/bGNLH+BsaZbIw8bv1y18eBmE9uQ3ppDtqHNpiVx1dpldctVQBlstzJdBQkDV62t7O5y1d3+/w82F5ABDThELQo0HngLS3zRbI5tZM49G2HsDZCnadjQBqbpDQZtCxQWhRM64XrtpHnoxE4EKyePEoeIHwXmHCnfqcL8Q1Q+QRAJB7XwjGHbQ8PSkGXjhfCMZiLL8jAa6UMfe0Pdwz5uW5LYiUVRYlGSOHVIJmqRhc6aRS8oxVvf/3Ve0hBa5N/052Nj7A/QfDwbItMYj9BMG42QPjP0xXioz3Tfb5t/aYm6GeLi3lkG3AlYuvmtX1CNN8zGVR9Pl+awmSfzPC3EcJHzZgEPO8o3Mxpdcyj6IrW10bPv7/W0PO0tahX2MAaqhWM4XzbTskMk0dr2jMS4SjuiI0G6ZFKSPZM0IFnnTGiZfQaaQdIVUkWHU6a/GqSN3PfHqmMyPMg9boq93pGPiH0fVIq9gSLVMRcHLN7vAkMaVxqqCxzJZWunbiG2ZuoEotLe12CZQCcVkZn6HtCOEaRXX5+tkvE8xZs3FemTiypfW6/+MYiMubVJC6/KJ+QuIliWdzfi0HtbUBCDnvXjfrjkTceK1NdP5k3TyuiVbeWSBKSQQMCgK8jm+JUMn++JJ8kdwlbUDgvHif1VpEbvK8ntc5I5TaTeWl+omSfKLUlTLfId+6RQHm9CvAHv/giY/gY=",
-      "after": "5VfRbpswFO3zpO0bUN4dCJAEBkkVJ9BVU6VWXfdUaSJwU1wBZrapIk376P3BHJLG2chU1oqHblF4wDL3+Nxzj6/9493JiX+6zjPtARgntJj0Bn2jp0ER04QUd5NeJVbI6Z1O377xLxm9h1hocnrBJ71UiPK9rvM4hTzi/ZzEjHK6Ev2Y5noCD5DREpie82VFskQ3DcPqyTCa5p8LyM8Yrcr6VQ6EJBPAtPMizqoEJr2QslyTg8C3X2jy598U5GsF5wkUgqwIsOk317Vs1zFcNBziGbKXboJwOHaREy4wNkxnFGDru683Ptwsog4ZrAUUG9p8WhFfP3jdT7mMGId6KdNVlHHw9YOR7Sxf367//2BzBgWwSEDSQqDxIFg48o9mc+wiex64CONggALDwJYxsO1gMGgrUFyWXuzF67WX09hLvQRWHk0yj8iHAfeOyPeUMP8QlQ8QJdJBLTxjue7QcgzkuHghPWPYyHECjEbmMMTB0AxwiNtKknqpFCWVkqS5RwqpRRF7a548Q4rXvv5rWrEYWuTfDudjaxwO0Hw8GyLbGo/QzBiNkDmzzMV4aM7MMGybf2WJQzOk5b23jIQX8XzzrJ+hxitm4+u/dpdms5lnc5qXsrmofrOAhy3l2xlLrgWUfZnag9az298P0/L73qLvwz62gf3AMZyLTbfsEElubTtGsl3lHdFRIF0yqciOSR6RonMmrCo+Aisg6wppT0cwbr4YpE25745Vx8rwsdzTZrEf7shHin0XVBV7A0VVx1wesES/CwxlXGWoLnAUl9pO3ULUZuoEYl97n6JlBp0oojL1OWIdIyivvjhbV+KCxsohZ/tM1S792/B1tNoaLfxZcUFzvLkjKfwEltXdrTzofikZyObO+2k/XoqmS2W6D0/jTaOq6HurqiEFyCCDiEMXkE+n4ErckD8nvyJN2uqC2GBcBzuSe3lx295fpz8B"
+    "C:\\OD\\OneDrive - Politecnico di Milano\\Beta\\Programs\\TRS2\\TRS2.vcxproj.filters": {
+      "before": "5Vhdj5s4FO1zpX3bHxDlcSWHzxBYmFSYwOxo21Wl2X2LVBFwgivArG2qVKv+u/6wNcwkJiXdkGmp1G4UFMWCe3zu8fW5+OPPz555L/ZFPnmHKMOkvJlqM3U6QWVCUlzubqY13wJ7+mL503PvNSVvUcIn4vaS3UwzzqtfFYUlGSpiNitwQgkjWz5LSKGk6B3KSYWoUrBNjfNU0VXVmIowk4l3x1FxS0ldtX/FQIRzjujkrkzyOkU304jQYiIGEXt4YiI+3l8l/rtGdykqOd5iRJf/OI5hOrbqgPkc+sDcOCmA0cIBdrSCUNVtK4TGB0/pPdhMog0Z7jkqG9psWWNP6fw93vI6pgy1U1lu45whT+mMPNzlKQ/z/3+wuUUlojFH6QCBFlq4ssUX+AF0gBmEDoAw1ECoqtBQNdMMNW2oQElVuYmb7PduQRI3c1O0dUmau1hcFDH3jHyXhPmBqPyG4lRU0ICaMRxnbtgqsB24EjWjmsC2QwgsfR7BcK6HMIJDJcncTIiSCUmywsWl0KJM3D1LnyDF9z7/e1LTBA3IvxkFC2MRaSBY+HNgGgsL+KplAd039NVirvt6FA3NvyyJbjFk1Vt3E3M3ZkVz7Z+gxo/FZoUZp3hTc7HRD1AI2kbgR06jEIyAaekRgAsrAKGvaZahRbZlBUMV+uVM8oWVdSzkqaby/ZPylNM+oN8WBHlAikq0AbIzYDRZ71C5vs3JRtjxTJRAp0V49OHu8v3UA5Rj0INdHwckShHjcqTQLYEar0eGoHW5FtfviJYoH5kKp0z/YogBq6FmnBSwaSalUod0+lX1kux2iM6y/nromkt/PciwckU8dqKnOIyjau3T9F78zvB+fy1Q/hj1AsxOrA6IS2Hn13MZCtGpoPGIsCpZ31fJiKl6RIjihBP6fkygRvqRdW+XV4PxDegIZf5EjI+sTpO0Fmbcgjnd666u/17NyA3htP6bwmz3uqshZMQBtV/jN09DOSEyYD/tu2uKNvVuLd6v3sj99KzDfvLm1N9UD7El356VU5SjmKFx4GTGpYaSXUWR6JjZLJslG97fxi+yk9GP/OSQBOwyHAHykGMJKBl+3pMvkjuEPVI7DEicLrGvitTz3f8ohstEun47oB7OSXjoL1qWNe6vFXlU1S8CGbDN5eUp/EHKM71uIM6n+Hlz678F9GbRxDxIeT7+KubxSOFbT3vVnAx+3jyv4XCaQnEW93AkufwX",
+      "after": "5Vjbrps4FO3zSPPSL4jyOJLDNQQGTipM4MzRtFWr075FqohxgiuwGdtUqUb9iv7wGM4lpKQKOSNGaicKimLBXl577Rv++vzZs+DFviwmnzAXhNGrqTHTpxNMEcsI3V1Na7kF7vTF8tdfgjecfcRITtTtVFxNcymr3zVNoByXqZiVBHEm2FbOECu1DH/CBasw10qxqUmRaaauW1NlZjIJbiQurzmrq/avWkhIITGf3FBU1Bm+miaMlxO1iMXdExP1Cd5T8leNbzJMJdkSzJd/e55le67ugfkchsDeeBmAycIDbrKCUDddJ4bWl0DrPdhsojUZ7yWmDW2xrEmgdf4+3vIm5QK3W1lu00LgQOus3N0VaHf7/3+wucYU81TibIBACyNeueoLwgh6wI5iD0AYGyDWdWjphm3HhjFUIFRVPvLRfu+XDPm5n+Gtz7LCJ+riWPgn5DsnzE9E5Q+cZiqDBuSM5Xlzy9WB68GVyhndBq4bQ+CY8wTGczOGCRwqSe7nSpRcSZKXPqFKC4r8vcieIMWPvv9bVnOEB/jfTqKFtUgMEC3CObCthQNC3XGAGVrmajE3QzNJhvr/kBLdZMirj/4mlX4qyubaP0GNn4vNigjJyaaWqtAPUAi6VhQmXqMQTIDtmAmACycCcWgYjmUkruNEQxX67YTzVSvrtJCnNpUfn1SgHc8B/bEgKiJWVmoMOEwGgqP1DtP1dcE2qh3PVAp0RoT7PtwN3297gPZo9KFdPy4cUMqU0JFMtwRqsh4Zgtd0ra4/Mae4GJmK5ML81xDno+GtfMXQQaMHR4ZV9ZLtdpjP8n4kdNtKLxJag4couJ8+jxGExNU65Nmt+p2R/f5CiKi4t3oGZqciAhKqWvjFLAZDdLJmPCKiQuvbCo3oqnuEJEWS8c9jAjXSj6x7G14Nxn9ARynzDgs5sjqN01qYcRPmuL5dmvm9nPlObWkr26XGh5SVJt9r8uFJ9o83f75uRrWQrITNS/ihtmV4U+/W6k3qQ8Wxmh7FLJ+hjeyXt2/ekXpFtGP9scadAuS4wKnAY0Ced8Fb+Z6caB2t+2vSJ304f+jxbU21TM/Dvmb0xOgSqeMGebpu9Ye6Hn5j88HRp+2vUpmOZL4tV6+ag57v18VLOBy7UB2t3J0wLf8B"
+    },
+    "C:\\OD\\OneDrive - Politecnico di Milano\\Beta\\Programs\\TRS2\\TRS2.vcxproj.user": {
+      "before": "tZFNS8NAEIaLR8H/sCyFtAez8QMRSVKkohcPrS3e8zFJVnYzYXe2VuiPd5OSQ9GjHvfZmXeeYfjZZBIv9lqxHRgrsU34VRhxBm2BpWzrhDuqLu/5Ir04j1cGP6AgtkVU9n2sXzpjoCXOfEprE94QdQ9C2KIBndlQy8KgxYrCArUoYQcKOzBC29xJVYrrKLrhPp2xPt//0NeLQdcNyMNNg5+PSj1LBTYl4yAWJ2joFD9bT9PYa5aDSviaNkDkF7OcLbEtJQ07B9OZf1Wydibryfwwna1URhUaPQ+SJHiC3NWH/d1tcHT1YmvaoiuacfLoK37j8b8LvoGCzMJfKg7S/cHTbw==",
+      "after": "vZFNT8MwDIYnjkhcOUfRpG4HlvIhhFDbCQ3BhcPGJu79cNugJK4SZwxpP560aIfBFXH0Y/v1a/v8ZDRK5jut2Bask2hSfjmLOQNTYiVNk3JP9cUdn2dnp8nS4juUxDaIyr0d6hfeWjDEWVAxLuUtUXcvhCtb0LmbaVladFjTrEQtKtiCwg6s0K7wUlXiKo6veVBnrNcPGfp8tui7AQW4bvHjQaknqcBlZD0k4ggNneJ367Eae8kLUClf0RqIwmKOswWaStKwczSehKiWjbd5T6b78WSpcqrR6mmUptEjFL7Z725vom+vwdiKNujL9jA5S8RP8j/WXkFB7uBvzCX9JfsnZ18="
     }
   }
 }]]></FlowDocument.Tag>
@@ -21,7 +25,7 @@
       <Span TextDecorations="Underline">Project Format Conversion</Span>
     </Paragraph>
     <Paragraph Margin="12,8" FontSize="18">
-      <Span>Report generated on 2024-12-27 16:20:53</Span>
+      <Span>Report generated on 2025-08-26 17:15:39</Span>
     </Paragraph>
   </Section>
   <Section>
@@ -29,33 +33,49 @@
       <Span>Files</Span>
     </Paragraph>
     <Paragraph Margin="24,12,0,0">
-      <Span FontFamily="Consolas" FontSize="14" Background="WhiteSmoke"><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+      <Span FontFamily="Consolas" FontSize="14" Background="WhiteSmoke"><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
       <LineBreak />
-      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj?before">[Before]</Hyperlink>
-      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj?after">[After]</Hyperlink>
-      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj?diff&amp;before&amp;after">
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj?before">[Before]</Hyperlink>
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj?after">[After]</Hyperlink>
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj?diff&amp;before&amp;after">
                         [Diff before/after]
                     </Hyperlink>
-      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj?diff&amp;before&amp;current">
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj?diff&amp;before&amp;current">
                         [Diff before/current]
                     </Hyperlink>
-      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj?diff&amp;after&amp;current">
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj?diff&amp;after&amp;current">
                         [Diff after/current]
                     </Hyperlink>
       <LineBreak />
     </Paragraph>
     <Paragraph Margin="24,12,0,0">
-      <Span FontFamily="Consolas" FontSize="14" Background="WhiteSmoke"><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj.filters]]></Span>
+      <Span FontFamily="Consolas" FontSize="14" Background="WhiteSmoke"><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj.filters]]></Span>
       <LineBreak />
-      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj.filters?before">[Before]</Hyperlink>
-      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj.filters?after">[After]</Hyperlink>
-      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj.filters?diff&amp;before&amp;after">
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj.filters?before">[Before]</Hyperlink>
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj.filters?after">[After]</Hyperlink>
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj.filters?diff&amp;before&amp;after">
                         [Diff before/after]
                     </Hyperlink>
-      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj.filters?diff&amp;before&amp;current">
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj.filters?diff&amp;before&amp;current">
                         [Diff before/current]
                     </Hyperlink>
-      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj.filters?diff&amp;after&amp;current">
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj.filters?diff&amp;after&amp;current">
+                        [Diff after/current]
+                    </Hyperlink>
+      <LineBreak />
+    </Paragraph>
+    <Paragraph Margin="24,12,0,0">
+      <Span FontFamily="Consolas" FontSize="14" Background="WhiteSmoke"><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj.user]]></Span>
+      <LineBreak />
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj.user?before">[Before]</Hyperlink>
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj.user?after">[After]</Hyperlink>
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj.user?diff&amp;before&amp;after">
+                        [Diff before/after]
+                    </Hyperlink>
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj.user?diff&amp;before&amp;current">
+                        [Diff before/current]
+                    </Hyperlink>
+      <Hyperlink NavigateUri="file://C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj.user?diff&amp;after&amp;current">
                         [Diff after/current]
                     </Hyperlink>
       <LineBreak />
@@ -77,7 +97,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -147,24 +167,24 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">GuiSource\trs2.h;release\moc_predefs.h;]]></Span><Span Background="LightCoral"><![CDATA[C:\Qt\6.5.2\msvc2019_64\bin\moc]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\gui\AppLogger.h;release\moc_predefs.h;]]></Span><Span Background="LightCoral"><![CDATA[C:\Qt\6.5.2\msvc2019_64\bin\moc]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">GuiSource\trs2.h;release\moc_predefs.h;]]></Span><Span Background="LightGreen"><![CDATA[$(QTDIR)\bin\moc]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\gui\AppLogger.h;release\moc_predefs.h;]]></Span><Span Background="LightGreen"><![CDATA[$(QTDIR)\bin\moc]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightCoral"><![CDATA['=='Release|x64'">C:\Qt\6]]></Span><Span><![CDATA[.]]></Span><Span Background="LightCoral"><![CDATA[5.2\msvc2019_64\bin\moc.]]></Span><Span><![CDATA[exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2/release/moc_predefs.h" ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/mkspecs/win32-msvc]]></Span><Span><![CDATA[ -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2" ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtWidgets]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtGui]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtCore]]></Span><Span><![CDATA[ -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" GuiSource\trs2.h -o release\moc_trs2.cpp</Command>]]></Span>
+              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightCoral"><![CDATA['=='Release|x64'">C:\Qt\6]]></Span><Span><![CDATA[.]]></Span><Span Background="LightCoral"><![CDATA[5.2\msvc2019_64\bin\moc.]]></Span><Span><![CDATA[exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/release/moc_predefs.h" ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/mkspecs/win32-msvc]]></Span><Span><![CDATA[ -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2" ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtWidgets]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtGui]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtCore]]></Span><Span><![CDATA[ -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" src\gui\AppLogger.h -o release\moc_AppLogger.cpp</Command>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightGreen"><![CDATA['=='Release|x64'">$(QTDIR)\bin\moc]]></Span><Span><![CDATA[.]]></Span><Span><![CDATA[exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2/release/moc_predefs.h" ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/mkspecs/win32-msvc]]></Span><Span><![CDATA[ -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2" ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtWidgets]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtGui]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtCore]]></Span><Span><![CDATA[ -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" GuiSource\trs2.h -o release\moc_trs2.cpp</Command>]]></Span>
+              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightGreen"><![CDATA['=='Release|x64'">$(QTDIR)\bin\moc]]></Span><Span><![CDATA[.]]></Span><Span><![CDATA[exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/release/moc_predefs.h" ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/mkspecs/win32-msvc]]></Span><Span><![CDATA[ -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2" ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtWidgets]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtGui]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtCore]]></Span><Span><![CDATA[ -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" src\gui\AppLogger.h -o release\moc_AppLogger.cpp</Command>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -174,24 +194,78 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">GuiSource\trs2.h;debug\moc_predefs.h;]]></Span><Span Background="LightCoral"><![CDATA[C:\Qt\6.5.2\msvc2019_64\bin\moc]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\gui\AppLogger.h;debug\moc_predefs.h;]]></Span><Span Background="LightCoral"><![CDATA[C:\Qt\6.5.2\msvc2019_64\bin\moc]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">GuiSource\trs2.h;debug\moc_predefs.h;]]></Span><Span Background="LightGreen"><![CDATA[$(QTDIR)\bin\moc]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\gui\AppLogger.h;debug\moc_predefs.h;]]></Span><Span Background="LightGreen"><![CDATA[$(QTDIR)\bin\moc]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightCoral"><![CDATA['=='Debug|x64'">C:\Qt\6]]></Span><Span><![CDATA[.]]></Span><Span Background="LightCoral"><![CDATA[5.2\msvc2019_64\bin\moc.]]></Span><Span><![CDATA[exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2/debug/moc_predefs.h" ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/mkspecs/win32-msvc]]></Span><Span><![CDATA[ -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2" ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtWidgets]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtGui]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtCore]]></Span><Span><![CDATA[ -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" GuiSource\trs2.h -o debug\moc_trs2.cpp</Command>]]></Span>
+              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightCoral"><![CDATA['=='Debug|x64'">C:\Qt\6]]></Span><Span><![CDATA[.]]></Span><Span Background="LightCoral"><![CDATA[5.2\msvc2019_64\bin\moc.]]></Span><Span><![CDATA[exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/debug/moc_predefs.h" ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/mkspecs/win32-msvc]]></Span><Span><![CDATA[ -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2" ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtWidgets]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtGui]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtCore]]></Span><Span><![CDATA[ -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" src\gui\AppLogger.h -o debug\moc_AppLogger.cpp</Command>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightGreen"><![CDATA['=='Debug|x64'">$(QTDIR)\bin\moc]]></Span><Span><![CDATA[.]]></Span><Span><![CDATA[exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2/debug/moc_predefs.h" ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/mkspecs/win32-msvc]]></Span><Span><![CDATA[ -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2" ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtWidgets]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtGui]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtCore]]></Span><Span><![CDATA[ -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" GuiSource\trs2.h -o debug\moc_trs2.cpp</Command>]]></Span>
+              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightGreen"><![CDATA['=='Debug|x64'">$(QTDIR)\bin\moc]]></Span><Span><![CDATA[.]]></Span><Span><![CDATA[exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/debug/moc_predefs.h" ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/mkspecs/win32-msvc]]></Span><Span><![CDATA[ -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2" ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtWidgets]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtGui]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtCore]]></Span><Span><![CDATA[ -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" src\gui\AppLogger.h -o debug\moc_AppLogger.cpp</Command>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\gui\trs2.h;release\moc_predefs.h;]]></Span><Span Background="LightCoral"><![CDATA[C:\Qt\6.5.2\msvc2019_64\bin\moc]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\gui\trs2.h;release\moc_predefs.h;]]></Span><Span Background="LightGreen"><![CDATA[$(QTDIR)\bin\moc]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightCoral"><![CDATA['=='Release|x64'">C:\Qt\6]]></Span><Span><![CDATA[.]]></Span><Span Background="LightCoral"><![CDATA[5.2\msvc2019_64\bin\moc.]]></Span><Span><![CDATA[exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/release/moc_predefs.h" ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/mkspecs/win32-msvc]]></Span><Span><![CDATA[ -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2" ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtWidgets]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtGui]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtCore]]></Span><Span><![CDATA[ -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" src\gui\trs2.h -o release\moc_trs2.cpp</Command>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightGreen"><![CDATA['=='Release|x64'">$(QTDIR)\bin\moc]]></Span><Span><![CDATA[.]]></Span><Span><![CDATA[exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/release/moc_predefs.h" ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/mkspecs/win32-msvc]]></Span><Span><![CDATA[ -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2" ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtWidgets]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtGui]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtCore]]></Span><Span><![CDATA[ -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" src\gui\trs2.h -o release\moc_trs2.cpp</Command>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\gui\trs2.h;debug\moc_predefs.h;]]></Span><Span Background="LightCoral"><![CDATA[C:\Qt\6.5.2\msvc2019_64\bin\moc]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\gui\trs2.h;debug\moc_predefs.h;]]></Span><Span Background="LightGreen"><![CDATA[$(QTDIR)\bin\moc]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightCoral"><![CDATA['=='Debug|x64'">C:\Qt\6]]></Span><Span><![CDATA[.]]></Span><Span Background="LightCoral"><![CDATA[5.2\msvc2019_64\bin\moc.]]></Span><Span><![CDATA[exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/debug/moc_predefs.h" ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/mkspecs/win32-msvc]]></Span><Span><![CDATA[ -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2" ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtWidgets]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtGui]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightCoral"><![CDATA[-IC:/Qt/6.5.2/msvc2019_64/include/QtCore]]></Span><Span><![CDATA[ -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" src\gui\trs2.h -o debug\moc_trs2.cpp</Command>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightGreen"><![CDATA['=='Debug|x64'">$(QTDIR)\bin\moc]]></Span><Span><![CDATA[.]]></Span><Span><![CDATA[exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/debug/moc_predefs.h" ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/mkspecs/win32-msvc]]></Span><Span><![CDATA[ -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2" ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtWidgets]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtGui]]></Span><Span><![CDATA[ ]]></Span><Span Background="LightGreen"><![CDATA[-I$(QTDIR)/include/QtCore]]></Span><Span><![CDATA[ -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" src\gui\trs2.h -o debug\moc_trs2.cpp</Command>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -255,24 +329,24 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">GuiSource\trs2.ui;]]></Span><Span Background="LightCoral"><![CDATA[C:\Qt\6.5.2\msvc2019_64\bin\uic]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\gui\trs2.ui;]]></Span><Span Background="LightCoral"><![CDATA[C:\Qt\6.5.2\msvc2019_64\bin\uic]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">GuiSource\trs2.ui;]]></Span><Span Background="LightGreen"><![CDATA[$(QTDIR)\bin\uic]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\gui\trs2.ui;]]></Span><Span Background="LightGreen"><![CDATA[$(QTDIR)\bin\uic]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightCoral"><![CDATA['=='Release|x64'">C:\Qt\6.5.2\msvc2019_64\bin\uic]]></Span><Span><![CDATA[.exe GuiSource\trs2.ui -o ui_trs2.h</Command>]]></Span>
+              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightCoral"><![CDATA['=='Release|x64'">C:\Qt\6.5.2\msvc2019_64\bin\uic]]></Span><Span><![CDATA[.exe src\gui\trs2.ui -o ui_trs2.h</Command>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightGreen"><![CDATA['=='Release|x64'">$(QTDIR)\bin\uic]]></Span><Span><![CDATA[.exe GuiSource\trs2.ui -o ui_trs2.h</Command>]]></Span>
+              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightGreen"><![CDATA['=='Release|x64'">$(QTDIR)\bin\uic]]></Span><Span><![CDATA[.exe src\gui\trs2.ui -o ui_trs2.h</Command>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -282,24 +356,24 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">GuiSource\trs2.ui;]]></Span><Span Background="LightCoral"><![CDATA[C:\Qt\6.5.2\msvc2019_64\bin\uic]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\gui\trs2.ui;]]></Span><Span Background="LightCoral"><![CDATA[C:\Qt\6.5.2\msvc2019_64\bin\uic]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">GuiSource\trs2.ui;]]></Span><Span Background="LightGreen"><![CDATA[$(QTDIR)\bin\uic]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+              <Span><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\gui\trs2.ui;]]></Span><Span Background="LightGreen"><![CDATA[$(QTDIR)\bin\uic]]></Span><Span><![CDATA[.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightCoral"><![CDATA['=='Debug|x64'">C:\Qt\6.5.2\msvc2019_64\bin\uic]]></Span><Span><![CDATA[.exe GuiSource\trs2.ui -o ui_trs2.h</Command>]]></Span>
+              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightCoral"><![CDATA['=='Debug|x64'">C:\Qt\6.5.2\msvc2019_64\bin\uic]]></Span><Span><![CDATA[.exe src\gui\trs2.ui -o ui_trs2.h</Command>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightGreen"><![CDATA['=='Debug|x64'">$(QTDIR)\bin\uic]]></Span><Span><![CDATA[.exe GuiSource\trs2.ui -o ui_trs2.h</Command>]]></Span>
+              <Span><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)]]></Span><Span Background="LightGreen"><![CDATA['=='Debug|x64'">$(QTDIR)\bin\uic]]></Span><Span><![CDATA[.exe src\gui\trs2.ui -o ui_trs2.h</Command>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -317,7 +391,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -365,27 +439,7 @@
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <InputFile>%(FullPath)</InputFile>]]></Span>
-            </Paragraph>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
               <Span Background="LightGreen"><![CDATA[      <OutputFile>$(Configuration)\moc_%(Filename).cpp</OutputFile>]]></Span>
-            </Paragraph>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <IncludePath>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$(QTDIR)/mkspecs/win32-msvc;C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2;$(QTDIR)/include;$(QTDIR)/include/QtWidgets;$(QTDIR)/include/QtGui;$(QTDIR)/include/QtCore;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um</IncludePath>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -415,7 +469,7 @@
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <Include>C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2/$(Configuration)/moc_predefs.h</Include>]]></Span>
+              <Span Background="LightGreen"><![CDATA[      <Include>C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/$(Configuration)/moc_predefs.h</Include>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -435,7 +489,27 @@
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <InputFile>%(FullPath)</InputFile>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
               <Span Background="LightGreen"><![CDATA[      <DynamicSource>output</DynamicSource>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <IncludePath>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$(QTDIR)/mkspecs/win32-msvc;C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2;$(QTDIR)/include;$(QTDIR)/include/QtWidgets;$(QTDIR)/include/QtGui;$(QTDIR)/include/QtCore;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um</IncludePath>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -465,7 +539,7 @@
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <QTDIR>$(QTDIR)</QTDIR>]]></Span>
+              <Span Background="LightGreen"><![CDATA[      <OutputFile>$(ProjectDir)\ui_%(Filename).h</OutputFile>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -485,7 +559,7 @@
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <OutputFile>$(ProjectDir)\ui_%(Filename).h</OutputFile>]]></Span>
+              <Span Background="LightGreen"><![CDATA[      <QTDIR>$(QTDIR)</QTDIR>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -533,116 +607,6 @@
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[    <QtMoc>]]></Span>
-            </Paragraph>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <QTDIR>$(QTDIR)</QTDIR>]]></Span>
-            </Paragraph>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <InputFile>%(FullPath)</InputFile>]]></Span>
-            </Paragraph>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <OutputFile>$(Configuration)\moc_%(Filename).cpp</OutputFile>]]></Span>
-            </Paragraph>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <IncludePath>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$(QTDIR)/mkspecs/win32-msvc;C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2;$(QTDIR)/include;$(QTDIR)/include/QtWidgets;$(QTDIR)/include/QtGui;$(QTDIR)/include/QtCore;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um</IncludePath>]]></Span>
-            </Paragraph>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <Define>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>]]></Span>
-            </Paragraph>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <CompilerFlavor>msvc</CompilerFlavor>]]></Span>
-            </Paragraph>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <Include>C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2/$(Configuration)/moc_predefs.h</Include>]]></Span>
-            </Paragraph>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>]]></Span>
-            </Paragraph>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <DynamicSource>output</DynamicSource>]]></Span>
-            </Paragraph>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[    </QtMoc>]]></Span>
-            </Paragraph>
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
               <Span Background="LightGreen"><![CDATA[    <QtUic>]]></Span>
             </Paragraph>
           </TableCell>
@@ -698,24 +662,134 @@
           </TableCell>
         </TableRow>
         <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <QtMoc>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <QTDIR>$(QTDIR)</QTDIR>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <OutputFile>$(Configuration)\moc_%(Filename).cpp</OutputFile>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <Define>UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB</Define>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <CompilerFlavor>msvc</CompilerFlavor>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <Include>C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/$(Configuration)/moc_predefs.h</Include>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <InputFile>%(FullPath)</InputFile>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <DynamicSource>output</DynamicSource>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <IncludePath>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$(QTDIR)/mkspecs/win32-msvc;C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2;$(QTDIR)/include;$(QTDIR)/include/QtWidgets;$(QTDIR)/include/QtGui;$(QTDIR)/include/QtCore;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um</IncludePath>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    </QtMoc>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
           <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
         </TableRow>
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[    ]]></Span><Span Background="LightCoral"><![CDATA[<CustomBuild]]></Span><Span><![CDATA[ Include="GuiSource\trs2.]]></Span><Span Background="LightCoral"><![CDATA[h">]]></Span>
+              <Span><![CDATA[    ]]></Span><Span Background="LightCoral"><![CDATA[<CustomBuild]]></Span><Span><![CDATA[ Include="src\gui\AppLogger.]]></Span><Span Background="LightCoral"><![CDATA[h">]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[    ]]></Span><Span Background="LightGreen"><![CDATA[<QtMoc]]></Span><Span><![CDATA[ Include="GuiSource\trs2.]]></Span><Span Background="LightGreen"><![CDATA[h" />]]></Span>
+              <Span><![CDATA[    ]]></Span><Span Background="LightGreen"><![CDATA[<QtMoc]]></Span><Span><![CDATA[ Include="src\gui\AppLogger.]]></Span><Span Background="LightGreen"><![CDATA[h" />]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">GuiSource\trs2.h;release\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+              <Span Background="LightCoral"><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\gui\AppLogger.h;release\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -725,7 +799,7 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2/release/moc_predefs.h" -I$(QTDIR)/mkspecs/win32-msvc -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2" -I$(QTDIR)/include -I$(QTDIR)/include/QtWidgets -I$(QTDIR)/include/QtGui -I$(QTDIR)/include/QtCore -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" GuiSource\trs2.h -o release\moc_trs2.cpp</Command>]]></Span>
+              <Span Background="LightCoral"><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/release/moc_predefs.h" -I$(QTDIR)/mkspecs/win32-msvc -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2" -I$(QTDIR)/include -I$(QTDIR)/include/QtWidgets -I$(QTDIR)/include/QtGui -I$(QTDIR)/include/QtCore -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" src\gui\AppLogger.h -o release\moc_AppLogger.cpp</Command>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -735,7 +809,112 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC GuiSource/trs2.h</Message>]]></Span>
+              <Span Background="LightCoral"><![CDATA[      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC src/gui/AppLogger.h</Message>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_AppLogger.cpp;%(Outputs)</Outputs>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\gui\AppLogger.h;debug\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/debug/moc_predefs.h" -I$(QTDIR)/mkspecs/win32-msvc -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2" -I$(QTDIR)/include -I$(QTDIR)/include/QtWidgets -I$(QTDIR)/include/QtGui -I$(QTDIR)/include/QtCore -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" src\gui\AppLogger.h -o debug\moc_AppLogger.cpp</Command>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC src/gui/AppLogger.h</Message>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_AppLogger.cpp;%(Outputs)</Outputs>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[    </CustomBuild>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[    ]]></Span><Span Background="LightCoral"><![CDATA[<CustomBuild]]></Span><Span><![CDATA[ Include="src\gui\trs2.]]></Span><Span Background="LightCoral"><![CDATA[h">]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[    ]]></Span><Span Background="LightGreen"><![CDATA[<QtMoc]]></Span><Span><![CDATA[ Include="src\gui\trs2.]]></Span><Span Background="LightGreen"><![CDATA[h" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\gui\trs2.h;release\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DNDEBUG -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/release/moc_predefs.h" -I$(QTDIR)/mkspecs/win32-msvc -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2" -I$(QTDIR)/include -I$(QTDIR)/include/QtWidgets -I$(QTDIR)/include/QtGui -I$(QTDIR)/include/QtCore -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" src\gui\trs2.h -o release\moc_trs2.cpp</Command>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC src/gui/trs2.h</Message>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -755,7 +934,7 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">GuiSource\trs2.h;debug\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+              <Span Background="LightCoral"><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\gui\trs2.h;debug\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -765,7 +944,7 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2/debug/moc_predefs.h" -I$(QTDIR)/mkspecs/win32-msvc -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2" -I$(QTDIR)/include -I$(QTDIR)/include/QtWidgets -I$(QTDIR)/include/QtGui -I$(QTDIR)/include/QtCore -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" GuiSource\trs2.h -o debug\moc_trs2.cpp</Command>]]></Span>
+              <Span Background="LightCoral"><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -DWIN64 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include "C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/debug/moc_predefs.h" -I$(QTDIR)/mkspecs/win32-msvc -I"C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2" -I$(QTDIR)/include -I$(QTDIR)/include/QtWidgets -I$(QTDIR)/include/QtGui -I$(QTDIR)/include/QtCore -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include" -I"C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt" -I"C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" src\gui\trs2.h -o debug\moc_trs2.cpp</Command>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -775,7 +954,7 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC GuiSource/trs2.h</Message>]]></Span>
+              <Span Background="LightCoral"><![CDATA[      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC src/gui/trs2.h</Message>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -796,6 +975,69 @@
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
               <Span Background="LightCoral"><![CDATA[    </CustomBuild>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[    <ClCompile Include="debug\moc_AppLogger.cpp">]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[    </ClCompile>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[    <ClCompile Include="release\moc_AppLogger.cpp">]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[    </ClCompile>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -964,12 +1206,12 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[    ]]></Span><Span Background="LightCoral"><![CDATA[<CustomBuild]]></Span><Span><![CDATA[ Include="GuiSource\trs2.]]></Span><Span Background="LightCoral"><![CDATA[ui">]]></Span>
+              <Span><![CDATA[    ]]></Span><Span Background="LightCoral"><![CDATA[<CustomBuild]]></Span><Span><![CDATA[ Include="src\gui\trs2.]]></Span><Span Background="LightCoral"><![CDATA[ui">]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[    ]]></Span><Span Background="LightGreen"><![CDATA[<QtUic]]></Span><Span><![CDATA[ Include="GuiSource\trs2.]]></Span><Span Background="LightGreen"><![CDATA[ui" />]]></Span>
+              <Span><![CDATA[    ]]></Span><Span Background="LightGreen"><![CDATA[<QtUic]]></Span><Span><![CDATA[ Include="src\gui\trs2.]]></Span><Span Background="LightGreen"><![CDATA[ui" />]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -986,7 +1228,7 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">GuiSource\trs2.ui;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+              <Span Background="LightCoral"><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">src\gui\trs2.ui;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -996,7 +1238,7 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe GuiSource\trs2.ui -o ui_trs2.h</Command>]]></Span>
+              <Span Background="LightCoral"><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(QTDIR)\bin\uic.exe src\gui\trs2.ui -o ui_trs2.h</Command>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -1006,7 +1248,7 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UIC GuiSource/trs2.ui</Message>]]></Span>
+              <Span Background="LightCoral"><![CDATA[      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UIC src/gui/trs2.ui</Message>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -1026,7 +1268,7 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">GuiSource\trs2.ui;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
+              <Span Background="LightCoral"><![CDATA[      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">src\gui\trs2.ui;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -1036,7 +1278,7 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe GuiSource\trs2.ui -o ui_trs2.h</Command>]]></Span>
+              <Span Background="LightCoral"><![CDATA[      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\uic.exe src\gui\trs2.ui -o ui_trs2.h</Command>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -1046,7 +1288,7 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UIC GuiSource/trs2.ui</Message>]]></Span>
+              <Span Background="LightCoral"><![CDATA[      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UIC src/gui/trs2.ui</Message>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -1084,7 +1326,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj.filters]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj.filters]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1094,12 +1336,12 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[    ]]></Span><Span Background="LightCoral"><![CDATA[<CustomBuild]]></Span><Span><![CDATA[ Include="GuiSource\trs2.h">]]></Span>
+              <Span><![CDATA[    ]]></Span><Span Background="LightCoral"><![CDATA[<CustomBuild]]></Span><Span><![CDATA[ Include="src\gui\AppLogger.h">]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[    ]]></Span><Span Background="LightGreen"><![CDATA[<QtMoc]]></Span><Span><![CDATA[ Include="GuiSource\trs2.h">]]></Span>
+              <Span><![CDATA[    ]]></Span><Span Background="LightGreen"><![CDATA[<QtMoc]]></Span><Span><![CDATA[ Include="src\gui\AppLogger.h">]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1116,6 +1358,99 @@
             <Paragraph FontFamily="Consolas" Margin="4, 0">
               <Span><![CDATA[    ]]></Span><Span Background="LightGreen"><![CDATA[</QtMoc>]]></Span>
             </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[    ]]></Span><Span Background="LightCoral"><![CDATA[<CustomBuild]]></Span><Span><![CDATA[ Include="src\gui\trs2.h">]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[    ]]></Span><Span Background="LightGreen"><![CDATA[<QtMoc]]></Span><Span><![CDATA[ Include="src\gui\trs2.h">]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[    ]]></Span><Span Background="LightCoral"><![CDATA[</CustomBuild>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[    ]]></Span><Span Background="LightGreen"><![CDATA[</QtMoc>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[    <ClCompile Include="debug\moc_AppLogger.cpp">]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <Filter>Generated Files</Filter>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[    </ClCompile>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[    <ClCompile Include="release\moc_AppLogger.cpp">]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <Filter>Generated Files</Filter>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[    </ClCompile>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
           </TableCell>
         </TableRow>
         <TableRow>
@@ -1217,12 +1552,12 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[    ]]></Span><Span Background="LightCoral"><![CDATA[<CustomBuild]]></Span><Span><![CDATA[ Include="GuiSource\trs2.ui">]]></Span>
+              <Span><![CDATA[    ]]></Span><Span Background="LightCoral"><![CDATA[<CustomBuild]]></Span><Span><![CDATA[ Include="src\gui\trs2.ui">]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span><![CDATA[    ]]></Span><Span Background="LightGreen"><![CDATA[<QtUic]]></Span><Span><![CDATA[ Include="GuiSource\trs2.ui">]]></Span>
+              <Span><![CDATA[    ]]></Span><Span Background="LightGreen"><![CDATA[<QtUic]]></Span><Span><![CDATA[ Include="src\gui\trs2.ui">]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1255,7 +1590,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1299,7 +1634,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1332,7 +1667,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1363,7 +1698,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1394,7 +1729,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1435,7 +1770,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1486,7 +1821,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1530,7 +1865,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1561,7 +1896,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1646,7 +1981,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1694,7 +2029,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1742,7 +2077,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1790,7 +2125,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1838,7 +2173,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1886,7 +2221,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1930,7 +2265,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1989,7 +2324,7 @@
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <QtMocDir>$(Configuration)</QtMocDir>]]></Span>
+              <Span Background="LightGreen"><![CDATA[      <QtUicDir>$(ProjectDir)</QtUicDir>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -1999,7 +2334,7 @@
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>]]></Span>
+              <Span Background="LightGreen"><![CDATA[      <QtUicFileName>ui_%(Filename).h</QtUicFileName>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -2012,7 +2347,7 @@
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <QtUicDir>$(ProjectDir)</QtUicDir>]]></Span>
+              <Span Background="LightGreen"><![CDATA[      <QtMocDir>$(Configuration)</QtMocDir>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -2022,7 +2357,7 @@
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightGreen"><![CDATA[      <QtUicFileName>ui_%(Filename).h</QtUicFileName>]]></Span>
+              <Span Background="LightGreen"><![CDATA[      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -2040,7 +2375,7 @@
         <TableRow Background="Orange">
           <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
             <Paragraph Margin="10,5" FontWeight="Bold">
-              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2\TRS2.vcxproj]]></Span>
+              <Span><![CDATA[C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\TRS2.vcxproj]]></Span>
             </Paragraph>
           </TableCell>
         </TableRow>
@@ -2060,27 +2395,7 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <InputFile>%(FullPath)</InputFile>]]></Span>
-            </Paragraph>
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
               <Span Background="LightCoral"><![CDATA[      <OutputFile>$(Configuration)\moc_%(Filename).cpp</OutputFile>]]></Span>
-            </Paragraph>
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <IncludePath>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$(QTDIR)/mkspecs/win32-msvc;C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2;$(QTDIR)/include;$(QTDIR)/include/QtWidgets;$(QTDIR)/include/QtGui;$(QTDIR)/include/QtCore;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um</IncludePath>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -2103,6 +2418,65 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <InputFile>%(FullPath)</InputFile>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <IncludePath>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$(QTDIR)/mkspecs/win32-msvc;C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2;$(QTDIR)/include;$(QTDIR)/include/QtWidgets;$(QTDIR)/include/QtGui;$(QTDIR)/include/QtCore;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um</IncludePath>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <OutputFile>$(ProjectDir)\ui_%(Filename).h</OutputFile>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <InputFile>%(FullPath)</InputFile>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightCoral"><![CDATA[      <QTDIR>$(QTDIR)</QTDIR>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
               <Span Background="LightCoral"><![CDATA[      <QTDIR>$(QTDIR)</QTDIR>]]></Span>
             </Paragraph>
           </TableCell>
@@ -2146,27 +2520,7 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <InputFile>%(FullPath)</InputFile>]]></Span>
-            </Paragraph>
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
               <Span Background="LightCoral"><![CDATA[      <OutputFile>$(Configuration)\moc_%(Filename).cpp</OutputFile>]]></Span>
-            </Paragraph>
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <IncludePath>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$(QTDIR)/mkspecs/win32-msvc;C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2;$(QTDIR)/include;$(QTDIR)/include/QtWidgets;$(QTDIR)/include/QtGui;$(QTDIR)/include/QtCore;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um</IncludePath>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -2189,16 +2543,6 @@
         <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <QTDIR>$(QTDIR)</QTDIR>]]></Span>
-            </Paragraph>
-          </TableCell>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0" />
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
-            <Paragraph FontFamily="Consolas" Margin="4, 0">
               <Span Background="LightCoral"><![CDATA[      <InputFile>%(FullPath)</InputFile>]]></Span>
             </Paragraph>
           </TableCell>
@@ -2207,9 +2551,12 @@
           </TableCell>
         </TableRow>
         <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
             <Paragraph FontFamily="Consolas" Margin="4, 0">
-              <Span Background="LightCoral"><![CDATA[      <OutputFile>$(ProjectDir)\ui_%(Filename).h</OutputFile>]]></Span>
+              <Span Background="LightCoral"><![CDATA[      <IncludePath>GeneratedFiles\$(ConfigurationName);GeneratedFiles;$(QTDIR)/mkspecs/win32-msvc;C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2;$(QTDIR)/include;$(QTDIR)/include/QtWidgets;$(QTDIR)/include/QtGui;$(QTDIR)/include/QtCore;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.36.32532\ATLMFC\include;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\VS\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.22000.0\ucrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\um;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\shared;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\winrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22000.0\\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um</IncludePath>]]></Span>
             </Paragraph>
           </TableCell>
           <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
@@ -2223,4 +2570,4 @@
     <Paragraph />
   </Section>
 </FlowDocument>
-<!--j5iDdy39twX9Ts01zTVYVNxn8dIQBQhew8R+bCOkZ2U=-->
+<!--8ycR7Z5X+MWwaArG4sEHQm47Rh+ma23qvpN4hHMuh8k=-->

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 11.0.0, 2025-08-22T17:30:48. -->
+<!-- Written by QtCreator 11.0.0, 2025-08-26T17:10:34. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -96,8 +96,8 @@
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
     <value type="int" key="EnableQmlDebugging">0</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Debug</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -135,8 +135,8 @@
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Release</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -176,8 +176,8 @@
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
     <value type="int" key="EnableQmlDebugging">0</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\TRS2\build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Profile</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\OD\OneDrive - Politecnico di Milano\Beta\Programs\build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Profile</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -238,13 +238,12 @@
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">TRS22</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Debug</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/build-TRS2-Desktop_x86_windows_msvc2022_pe_64bit-Debug</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>

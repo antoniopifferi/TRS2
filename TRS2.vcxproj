@@ -11,11 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{DC39BBB4-D029-3BE8-B4FD-7988C1737AA1}</ProjectGuid>
+    <ProjectGuid>{5E70E5D8-04C5-3291-AC91-C28DEF47B2D4}</ProjectGuid>
     <RootNamespace>TRS2</RootNamespace>
     <Keyword>QtVS_v304</Keyword>
-    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
-    <WindowsTargetPlatformMinVersion>10.0.22000.0</WindowsTargetPlatformMinVersion>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.26100.0</WindowsTargetPlatformMinVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -39,13 +39,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <Import Project="$(QtMsBuild)\qt_defaults.props" Condition="Exists('$(QtMsBuild)\qt_defaults.props')" />
-  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <QtInstall>6.5.2_msvc2019_64</QtInstall>
-    <QtModules>core;gui;widgets;charts</QtModules>
-  </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <QtInstall>6.5.2_msvc2019_64</QtInstall>
-    <QtModules>core;gui;widgets;charts</QtModules>
+    <QtModules>core;gui;widgets</QtModules>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtInstall>6.5.2_msvc2019_64</QtInstall>
+    <QtModules>core;gui;widgets</QtModules>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') OR !Exists('$(QtMsBuild)\Qt.props')">
     <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
@@ -80,22 +80,21 @@
       <DebugInformationFormat>None</DebugInformationFormat>
       <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
-      <LanguageStandard>stdcpp23</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <ObjectFileName>release\</ObjectFileName>
       <Optimization>MaxSpeed</Optimization>
       <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;NDEBUG;QT_NO_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessToFile>false</PreprocessToFile>
-      <ProgramDataBaseFileName>
-      </ProgramDataBaseFileName>
+      <ProgramDataBaseFileName></ProgramDataBaseFileName>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <EnableModules>true</EnableModules>
     </ClCompile>
     <Link>
+      <AdditionalDependencies>$(QTDIR)\lib\Qt6EntryPoint.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
@@ -108,7 +107,6 @@
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <SubSystem>Windows</SubSystem>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalDependencies />
     </Link>
     <Midl>
       <DefaultCharType>Unsigned</DefaultCharType>
@@ -120,7 +118,7 @@
     </ResourceCompile>
     <QtMoc>
       <CompilerFlavor>msvc</CompilerFlavor>
-      <Include>C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2/$(Configuration)/moc_predefs.h</Include>
+      <Include>C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/$(Configuration)/moc_predefs.h</Include>
       <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
       <DynamicSource>output</DynamicSource>
       <QtMocDir>$(Configuration)</QtMocDir>
@@ -134,15 +132,14 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);C:\Qt\6.5.2\msvc2019_64\include
-C:\Qt\6.5.2\msvc2019_64\include\QtCharts;.;debug;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;.;debug;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>debug\</AssemblerListingLocation>
-      <BrowseInformation>true</BrowseInformation>
+      <BrowseInformation>false</BrowseInformation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
-      <LanguageStandard>stdcpp23</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <ObjectFileName>debug\</ObjectFileName>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -153,10 +150,10 @@ C:\Qt\6.5.2\msvc2019_64\include\QtCharts;.;debug;/include;%(AdditionalIncludeDir
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <EnableModules>true</EnableModules>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Qt\6.5.2\msvc2019_64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(QTDIR)\lib\Qt6EntryPointd.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -165,7 +162,6 @@ C:\Qt\6.5.2\msvc2019_64\include\QtCharts;.;debug;/include;%(AdditionalIncludeDir
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <SubSystem>Windows</SubSystem>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <AdditionalDependencies>Qt6Chartsd.lib;Qt6Widgetsd.lib;Qt6Guid.lib;Qt6Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <Midl>
       <DefaultCharType>Unsigned</DefaultCharType>
@@ -175,41 +171,41 @@ C:\Qt\6.5.2\msvc2019_64\include\QtCharts;.;debug;/include;%(AdditionalIncludeDir
     <ResourceCompile>
       <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;_ENABLE_EXTENDED_ALIGNED_STORAGE;WIN64;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
-    <QtMoc>
-      <CompilerFlavor>msvc</CompilerFlavor>
-      <Include>C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/TRS2/$(Configuration)/moc_predefs.h</Include>
-      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
-      <DynamicSource>output</DynamicSource>
-      <QtMocDir>$(Configuration)</QtMocDir>
-      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
-    </QtMoc>
     <QtUic>
       <ExecutionDescription>Uic'ing %(Identity)...</ExecutionDescription>
       <QtUicDir>$(ProjectDir)</QtUicDir>
       <QtUicFileName>ui_%(Filename).h</QtUicFileName>
     </QtUic>
-    <Bscmake>
-      <PreserveSbr>true</PreserveSbr>
-    </Bscmake>
+    <QtMoc>
+      <CompilerFlavor>msvc</CompilerFlavor>
+      <Include>C:/OD/OneDrive - Politecnico di Milano/Beta/Programs/TRS2/$(Configuration)/moc_predefs.h</Include>
+      <ExecutionDescription>Moc'ing %(Identity)...</ExecutionDescription>
+      <DynamicSource>output</DynamicSource>
+      <QtMocDir>$(Configuration)</QtMocDir>
+      <QtMocFileName>moc_%(Filename).cpp</QtMocFileName>
+    </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\gen\Const.ixx" />
     <ClCompile Include="src\gen\Globals.cpp" />
-    <ClCompile Include="src\gen\Globals.ixx" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="src\gui\main.cpp" />
-    <ClCompile Include="src\gui\trs2.cpp" />
     <ClCompile Include="src\run\runKernel.cpp" />
-    <ClCompile Include="src\spc\Spc.ixx" />
-    <ClCompile Include="src\spc\SpcFactory.ixx" />
-    <ClCompile Include="src\spc\TestSpc.ixx" />
-    <ClCompile Include="src\step\ArdStep.ixx" />
-    <ClCompile Include="src\step\MicroStep.ixx" />
-    <ClCompile Include="src\step\Step.ixx" />
-    <ClCompile Include="src\step\StepFactory.ixx" />
-    <ClCompile Include="src\step\TestStep.ixx" />
+    <ClCompile Include="src\gui\trs2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\gui\AppLogger.h" />
+    <ClInclude Include="src\step\ArdStep.ixx" />
+    <ClInclude Include="src\gui\Binder.h" />
+    <ClInclude Include="src\gen\Globals.ixx" />
+    <ClInclude Include="src\spc\Spc.ixx" />
+    <ClInclude Include="src\spc\SpcFactory.ixx" />
+    <ClInclude Include="src\step\Step.ixx" />
+    <ClInclude Include="src\step\StepFactory.ixx" />
+    <ClInclude Include="src\spc\TestSpc.ixx" />
+    <ClInclude Include="src\step\TestStep.ixx" />
+    <ClInclude Include="src\run\runKernel.h" />
+    <QtMoc Include="src\gui\trs2.h" />
+    <ClInclude Include="src\gui\ui_trs2.h" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="debug\moc_predefs.h.cbt">
@@ -228,12 +224,12 @@ C:\Qt\6.5.2\msvc2019_64\include\QtCharts;.;debug;/include;%(AdditionalIncludeDir
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\gui\Binder.h" />
-    <ClInclude Include="src\run\runKernel.h" />
-    <QtMoc Include="src\gui\trs2.h" />
+    <QtUic Include="src\gui\trs2.ui" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="src\gui\trs2.ui" />
+    <None Include="src\gen\Const.ixx" />
+    <None Include="src\gen\Data.ixx" />
+    <None Include="src\step\MicroStep.ixx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />
