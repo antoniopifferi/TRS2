@@ -25,9 +25,9 @@ public:
         this->actual = goal;
 
         // Delay 1s without freezing the GUI:
-        QEventLoop loop;
-        QTimer::singleShot(1000, &loop, &QEventLoop::quit);
-        loop.exec(); // processes events while waiting
+        //QEventLoop loop;
+        //QTimer::singleShot(1000, &loop, &QEventLoop::quit);
+        //loop.exec(); // processes events while waiting
 
         outText(std::format("Stepper {} ({}) moved to position = {}", this->iS, P.Step[this->iS].Type, this->actual));
     }

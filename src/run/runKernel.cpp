@@ -23,8 +23,9 @@ void runKernel() {
 	P.Chann.Num = 1024;
 	P.Spc.Type = "TEST";
     P.Spc.Factor = 1.0; // ps/bin
-	P.Spc.TimeO = 1.0; // s
+	P.Spc.TimeO = 0.1; // s
 	P.Spc.TimeM = 1.0; // s
+    P.Contest.Function = CONTEST_OSC;
 
     // define variables
     std::unique_ptr<Step> steps[MAX_STEP];
@@ -62,7 +63,10 @@ void runKernel() {
                         for (auto& s : steps) {  
                             if (s) s->moveStep(&s->actual, s->calcGoal(), P.Step[s->iS].Mode != "MULTI", status);  
                         }
-                        if (spc[0]) spc[0]->get();
+                        if (spc[0]) {
+                            spc[0]->wait();
+                            spc[0]->get();
+                        }
 
                         outText(std::format("Loop = {}", P.Loop[4].Actual));
 

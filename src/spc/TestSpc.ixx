@@ -38,7 +38,7 @@ protected:
     void waitDev() override {
         // C path: Delay((P.Contest.Function==CONTEST_OSC ? P.Spc.TimeO : P.Spc.TimeM));
         const double secs = (P.Contest.Function == CONTEST_OSC ? P.Spc.TimeO : P.Spc.TimeM);
-        const int ms = static_cast<int>(std::max(0.0, secs) * 100.0);
+        const int ms = static_cast<int>(std::max(0.0, secs) * 1000.0);
 
         QEventLoop loop;
         QTimer::singleShot(ms, &loop, &QEventLoop::quit);
