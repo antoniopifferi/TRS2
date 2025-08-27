@@ -28,7 +28,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "qcustomplot.h"
+#include "src/ext/qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -1643,7 +1643,7 @@ public:
         TRS2->setCentralWidget(centralwidget);
         menubar = new QMenuBar(TRS2);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1321, 22));
+        menubar->setGeometry(QRect(0, 0, 1321, 26));
         menuRun = new QMenu(menubar);
         menuRun->setObjectName("menuRun");
         menuWindow = new QMenu(menubar);

@@ -63,9 +63,17 @@ void runKernel() {
                             if (s) s->moveStep(&s->actual, s->calcGoal(), P.Step[s->iS].Mode != "MULTI", status);  
                         }
                         if (spc[0]) spc[0]->get();
-						for (int ib = 0; ib < P.Chann.Num; ib++)
-							//outText("Data[" + std::to_string(ib) + "] = " + std::to_string(Data[ib]) + "\n");
-						    outText(std::format("Data[{}] = {}\n", ib, Data[ib]));
+
+                        outText(std::format("Loop = {}", P.Loop[4].Actual));
+
+                        std::vector<double> t(static_cast<size_t>(P.Chann.Num));
+                        for (int i = 0; i < P.Chann.Num; ++i)
+                            t[static_cast<size_t>(i)] = (static_cast<double>(i) + 0.5) * P.Spc.Factor;
+
+                        // Plot all points at once
+                        if (GUI) GUI->displayPlot(t, Data);
+
+
                     }
                 }
             }

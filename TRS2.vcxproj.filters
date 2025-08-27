@@ -67,6 +67,9 @@
     <ClCompile Include="src\spc\Spc.ixx" />
     <ClCompile Include="src\spc\SpcFactory.ixx" />
     <ClCompile Include="src\spc\TestSpc.ixx" />
+    <ClCompile Include="src\ext\qcustomplot.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="src\gui\AppLogger.h">
@@ -75,12 +78,18 @@
     <QtMoc Include="src\gui\trs2.h">
       <Filter>Generated Files</Filter>
     </QtMoc>
+    <QtMoc Include="src\ext\qcustomplot.h">
+      <Filter>Generated Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\gui\Binder.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="src\run\runKernel.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\ui_trs2.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

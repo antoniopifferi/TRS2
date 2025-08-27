@@ -4,6 +4,7 @@
 //#include "GenSource/Parm.h"
 //#include "GuiSource/Table.h"
 #include "AppLogger.h"
+#include "src/ext/qcustomplot.h"
 
 import Globals;
 import Const;
@@ -19,6 +20,8 @@ import Const;
 #include <QMessageBox>
 
 #include <typeinfo>
+#include <algorithm>
+#include <limits>
 
 // Always "<Prefix>_<1-based>"
 template <class T>
@@ -147,4 +150,73 @@ void TRS2::displayPanel(const QString &namePanel)
 void TRS2::appendOutput(const QString& msg)
 {
     ui->outputText->appendPlainText(msg);
+}
+
+// trs2.cpp
+void TRS2::displayPlot(const std::vector<double>& X,
+    const std::vector<long>& Y)
+{
+    if (!ui || !ui->displayPlot) return;
+
+    // Create the first graph if missing and configure once.
+    QCPGraph* g = nullptr;
+    if (ui->displayPlot->graphCount() == 0) {
+        g = ui->displayPlot->addGraph();
+        g->setLineStyle(QCPGraph::lsNone); // markers only, no line
+        g->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 4));
+
+        // Axes and labels
+        ui->displayPlot->xAxis->setLabel("time (ps)");
+        ui->displayPlot->xAxis->setScaleType(QCPAxis::stLinear);
+
+        ui->displayPlot->yAxis->setLabel("counts");
+        ui->displayPlot->yAxis->setScaleType(QCPAxis::stLogarithmic);
+        QSharedPointer<QCPAxisTickerLog> logTicker(new QCPAxisTickerLog);
+        ui->displayPlot->yAxis->setTicker(logTicker);
+        ui->displayPlot->yAxis->setNumberFormat("eb");   // e.g. 1e3
+        ui->displayPlot->yAxis->setNumberPrecision(0);
+    }
+    else {
+        g = ui->displayPlot->graph(0);
+    }
+
+    // Convert to QVector and sanitize Y for log scale (skip non-positive).
+    const int n = static_cast<int>(std::min(X.size(), Y.size()));
+    QVector<double> qx; qx.reserve(n);
+    QVector<double> qy; qy.reserve(n);
+
+    for (int i = 0; i < n; ++i) {
+        const double xi = X[i];
+        const double yi = static_cast<double>(Y[i]);
+        qx.push_back(xi);
+        qy.push_back(yi > 0 ? yi : std::numeric_limits<double>::quiet_NaN());
+        // NaN points are ignored by QCustomPlot ? safe for log axis
+    }
+
+    // One-shot refresh of all points
+    g->setData(qx, qy, /*alreadySorted=*/true);
+
+    // Ranges
+    if (n > 0) {
+        auto [xminIt, xmaxIt] = std::minmax_element(qx.begin(), qx.end());
+        double xmin = std::isfinite(*xminIt) ? *xminIt : 0.0;
+        double xmax = std::isfinite(*xmaxIt) ? *xmaxIt : 1.0;
+        if (xmin == xmax) xmax = xmin + 1.0;
+        ui->displayPlot->xAxis->setRange(xmin, xmax);
+
+        double ymin = std::numeric_limits<double>::infinity();
+        double ymax = 0.0;
+        for (double v : qy) if (std::isfinite(v) && v > 0) {
+            ymin = std::min(ymin, v);
+            ymax = std::max(ymax, v);
+        }
+        if (std::isfinite(ymin) && ymax > 0) {
+            ui->displayPlot->yAxis->setRange(ymin, ymax);
+        }
+        else {
+            ui->displayPlot->yAxis->setRange(1.0, 10.0); // fallback
+        }
+    }
+
+    ui->displayPlot->replot(QCustomPlot::rpQueuedReplot);
 }

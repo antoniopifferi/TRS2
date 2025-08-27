@@ -28,6 +28,7 @@ public:
     void saveIni(const QString& path);
     void loadIni(const QString& path);
     void appendOutput(const QString& msg);
+    void displayPlot(const std::vector<double>& X, const std::vector<long>& Y);
 
 private slots:
 
