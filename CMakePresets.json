@@ -1,83 +1,28 @@
 {
-  "version": 6,
-  "cmakeMinimumRequired": {
-    "major": 3,
-    "minor": 29,
-    "patch": 0
-  },
+  "version": 5,
+  "cmakeMinimumRequired": { "major": 3, "minor": 28 },
   "configurePresets": [
     {
-      "name": "vs2022-x64",
-      "displayName": "Visual Studio 2022 (x64)",
+      "name": "x64-debug",
+      "displayName": "x64 Debug (MSVC + Qt)",
       "generator": "Visual Studio 17 2022",
-      "binaryDir": "build/vs2022",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/build/x64-Debug",
       "cacheVariables": {
-        "CMAKE_CONFIGURATION_TYPES": "Debug;Release",
-        "CMAKE_POLICY_DEFAULT_CMP0141": "NEW"
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_STANDARD": "23",
+        "CMAKE_CXX_SCAN_FOR_MODULES": "ON",
+        "CMAKE_PREFIX_PATH": "C:/Qt/6.9.2/msvc2022_64"
       }
     },
     {
-      "name": "ninja-msvc",
-      "displayName": "Ninja (MSVC, multi-config)",
-      "generator": "Ninja Multi-Config",
-      "binaryDir": "build/ninja-msvc",
+      "name": "x64-release",
+      "displayName": "x64 Release (MSVC + Qt)",
+      "inherits": "x64-debug",
+      "binaryDir": "${sourceDir}/build/x64-Release",
       "cacheVariables": {
-        "CMAKE_C_COMPILER": "cl",
-        "CMAKE_CXX_COMPILER": "cl",
-        "CMAKE_CONFIGURATION_TYPES": "Debug;Release",
-        "CMAKE_POLICY_DEFAULT_CMP0141": "NEW"
+        "CMAKE_BUILD_TYPE": "Release"
       }
-    },
-    {
-      "name": "unix-makefiles",
-      "displayName": "Unix Makefiles (single-config)",
-      "generator": "Unix Makefiles",
-      "binaryDir": "build/make",
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
-      }
-    }
-  ],
-  "buildPresets": [
-    {
-      "name": "build-vs-Debug",
-      "configurePreset": "vs2022-x64",
-      "configuration": "Debug"
-    },
-    {
-      "name": "build-vs-Release",
-      "configurePreset": "vs2022-x64",
-      "configuration": "Release"
-    },
-    {
-      "name": "build-ninja-Debug",
-      "configurePreset": "ninja-msvc",
-      "configuration": "Debug"
-    },
-    {
-      "name": "build-ninja-Release",
-      "configurePreset": "ninja-msvc",
-      "configuration": "Release"
-    },
-    {
-      "name": "build-make",
-      "configurePreset": "unix-makefiles"
-    }
-  ],
-  "testPresets": [
-    {
-      "name": "ctest-vs-Debug",
-      "configurePreset": "vs2022-x64",
-      "configuration": "Debug"
-    }
-  ],
-  "workflowPresets": [
-    {
-      "name": "vs-Debug",
-      "steps": [
-        { "type": "configure", "name": "vs2022-x64" },
-        { "type": "build", "name": "build-vs-Debug" }
-      ]
     }
   ]
 }

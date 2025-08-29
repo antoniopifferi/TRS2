@@ -4,7 +4,7 @@
 //#include "GenSource/Parm.h"
 //#include "GuiSource/Table.h"
 #include "AppLogger.h"
-#include "src/ext/qcustomplot.h"
+#include "lib/qcustomplot.h"
 
 import Globals;
 import Const;

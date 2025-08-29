@@ -8,6 +8,7 @@
 #include <typeindex>
 
 #include "src/gui/Binder.h"
+#include "lib/qcustomplot.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class TRS2; }

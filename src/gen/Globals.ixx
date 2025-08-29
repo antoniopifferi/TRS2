@@ -9,13 +9,14 @@ module;
 #include <stddef.h>                // size_t etc., just in case
 //#include <GenSource/Step.h>
 
-#include "src/gui/trs2.h"
+//#include "src/gui/trs2.h"
 
 // If you truly need Qt here, include it in the global fragment.
 // (Not used in the declarations below, so omitted.)
 // #include <QMainWindow>
 #include <QString>
 // #include <QMap>
+class TRS2;
 
 //------------------------------
 // Module interface

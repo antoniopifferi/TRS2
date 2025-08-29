@@ -35,7 +35,7 @@
           <number>6</number>
          </property>
          <property name="sizeConstraint">
-          <enum>QLayout::SetFixedSize</enum>
+          <enum>QLayout::SetDefaultConstraint</enum>
          </property>
          <property name="leftMargin">
           <number>6</number>
@@ -139,28 +139,28 @@
            <item>
             <widget class="QSpinBox" name="LoopHome_1">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopFirst_1">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopLast_1">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopDelta_1">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
              <property name="value">
               <number>1</number>
@@ -173,7 +173,7 @@
               <bool>true</bool>
              </property>
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
              <property name="value">
               <number>1</number>
@@ -183,7 +183,7 @@
            <item>
             <widget class="QLineEdit" name="LoopFileBreak_1"/>
            </item>
-           <item alignment="Qt::AlignHCenter">
+           <item>
             <widget class="QCheckBox" name="LoopBreak_1">
              <property name="text">
               <string>ON / OFF</string>
@@ -199,7 +199,7 @@
              </property>
             </widget>
            </item>
-           <item alignment="Qt::AlignHCenter">
+           <item>
             <widget class="QCheckBox" name="LoopInvert_1">
              <property name="text">
               <string>ON / OFF</string>
@@ -251,28 +251,28 @@
            <item>
             <widget class="QSpinBox" name="LoopHome_2">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopFirst_2">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopLast_2">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopDelta_2">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
              <property name="value">
               <number>1</number>
@@ -285,7 +285,7 @@
               <bool>true</bool>
              </property>
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
              <property name="value">
               <number>1</number>
@@ -295,7 +295,7 @@
            <item>
             <widget class="QLineEdit" name="LoopFileBreak_2"/>
            </item>
-           <item alignment="Qt::AlignHCenter">
+           <item>
             <widget class="QCheckBox" name="LoopBreak_2">
              <property name="text">
               <string>ON / OFF</string>
@@ -311,7 +311,7 @@
              </property>
             </widget>
            </item>
-           <item alignment="Qt::AlignHCenter">
+           <item>
             <widget class="QCheckBox" name="LoopInvert_2">
              <property name="text">
               <string>ON / OFF</string>
@@ -363,28 +363,28 @@
            <item>
             <widget class="QSpinBox" name="LoopHome_3">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopFirst_3">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopLast_3">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopDelta_3">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
              <property name="value">
               <number>1</number>
@@ -397,7 +397,7 @@
               <bool>true</bool>
              </property>
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
              <property name="value">
               <number>1</number>
@@ -407,7 +407,7 @@
            <item>
             <widget class="QLineEdit" name="LoopFileBreak_3"/>
            </item>
-           <item alignment="Qt::AlignHCenter">
+           <item>
             <widget class="QCheckBox" name="LoopBreak_3">
              <property name="text">
               <string>ON / OFF</string>
@@ -423,7 +423,7 @@
              </property>
             </widget>
            </item>
-           <item alignment="Qt::AlignHCenter">
+           <item>
             <widget class="QCheckBox" name="LoopInvert_3">
              <property name="text">
               <string>ON / OFF</string>
@@ -475,28 +475,28 @@
            <item>
             <widget class="QSpinBox" name="LoopHome_4">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopFirst_4">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopLast_4">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopDelta_4">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
              <property name="value">
               <number>1</number>
@@ -509,7 +509,7 @@
               <bool>true</bool>
              </property>
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
              <property name="value">
               <number>1</number>
@@ -519,7 +519,7 @@
            <item>
             <widget class="QLineEdit" name="LoopFileBreak_4"/>
            </item>
-           <item alignment="Qt::AlignHCenter">
+           <item>
             <widget class="QCheckBox" name="LoopBreak_4">
              <property name="text">
               <string>ON / OFF</string>
@@ -535,7 +535,7 @@
              </property>
             </widget>
            </item>
-           <item alignment="Qt::AlignHCenter">
+           <item>
             <widget class="QCheckBox" name="LoopInvert_4">
              <property name="text">
               <string>ON / OFF</string>
@@ -587,28 +587,28 @@
            <item>
             <widget class="QSpinBox" name="LoopHome_5">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopFirst_5">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopLast_5">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QSpinBox" name="LoopDelta_5">
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
              <property name="value">
               <number>1</number>
@@ -621,7 +621,7 @@
               <bool>true</bool>
              </property>
              <property name="buttonSymbols">
-              <enum>QAbstractSpinBox::NoButtons</enum>
+              <enum>QAbstractSpinBox::UpDownArrows</enum>
              </property>
              <property name="value">
               <number>1</number>
@@ -631,7 +631,7 @@
            <item>
             <widget class="QLineEdit" name="LoopFileBreak_5"/>
            </item>
-           <item alignment="Qt::AlignHCenter">
+           <item>
             <widget class="QCheckBox" name="LoopBreak_5">
              <property name="text">
               <string>ON / OFF</string>
@@ -647,7 +647,7 @@
              </property>
             </widget>
            </item>
-           <item alignment="Qt::AlignHCenter">
+           <item>
             <widget class="QCheckBox" name="LoopInvert_5">
              <property name="text">
               <string>ON / OFF</string>
@@ -696,7 +696,7 @@
          <rect>
           <x>20</x>
           <y>10</y>
-          <width>975</width>
+          <width>1004</width>
           <height>575</height>
          </rect>
         </property>
@@ -705,7 +705,7 @@
           <number>6</number>
          </property>
          <property name="sizeConstraint">
-          <enum>QLayout::SetFixedSize</enum>
+          <enum>QLayout::SetDefaultConstraint</enum>
          </property>
          <property name="leftMargin">
           <number>6</number>
@@ -2217,7 +2217,7 @@
      <x>0</x>
      <y>0</y>
      <width>1321</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuRun">
@@ -2264,7 +2264,7 @@
   <customwidget>
    <class>QCustomPlot</class>
    <extends>QWidget</extends>
-   <header>qcustomplot.h</header>
+   <header>lib\qcustomplot.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

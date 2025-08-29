@@ -2,6 +2,7 @@
 
 // ==========================
 // Binder.h (Qt6, header-only)
+// Two-way data binding by objectName
 // ==========================
 
 #include <QObject>
@@ -19,7 +20,6 @@
 #include <QHash>
 #include <QHashFunctions>
 #include <QString>
-#include <QStringView>
 
 #include <unordered_map>
 #include <vector>
@@ -55,18 +55,17 @@ namespace qtbind {
 
             std::unique_ptr<IBinding> b;
 
-            // Try supported widgets. Only the matching (widget,type) pair returns non-null
-            if (!b) { if (auto* sb = qobject_cast<QSpinBox*>(w))         b = makeBinding(sb, var); }
-            if (!b) { if (auto* ds = qobject_cast<QDoubleSpinBox*>(w))   b = makeBinding(ds, var); }
-            if (!b) { if (auto* le = qobject_cast<QLineEdit*>(w))        b = makeBinding(le, var); }
-            if (!b) { if (auto* ck = qobject_cast<QCheckBox*>(w))        b = makeBinding(ck, var); }
-            if (!b) { if (auto* cb = qobject_cast<QComboBox*>(w))        b = makeBinding(cb, var); }
+            if (!b) { if (auto* sb = qobject_cast<QSpinBox*>(w))       b = makeBinding(sb, var); }
+            if (!b) { if (auto* ds = qobject_cast<QDoubleSpinBox*>(w)) b = makeBinding(ds, var); }
+            if (!b) { if (auto* le = qobject_cast<QLineEdit*>(w))      b = makeBinding(le, var); }
+            if (!b) { if (auto* ck = qobject_cast<QCheckBox*>(w))      b = makeBinding(ck, var); }
+            if (!b) { if (auto* cb = qobject_cast<QComboBox*>(w))      b = makeBinding(cb, var); }
 
             if (!b) return false;
 
             const QString key = objectName;
-            m_bindings[key].push_back(std::move(b));          // std::vector<unique_ptr<...>>
-            m_widgetByName.insert(key, QPointer<QWidget>(w)); // safe, copyable
+            m_bindings[key].push_back(std::move(b));
+            m_widgetByName.insert(key, QPointer<QWidget>(w));
             return true;
         }
 
@@ -76,6 +75,7 @@ namespace qtbind {
         bool readAll() {
             bool ok = true;
             for (auto& [name, vec] : m_bindings) {
+                (void)name;
                 for (auto& b : vec) ok &= b->pull();
             }
             return ok;
@@ -85,7 +85,7 @@ namespace qtbind {
         bool writeAll() {
             bool ok = true;
             for (auto& [name, vec] : m_bindings) {
-                // push preferred binding first (e.g., QComboBox index over text)
+                (void)name;
                 int preferred = findPreferredIndex(vec);
                 if (preferred >= 0) ok &= vec[preferred]->push();
                 for (int i = 0; i < static_cast<int>(vec.size()); ++i) {
@@ -190,8 +190,7 @@ namespace qtbind {
                         if (w) {
                             if (this->var_) *this->var_ = w->value();
                             QObject::connect(w, QOverload<int>::of(&QSpinBox::valueChanged),
-                                w, [ptr = this->var_](int v) { if (ptr) *ptr = v; },
-                                Qt::UniqueConnection);
+                                w, [ptr = this->var_](int v) { if (ptr) *ptr = v; });
                         }
                     }
                     bool pull() override {
@@ -213,8 +212,7 @@ namespace qtbind {
                         if (w) {
                             if (this->var_) *this->var_ = static_cast<T>(w->value());
                             QObject::connect(w, QOverload<int>::of(&QSpinBox::valueChanged),
-                                w, [ptr = this->var_](int iv) { if (ptr) *ptr = static_cast<T>(iv); },
-                                Qt::UniqueConnection);
+                                w, [ptr = this->var_](int iv) { if (ptr) *ptr = static_cast<T>(iv); });
                         }
                     }
                     bool pull() override {
@@ -231,7 +229,6 @@ namespace qtbind {
                     }
                 };
                 return std::make_unique<B>(w->objectName(), w, var);
-
             }
             else {
                 return nullptr;
@@ -248,8 +245,7 @@ namespace qtbind {
                         if (w) {
                             if (this->var_) *this->var_ = w->value();
                             QObject::connect(w, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
-                                w, [ptr = this->var_](double dv) { if (ptr) *ptr = dv; },
-                                Qt::UniqueConnection);
+                                w, [ptr = this->var_](double dv) { if (ptr) *ptr = dv; });
                         }
                     }
                     bool pull() override {
@@ -271,8 +267,7 @@ namespace qtbind {
                         if (w) {
                             if (this->var_) *this->var_ = static_cast<T>(w->value());
                             QObject::connect(w, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
-                                w, [ptr = this->var_](double dv) { if (ptr) *ptr = static_cast<T>(dv); },
-                                Qt::UniqueConnection);
+                                w, [ptr = this->var_](double dv) { if (ptr) *ptr = static_cast<T>(dv); });
                         }
                     }
                     bool pull() override {
@@ -285,7 +280,6 @@ namespace qtbind {
                     }
                 };
                 return std::make_unique<B>(w->objectName(), w, var);
-
             }
             else {
                 return nullptr;
@@ -301,9 +295,8 @@ namespace qtbind {
                     B(const QString& n, QLineEdit* w, QString& v) : Base(n, w, v) {
                         if (w) {
                             if (this->var_) *this->var_ = w->text();
-                            QObject::connect(w, &QLineEdit::textChanged, w,
-                                [ptr = this->var_](const QString& t) { if (ptr) *ptr = t; },
-                                Qt::UniqueConnection);
+                            QObject::connect(w, &QLineEdit::textChanged,
+                                w, [ptr = this->var_](const QString& t) { if (ptr) *ptr = t; });
                         }
                     }
                     bool pull() override {
@@ -324,9 +317,8 @@ namespace qtbind {
                     B(const QString& n, QLineEdit* w, std::string& v) : Base(n, w, v) {
                         if (w) {
                             if (this->var_) *this->var_ = w->text().toStdString();
-                            QObject::connect(w, &QLineEdit::textChanged, w,
-                                [ptr = this->var_](const QString& t) { if (ptr) *ptr = t.toStdString(); },
-                                Qt::UniqueConnection);
+                            QObject::connect(w, &QLineEdit::textChanged,
+                                w, [ptr = this->var_](const QString& t) { if (ptr) *ptr = t.toStdString(); });
                         }
                     }
                     bool pull() override {
@@ -339,7 +331,6 @@ namespace qtbind {
                     }
                 };
                 return std::make_unique<B>(w->objectName(), w, var);
-
             }
             else {
                 return nullptr;
@@ -355,9 +346,8 @@ namespace qtbind {
                     B(const QString& n, QCheckBox* w, bool& v) : Base(n, w, v) {
                         if (w) {
                             if (this->var_) *this->var_ = w->isChecked();
-                            QObject::connect(w, &QCheckBox::toggled, w,
-                                [ptr = this->var_](bool b) { if (ptr) *ptr = b; },
-                                Qt::UniqueConnection);
+                            QObject::connect(w, &QCheckBox::toggled,
+                                w, [ptr = this->var_](bool b) { if (ptr) *ptr = b; });
                         }
                     }
                     bool pull() override {
@@ -378,9 +368,8 @@ namespace qtbind {
                     B(const QString& n, QCheckBox* w, T& v) : Base(n, w, v) {
                         if (w) {
                             if (this->var_) *this->var_ = w->isChecked() ? T{ 1 } : T{ 0 };
-                            QObject::connect(w, &QCheckBox::toggled, w,
-                                [ptr = this->var_](bool b) { if (ptr) *ptr = b ? T{ 1 } : T{ 0 }; },
-                                Qt::UniqueConnection);
+                            QObject::connect(w, &QCheckBox::toggled,
+                                w, [ptr = this->var_](bool b) { if (ptr) *ptr = b ? T{ 1 } : T{ 0 }; });
                         }
                     }
                     bool pull() override {
@@ -393,7 +382,6 @@ namespace qtbind {
                     }
                 };
                 return std::make_unique<B>(w->objectName(), w, var);
-
             }
             else {
                 return nullptr;
@@ -409,9 +397,8 @@ namespace qtbind {
                     B(const QString& n, QComboBox* w, int& v) : Base(n, w, v) {
                         if (w) {
                             if (this->var_) *this->var_ = w->currentIndex();
-                            QObject::connect(w, QOverload<int>::of(&QComboBox::currentIndexChanged), w,
-                                [ptr = this->var_](int i) { if (ptr) *ptr = i; },
-                                Qt::UniqueConnection);
+                            QObject::connect(w, QOverload<int>::of(&QComboBox::currentIndexChanged),
+                                w, [ptr = this->var_](int i) { if (ptr) *ptr = i; });
                         }
                     }
                     bool pull() override {
@@ -422,7 +409,7 @@ namespace qtbind {
                         auto* w = this->widget_.data(); if (!w || !this->var_) return false;
                         QSignalBlocker b(w); w->setCurrentIndex(*this->var_); return true;
                     }
-                    bool isPreferredForPush() const override { return true; } // prefer index when both bound
+                    bool isPreferredForPush() const override { return true; }
                 };
                 return std::make_unique<B>(w->objectName(), w, var);
 
@@ -433,9 +420,8 @@ namespace qtbind {
                     B(const QString& n, QComboBox* w, QString& v) : Base(n, w, v) {
                         if (w) {
                             if (this->var_) *this->var_ = w->currentText();
-                            QObject::connect(w, &QComboBox::currentTextChanged, w,
-                                [ptr = this->var_](const QString& t) { if (ptr) *ptr = t; },
-                                Qt::UniqueConnection);
+                            QObject::connect(w, &QComboBox::currentTextChanged,
+                                w, [ptr = this->var_](const QString& t) { if (ptr) *ptr = t; });
                         }
                     }
                     bool pull() override {
@@ -456,9 +442,8 @@ namespace qtbind {
                     B(const QString& n, QComboBox* w, std::string& v) : Base(n, w, v) {
                         if (w) {
                             if (this->var_) *this->var_ = w->currentText().toStdString();
-                            QObject::connect(w, &QComboBox::currentTextChanged, w,
-                                [ptr = this->var_](const QString& t) { if (ptr) *ptr = t.toStdString(); },
-                                Qt::UniqueConnection);
+                            QObject::connect(w, &QComboBox::currentTextChanged,
+                                w, [ptr = this->var_](const QString& t) { if (ptr) *ptr = t.toStdString(); });
                         }
                     }
                     bool pull() override {
@@ -471,7 +456,6 @@ namespace qtbind {
                     }
                 };
                 return std::make_unique<B>(w->objectName(), w, var);
-
             }
             else {
                 return nullptr;
@@ -577,6 +561,6 @@ namespace qtbind {
 
     // Convenience macro to avoid typing quotes around objectName tokens
 #define QT_BIND(binder, widgetNameToken, varRef) \
-    (binder).bind(QStringLiteral(#widgetNameToken), (varRef))
+        (binder).bind(QStringLiteral(#widgetNameToken), (varRef))
 
 } // namespace qtbind
