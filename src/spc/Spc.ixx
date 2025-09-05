@@ -1,12 +1,13 @@
 module;                              // global module fragment (for legacy includes)
 #include "src/gui/AppLogger.h"
 
+#include <memory>
+#include <vector>
+#include <cmath>
+#include <cstdlib>
+
 export module Spc;
 
-import <memory>;
-import <vector>;
-import <cmath>;
-import <cstdlib>;
 
 import Const;
 import Globals;

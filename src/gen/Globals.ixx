@@ -15,8 +15,16 @@ module;
 // (Not used in the declarations below, so omitted.)
 // #include <QMainWindow>
 #include <QString>
+// Standard library imports used in exported declarations
+#include <string>
+#include <cstdint>
+#include <vector>
+#include <mutex>
+#include <condition_variable>
+#include <thread>
+#include <memory>
 // #include <QMap>
-class TRS2;
+//class TRS2;
 
 //------------------------------
 // Module interface
@@ -25,14 +33,7 @@ export module Globals;
 
 import Const;
 
-// Standard library imports used in exported declarations
-import <string>;
-import <cstdint>;
-import <vector>;
-import <mutex>;
-import <condition_variable>;
-import <thread>;
-import <memory>;
+
 
 // Your constants/types come from this module.
 // Re-export so importers of Parm see them without importing Const separately.
@@ -841,9 +842,18 @@ export struct ParmS {
 
 // Export the external declaration; define it in a module implementation unit:
 // module Parm;  ParmS P{};
+export class TRS2;
 export extern ParmS P;
 
 export extern TRS2* GUI;
 
 export extern std::vector<long> Data;
 export void InitData();
+ParmS P{};
+TRS2* GUI = nullptr;
+
+std::vector<long> Data;
+export void InitData() {
+    Data.resize(static_cast<std::size_t>(P.Chann.Num));
+}
+

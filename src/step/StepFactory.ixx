@@ -1,11 +1,13 @@
 module;                              // global module fragment starts
 #include "src/gui/AppLogger.h"     // <-- legacy include goes here
 // (you can also put other #includes here if needed)
+#include <memory>
+#include <string>
+
 
 export module StepFactory;
 
-import <memory>;
-import <string>;
+
 
 import Step;
 import Globals;
@@ -14,9 +16,9 @@ import MicroStep;
 import ArdStep;
 import MicroStep;
 import TestStep;
-
+export std::unique_ptr<Step> createStep(int iS);
 // Ensure the correct namespace is used for unique_ptr
-export std::unique_ptr<Step> Step::createStep(int iS)
+export std::unique_ptr<Step> createStep(int iS)
 {
     const std::string& type = P.Step[iS].Type;
     outText("Enter the Factory constructor called");

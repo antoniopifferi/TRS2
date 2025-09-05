@@ -2,9 +2,11 @@ module;                              // global module fragment starts
 #include "src/gui/AppLogger.h"     // <-- legacy include goes here
 // (you can also put other #includes here if needed)
 
+#include <iostream>
+
 export module ArdStep;
 
-import <iostream>;
+
 import Step;
 
 // Concrete device: ArdStep

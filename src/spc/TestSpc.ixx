@@ -3,12 +3,13 @@ module;                              // global module fragment
 #include <QEventLoop>
 #include <QTimer>
 
+#include <vector>
+#include <cmath>
+#include <cstdlib>
+#include <format>
+
 export module TestSpc;
 
-import <vector>;
-import <cmath>;
-import <cstdlib>;
-import <format>;
 
 import Spc;
 import Globals;

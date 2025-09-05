@@ -1,7 +1,5 @@
 module;  // global module fragment for legacy includes if any
 
-export module Data;
-
 import <vector>;
 import <span>;
 import <mdspan>;
@@ -9,6 +7,10 @@ import <cstdint>;
 import <algorithm>;
 import <utility>;
 import <stdexcept>;
+
+export module Data;
+
+
 
 import Const; // for T_DATA, T_SUB, T_HEAD, SPC_BANK_DIM, etc. (?filecite?turn6file0?)
 

@@ -3,11 +3,12 @@ module;                              // global module fragment starts
 #include <QEventLoop>
 #include <QTimer>
 // (you can also put other #includes here if needed)
+#include <iostream>
+#include <format> // C++20 format library
 
 export module TestStep;
 
-import <iostream>;
-import <format>; // C++20 format library
+
 import Step;
 import Globals;
 

@@ -9,11 +9,12 @@
 import Const;
 import Globals;
 import Step;
+import StepFactory;
 import ArdStep;
 import MicroStep;
 import Spc;
 import TestSpc;
-
+import SpcFactory;
 
 void runKernel() {
 
@@ -44,13 +45,13 @@ void runKernel() {
 
 	 //InitSteps
     for (int iS = 0; iS < MAX_STEP; ++iS) {
-        steps[iS] = Step::createStep(iS);
+        steps[iS] = createStep(iS);
         if(steps[iS]) steps[iS]->initStep();
         if(steps[iS]) steps[iS]->initPos();
         }
 
 	// InitSpc
-    spc[0] = Spc::createSpc();
+    spc[0] = createSpc();
     if (spc[0]) spc[0]->init();
 
     for (P.Loop[0].Actual = P.Loop[0].First; P.Loop[0].Actual <= P.Loop[0].Last; P.Loop[0].Actual += P.Loop[0].Delta) {

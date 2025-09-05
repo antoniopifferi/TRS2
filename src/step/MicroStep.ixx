@@ -1,6 +1,9 @@
+module;                   
+#include <iostream>
+
 export module MicroStep;
 
-import <iostream>;
+
 import Step;
 
 // Concrete device: MicroStep

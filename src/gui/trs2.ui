@@ -2264,7 +2264,7 @@
   <customwidget>
    <class>QCustomPlot</class>
    <extends>QWidget</extends>
-   <header>lib\qcustomplot.h</header>
+   <header>lib/qcustomplot.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

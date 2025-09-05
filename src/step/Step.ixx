@@ -1,16 +1,18 @@
 module;                              // global module fragment (for legacy includes)
 #include "src/gui/AppLogger.h"
 
+#include <string>
+#include <vector>
+#include <memory>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+
 export module Step;
 
-import <string>;
-import <vector>;
-import <memory>;
-import <fstream>;
-import <sstream>;
-import <iostream>;
-import <cmath>;
-import <algorithm>;
+
 
 import Const;
 import Globals;

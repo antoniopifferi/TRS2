@@ -1,7 +1,9 @@
 module;
 //#include "src/gui/trs2.h"
+#include <vector>
+//module Globals;
+import Globals; 
 
-module Globals;
 import Const;
 
 ParmS P{};
