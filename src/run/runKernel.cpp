@@ -16,6 +16,18 @@ import Spc;
 import TestSpc;
 import SpcFactory;
 
+void loopGet(int loop) {
+    int l = loop;
+    for (int iL = 0; iL < MAX_LOOP; iL++) {
+        if (P.Loop[iL].Num > 0) {
+            P.Loop[iL].Actual = l % P.Loop[iL].Num;
+            l /= P.Loop[iL].Num;
+        } else {
+            P.Loop[iL].Actual = 0;
+        }
+    }
+}
+
 void runKernel() {
 
     // GUI
@@ -54,35 +66,32 @@ void runKernel() {
     spc[0] = createSpc();
     if (spc[0]) spc[0]->init();
 
-    for (P.Loop[0].Actual = P.Loop[0].First; P.Loop[0].Actual <= P.Loop[0].Last; P.Loop[0].Actual += P.Loop[0].Delta) {
-        for (P.Loop[1].Actual = P.Loop[1].First; P.Loop[1].Actual <= P.Loop[1].Last; P.Loop[1].Actual += P.Loop[1].Delta) {
-            for (P.Loop[2].Actual = P.Loop[2].First; P.Loop[2].Actual <= P.Loop[2].Last; P.Loop[2].Actual += P.Loop[2].Delta) {
-                for (P.Loop[3].Actual = P.Loop[3].First; P.Loop[3].Actual <= P.Loop[3].Last; P.Loop[3].Actual += P.Loop[3].Delta) {
-                    for (P.Loop[4].Actual = P.Loop[4].First; P.Loop[4].Actual <= P.Loop[4].Last; P.Loop[4].Actual += P.Loop[4].Delta) {
-                        bool status=false;
+	int loop = 0;
+    while (!P.Command.Abort && loop<P.Loop[0].Num*P.Loop[1].Num * P.Loop[2].Num * P.Loop[3].Num * P.Loop[4].Num) {
+		
+        loopGet(loop);
 
-                        for (auto& s : steps) {  
-                            if (s) s->moveStep(&s->actual, s->calcGoal(), P.Step[s->iS].Mode != "MULTI", status);  
-                        }
-                        if (spc[0]) {
-                            spc[0]->wait();
-                            spc[0]->get();
-                        }
+        bool status=false;
 
-                        outText(std::format("Loop = {}", P.Loop[4].Actual));
-
-                        std::vector<double> t(static_cast<size_t>(P.Chann.Num));
-                        for (int i = 0; i < P.Chann.Num; ++i)
-                            t[static_cast<size_t>(i)] = (static_cast<double>(i) + 0.5) * P.Spc.Factor;
-
-                        // Plot all points at once
-                        if (GUI) GUI->displayPlot(t, Data);
-
-
-                    }
-                }
-            }
+        for (auto& s : steps) {
+            if (s) s->moveStep(&s->actual, s->calcGoal(), P.Step[s->iS].Mode != "MULTI", status);
         }
+        if (spc[0]) {
+            spc[0]->wait();
+            spc[0]->get();
+        }
+        
+        outText(std::format("Loop = {}", P.Loop[4].Actual));
+        
+        std::vector<double> t(static_cast<size_t>(P.Chann.Num));
+        for (int i = 0; i < P.Chann.Num; ++i)
+            t[static_cast<size_t>(i)] = (static_cast<double>(i) + 0.5) * P.Spc.Factor;
+        
+        // Plot all points at once
+        GUI->displayPlot(t, Data);
+
+		loop++;
     }
+
     displayPanel("Parm");
 }
