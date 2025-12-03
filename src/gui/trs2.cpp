@@ -187,17 +187,21 @@ void TRS2::displayPlot(const std::vector<double>& X,
 
     for (int i = 0; i < n; ++i) {
         const double xi = X[i];
-        const double yi = static_cast<double>(Y[i]);
+        double yi = static_cast<double>(Y[i]);
+
+        // For log axis: ensure strictly positive.
+        // Here we clamp everything <= 0 up to 1.
+        if (yi <= 0.0) yi = 0.001;
+
         qx.push_back(xi);
-        qy.push_back(yi > 0 ? yi : std::numeric_limits<double>::quiet_NaN());
-        // NaN points are ignored by QCustomPlot ? safe for log axis
+        qy.push_back(yi);
     }
 
     // One-shot refresh of all points
     g->setData(qx, qy, /*alreadySorted=*/true);
 
     // Ranges
-    if (n > 0) {
+    if (!qx.isEmpty()) {
         auto [xminIt, xmaxIt] = std::minmax_element(qx.begin(), qx.end());
         double xmin = std::isfinite(*xminIt) ? *xminIt : 0.0;
         double xmax = std::isfinite(*xmaxIt) ? *xmaxIt : 1.0;
@@ -211,7 +215,8 @@ void TRS2::displayPlot(const std::vector<double>& X,
             ymax = std::max(ymax, v);
         }
         if (std::isfinite(ymin) && ymax > 0) {
-            ui->displayPlot->yAxis->setRange(ymin, ymax);
+            //ui->displayPlot->yAxis->setRange(ymin, ymax);
+            ui->displayPlot->yAxis->setRange(1, ymax);
         }
         else {
             ui->displayPlot->yAxis->setRange(1.0, 10.0); // fallback

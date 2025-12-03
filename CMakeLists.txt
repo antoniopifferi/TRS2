@@ -1,4 +1,4 @@
-#changed Qt6 6.9
+# Using Qt6 6.10.1
 cmake_minimum_required(VERSION 3.28)
 project(TRS2 LANGUAGES CXX)
 
@@ -72,14 +72,11 @@ target_sources(TRS2 PRIVATE
 
 target_link_libraries(TRS2 PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::PrintSupport)
 
-
 target_include_directories(TRS2 PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${CMAKE_CURRENT_SOURCE_DIR}/lib    
 )
-
-
 
 # Keep AUTOMOC away from module interface units
 set_source_files_properties(
@@ -103,8 +100,11 @@ if (WIN32)
     UNICODE _UNICODE WIN32 _WINDOWS _ENABLE_EXTENDED_ALIGNED_STORAGE
     $<$<CONFIG:Release>:NDEBUG;QT_NO_DEBUG>
   )
-  # Copy Qt DLLs after each build (Debug/Release)
-  set(QT_ROOT "C:/Qt/6.9.2/msvc2022_64")
+
+  # Copy Qt 6.10.1 DLLs after each build (Debug/Release)
+  # Adjust this path if your Qt 6.10.1 installation is in a different location.
+  set(QT_ROOT "C:/Qt/6.10.1/msvc2022_64")
+
   add_custom_command(TARGET TRS2 POST_BUILD
     COMMAND "${QT_ROOT}/bin/windeployqt.exe"
             --compiler-runtime
@@ -125,4 +125,3 @@ set(CMAKE_AUTOUIC_SEARCH_PATHS
   ${CMAKE_CURRENT_SOURCE_DIR}/src
   ${CMAKE_CURRENT_SOURCE_DIR}/ui
 )
-
