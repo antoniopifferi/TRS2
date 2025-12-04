@@ -32,6 +32,7 @@ qt_add_executable(TRS2
   src/spc/Spc.ixx
   src/spc/SpcFactory.ixx
   src/spc/TestSpc.ixx
+  src/spc/SpcMharp.ixx
   src/step/ArdStep.ixx
   src/step/MicroStep.ixx
   src/step/Step.ixx
@@ -63,6 +64,7 @@ target_sources(TRS2 PRIVATE
     src/spc/Spc.ixx
     src/spc/SpcFactory.ixx
     src/spc/TestSpc.ixx
+    src/spc/SpcMharp.ixx
     src/step/ArdStep.ixx
     src/step/MicroStep.ixx
     src/step/Step.ixx
@@ -85,6 +87,7 @@ set_source_files_properties(
   src/spc/Spc.ixx
   src/spc/SpcFactory.ixx
   src/spc/TestSpc.ixx
+  src/spc/SpcMharp.ixx
   src/step/ArdStep.ixx
   src/step/MicroStep.ixx
   src/step/Step.ixx

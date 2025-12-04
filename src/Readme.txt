@@ -50,3 +50,11 @@ CHANGING FILE DIRECTORY STRUCTURE:
 USE OF FORMAT IN C++20 MODULES:
 - Format is not supported in C++20 modules. You can use the `std::format` library, but it requires C++20 support and may not be available in all compilers. If you need to format strings, consider using `std::ostringstream` or other string manipulation techniques instead.
 - outText(std::format("Stepper {} ({}) moved to position = {}", this->iS, P.Step[this->iS].Type, this->actual));
+
+ADD NEW FILES TO PROJECT
+- Manually edit CMakeList
+
+INSTALL NEW PC
+- Install Visual Studio Enterprise 2026
+- Install QT 6.10 with compiler MSVC at least 2022
+- In VS->Extension->QT->Version-> select MSVS QT 6.10
