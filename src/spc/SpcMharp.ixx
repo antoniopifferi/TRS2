@@ -2,16 +2,31 @@ module;
 
 #include "src/gui/AppLogger.h"
 
-#include "mhdefin.h"
-#include "mhlib.h"
+extern "C" {
+#include "lib/mhdefin.h"
+#include "lib/mhlib.h"
+}
 #include "errorcodes.h"
 
 #include <vector>
 #include <string>
 #include <format>
 
-// ErrHandler is still implemented in the legacy C code (Measure.c)
-extern "C" void ErrHandler(int Device, int Code, char* Function);
+// CONSTANTS
+static constexpr int MHARP_DEV0 = 0; // Use just 1 Device, the software can control more than 1 device (i.e. many HydraHarp) (Board = Channel, not Device)
+static constexpr int MHARP_MAX_DET = 16; // Max number of det in input
+static constexpr int MHARP_MAX_BIN = 16384; // Max number of bins
+static constexpr int MHARP_MINDET_SINGLETRANSFER = 3; // minimum number of detectors when single transfer is convenient
+
+
+// Device-specific helper: translate MHARP code, then forward to generic ErrHandler
+inline void errDev(int code, const char* what)
+{
+    char buf[256] = {};
+    MH_GetErrorString(buf, code);
+    std::string msg = (what ? std::string(what) : std::string()) + std::string(": ") + buf;
+    ErrHandler("MHARP", code, msg.c_str());
+}
 
 export module SpcMharp;
 
@@ -48,9 +63,7 @@ protected:
     {
         for (int ib = 0; ib < P.Num.Board; ++ib) {
             const int ret = MH_CloseDevice(ib);
-            if (ret < 0) {
-                ErrHandler(ERR_MHARP, ret, (char*)"MH_CloseDevice");
-            }
+            if (ret < 0) errDev(ret, "MH_CloseDevice");
         }
     }
 
@@ -65,18 +78,13 @@ protected:
     {
         for (int ib = 0; ib < P.Num.Board; ++ib) {
             const int ret = MH_ClearHistMem(ib);
-            if (ret < 0) {
-                ErrHandler(ERR_MHARP, ret, (char*)"MH_ClearHistMem");
-            }
+            if (ret < 0) errDev(ret, "MH_ClearHistMem");
         }
     }
 
     // Equivalent of StartMharp(...)
     void startDev() override
     {
-        // In the original C code StartMharp is called with a Board index;
-        // here we just mirror the same logic for each board, using MHARP_DEV0
-        // as the device index for the actual measurement start.
         for (int ib = 0; ib < P.Num.Board; ++ib) {
             startBoard(ib);
         }
@@ -110,10 +118,9 @@ protected:
         int ret = 0;
         do {
             ret = MH_CTCStatus(MHARP_DEV0, &mod_state);
-            if (ret < 0) {
-                ErrHandler(ERR_MHARP, ret, (char*)"MH_CTCStatus");
+            if (ret < 0) errDev(ret, "MH_CTCStatus");
+            if (ret < 0)
                 break;
-            }
         } while (mod_state == 0);
     }
 
@@ -139,10 +146,9 @@ protected:
             if (nDet > MHARP_MINDET_SINGLETRANSFER) {
                 // Single transfer not convenient: read all histograms at once
                 ret = MH_GetAllHistograms(MHARP_DEV0, data.data());
-                if (ret < 0) {
-                    ErrHandler(ERR_MHARP, ret, (char*)"MH_GetAllHistograms");
+                if (ret < 0) errDev(ret, "MH_GetAllHistograms");
+                if (ret < 0)
                     continue;
-                }
             }
             else {
                 // Single transfer per detector
@@ -151,10 +157,9 @@ protected:
                         MHARP_DEV0,
                         &data[static_cast<size_t>(id * nChan)],
                         id);
-                    if (ret < 0) {
-                        ErrHandler(ERR_MHARP, ret, (char*)"MH_GetHistogram");
+                    if (ret < 0) errDev(ret, "MH_GetHistogram");
+                    if (ret < 0)
                         break;
-                    }
                 }
             }
 
@@ -162,8 +167,8 @@ protected:
             for (int id = 0; id < nDet; ++id) {
                 for (int ic = 0; ic < nChan; ++ic) {
                     const size_t srcIdx = static_cast<size_t>(ic + id * nChan);
-                    D.Buffer[ib][ic + id * nChan] =
-                        static_cast<T_DATA>(data[srcIdx]);
+                    Data[ic + id * nChan] =
+                        static_cast<unsigned long>(data[srcIdx]);
                 }
             }
         }
@@ -172,7 +177,7 @@ protected:
 private:
     // ---- helpers ----
 
-    // Port of InitMharp(Board) – HISTOGRAM part only, GUI / FLOW removed
+    // Port of InitMharp(Board) - HISTOGRAM part only, GUI / FLOW removed
     void initBoard(int board)
     {
         char libVersion[8] = {};
@@ -189,96 +194,62 @@ private:
 
         // Library version
         ret = MH_GetLibraryVersion(libVersion);
-        if (ret < 0) {
-            ErrHandler(ERR_MHARP, ret, (char*)"MH_GetLibraryVersion");
-            return;
-        }
+        if (ret < 0) { errDev(ret, "MH_GetLibraryVersion"); return; }
         outText(std::format("MultiHarp lib version: {}", libVersion));
 
         // Open the device and report the serial number
         ret = MH_OpenDevice(board, hwSerial);
-        if (ret < 0) {
-            ErrHandler(ERR_MHARP, ret, (char*)"MH_OpenDevice");
-            return;
-        }
+        if (ret < 0) { errDev(ret, "MH_OpenDevice"); return; }
         outText(std::format("MultiHarp serial: {}", hwSerial));
 
         // Operation mode: histogram only (MODE_HIST)
         ret = MH_Initialize(board, MODE_HIST, 0);
-        if (ret < 0) {
-            ErrHandler(ERR_MHARP, ret, (char*)"MH_Initialize");
-            return;
-        }
+        if (ret < 0) { errDev(ret, "MH_Initialize"); return; }
 
         // Histogram length and software offset
         ret = MH_SetHistoLen(board, mh.LenCode, &histLen);
-        if (ret < 0) {
-            ErrHandler(ERR_MHARP, ret, (char*)"MH_SetHistoLen");
-            return;
-        }
+        if (ret < 0) { errDev(ret, "MH_SetHistoLen"); return; }
 
         ret = MH_SetOffset(board, mh.Offset);
-        if (ret < 0) {
-            ErrHandler(ERR_MHARP, ret, (char*)"MH_SetOffset");
-            return;
-        }
+        if (ret < 0) { errDev(ret, "MH_SetOffset"); return; }
 
         // Start mode: standard software start (used for histogram + sync rate)
         ret = MH_SetMeasControl(MHARP_DEV0, MEASCTRL_SINGLESHOT_CTC, 1, 1);
-        if (ret < 0) {
-            ErrHandler(ERR_MHARP, ret, (char*)"MH_SetMeasControl");
-            return;
-        }
+        if (ret < 0) { errDev(ret, "MH_SetMeasControl"); return; }
 
         // Sync channel configuration
         ret = MH_SetSyncDiv(board, mh.SyncDivider);
-        if (ret < 0) {
-            ErrHandler(ERR_MHARP, ret, (char*)"MH_SetSyncDiv");
-        }
+        if (ret < 0) errDev(ret, "MH_SetSyncDiv");
 
         ret = MH_SetSyncEdgeTrg(board, mh.SyncLevel, mh.SyncEdge);
-        if (ret < 0) {
-            ErrHandler(ERR_MHARP, ret, (char*)"MH_SetSyncEdgeTrg");
-        }
+        if (ret < 0) errDev(ret, "MH_SetSyncEdgeTrg");
 
         ret = MH_SetSyncChannelOffset(board, mh.SyncOffset);
-        if (ret < 0) {
-            ErrHandler(ERR_MHARP, ret, (char*)"MH_SetSyncChannelOffset");
-        }
+        if (ret < 0) errDev(ret, "MH_SetSyncChannelOffset");
 
         // Input channels configuration (level, edge, offset, enable)
         for (int id = 0; id < P.Num.Det; ++id) {
             ret = MH_SetInputEdgeTrg(board, id,
                 mh.InputLevel[id],
                 mh.InputEdge[id]);
-            if (ret < 0) {
-                ErrHandler(ERR_MHARP, ret, (char*)"MH_SetInputEdgeTrg");
-            }
+            if (ret < 0) errDev(ret, "MH_SetInputEdgeTrg");
 
             ret = MH_SetInputChannelOffset(board, id, mh.InputOffset[id]);
-            if (ret < 0) {
-                ErrHandler(ERR_MHARP, ret, (char*)"MH_SetInputChannelOffset");
-            }
+            if (ret < 0) errDev(ret, "MH_SetInputChannelOffset");
 
             // Enable detector channel
             ret = MH_SetInputChannelEnable(board, id, 1);
-            if (ret < 0) {
-                ErrHandler(ERR_MHARP, ret, (char*)"MH_SetInputChannelEnable");
-            }
+            if (ret < 0) errDev(ret, "MH_SetInputChannelEnable");
         }
 
         // Binning (time resolution)
         ret = MH_SetBinning(board, mh.Binning);
-        if (ret < 0) {
-            ErrHandler(ERR_MHARP, ret, (char*)"MH_SetBinning");
-        }
+        if (ret < 0) errDev(ret, "MH_SetBinning");
 
         // Time calibration: resolution is the bin width in ps
         ret = MH_GetResolution(board, &resolution);
-        if (ret < 0) {
-            ErrHandler(ERR_MHARP, ret, (char*)"MH_GetResolution");
-        }
-        else {
+        if (ret < 0) errDev(ret, "MH_GetResolution");
+        if (ret >= 0) {
             P.Spc.Calib = resolution;
             P.Spc.Factor = P.Spc.Calib * P.Spc.Scale;
         }
@@ -293,15 +264,10 @@ private:
     void startBoard(int board)
     {
         int ret = MH_SetMeasControl(board, MEASCTRL_SINGLESHOT_CTC, 1, 1);
-        if (ret < 0) {
-            ErrHandler(ERR_MHARP, ret, (char*)"MH_SetMeasControl");
-            return;
-        }
+        if (ret < 0) { errDev(ret, "MH_SetMeasControl"); return; }
 
         ret = MH_StartMeas(MHARP_DEV0, P.Spc.TimeMharp);
-        if (ret < 0) {
-            ErrHandler(ERR_MHARP, ret, (char*)"MH_StartMeas");
-        }
+        if (ret < 0) errDev(ret, "MH_StartMeas");
     }
 
     // Port of StopMharp(Board) applied to all boards
@@ -309,9 +275,7 @@ private:
     {
         for (int ib = 0; ib < P.Num.Board; ++ib) {
             const int ret = MH_StopMeas(ib);
-            if (ret < 0) {
-                ErrHandler(ERR_MHARP, ret, (char*)"MH_StopMeas");
-            }
+            if (ret < 0) errDev(ret, "MH_StopMeas");
         }
     }
 };

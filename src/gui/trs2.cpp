@@ -59,40 +59,36 @@ TRS2::TRS2(QWidget *parent)
         bindIdx1(*binder_, "LoopLast", iL, P.Loop[iL].Last);
         bindIdx1(*binder_, "LoopDelta", iL, P.Loop[iL].Delta);
         bindIdx1(*binder_, "LoopNum", iL, P.Loop[iL].Num);
-        bindIdx1(*binder_, "LoopFileBreak", iL, P.Loop[iL].FileBreak);   // QString (QLineEdit)
-        bindIdx1(*binder_, "LoopBreak", iL, P.Loop[iL].Break);       // bool (QCheckBox)
-        bindIdx1(*binder_, "LoopInvert", iL, P.Loop[iL].Invert);      // bool
+        bindIdx1(*binder_, "LoopFileBreak", iL, P.Loop[iL].FileBreak);
+        bindIdx1(*binder_, "LoopBreak", iL, P.Loop[iL].Break);
+        bindIdx1(*binder_, "LoopInvert", iL, P.Loop[iL].Invert);
         // LoopCont: choose one style — index (int) or label (QString):
-        // bindIdx1(*binder_, "LoopCont",     iL, P.Loop[iL].LoopContIndex);   // int (QComboBox index)
-        bindIdx1(*binder_, "LoopCont",     iL, P.Loop[iL].Cont);            // QString (QComboBox text)
+        // bindIdx1(*binder_, "LoopCont",     iL, P.Loop[iL].LoopContIndex);
+        bindIdx1(*binder_, "LoopCont",     iL, P.Loop[iL].Cont);
     }
     
     // STEP
     for (int iS = 0; iS < MAX_STEP; ++iS) {
-        // Keep as int (index) if that’s how you used them before:
         bindIdx1(*binder_, "StepType", iS, P.Step[iS].Type);
         bindIdx1(*binder_, "StepCom", iS, P.Step[iS].Com);
         bindIdx1(*binder_, "StepAxis", iS, P.Step[iS].Axis);
-        bindIdx1(*binder_, "StepMode", iS, P.Step[iS].Mode);   
-        bindIdx1(*binder_, "StepSign", iS, P.Step[iS].Sign);   
+        bindIdx1(*binder_, "StepMode", iS, P.Step[iS].Mode);
+        bindIdx1(*binder_, "StepSign", iS, P.Step[iS].Sign);
         bindIdx1(*binder_, "StepLoop", iS, P.Step[iS].Loop);
-        bindIdx1(*binder_, "StepHold", iS, P.Step[iS].Hold);        // bool
-        bindIdx1(*binder_, "StepLcd", iS, P.Step[iS].Lcd);         // bool
-        bindIdx1(*binder_, "StepFName", iS, P.Step[iS].FName);       // QString (QLineEdit)
-        bindIdx1(*binder_, "StepMin", iS, P.Step[iS].Min);         // int (QSpinBox)
-        bindIdx1(*binder_, "StepMax", iS, P.Step[iS].Max);         // int
-        bindIdx1(*binder_, "StepFreqMin", iS, P.Step[iS].FreqMin);     // double (QDoubleSpinBox)
-        bindIdx1(*binder_, "StepFreqMax", iS, P.Step[iS].FreqMax);     // double
-        bindIdx1(*binder_, "StepFreqDelta", iS, P.Step[iS].FreqDelta);   // double
-        bindIdx1(*binder_, "StepFreq", iS, P.Step[iS].Freq);        // double
-        bindIdx1(*binder_, "StepFactor", iS, P.Step[iS].Factor);      // double
-        bindIdx1(*binder_, "StepSort", iS, P.Step[iS].Sort);        // bool
+        bindIdx1(*binder_, "StepHold", iS, P.Step[iS].Hold);
+        bindIdx1(*binder_, "StepLcd", iS, P.Step[iS].Lcd);
+        bindIdx1(*binder_, "StepFName", iS, P.Step[iS].FName);
+        bindIdx1(*binder_, "StepMin", iS, P.Step[iS].Min);
+        bindIdx1(*binder_, "StepMax", iS, P.Step[iS].Max);
+        bindIdx1(*binder_, "StepFreqMin", iS, P.Step[iS].FreqMin);
+        bindIdx1(*binder_, "StepFreqMax", iS, P.Step[iS].FreqMax);
+        bindIdx1(*binder_, "StepFreqDelta", iS, P.Step[iS].FreqDelta);
+        bindIdx1(*binder_, "StepFreq", iS, P.Step[iS].Freq);
+        bindIdx1(*binder_, "StepFactor", iS, P.Step[iS].Factor);
+        bindIdx1(*binder_, "StepSort", iS, P.Step[iS].Sort);
     }
-    // Matches your Step table entries. :contentReference[oaicite:7]{index=7}
-    // ===============================================================
 
-
-    // LOAD SETTINGS (INI, as requested)
+    // LOAD SETTINGS (INI)
     loadIni("c:\\Temp\\TRS2.ini");
 
     // READ ALL
@@ -106,27 +102,22 @@ TRS2::~TRS2()
     delete ui;
 }
 
-// widgets -> variables
 void TRS2::readAll() {
     if (binder_) binder_->readAll();
 }
 
-// variables -> widgets
 void TRS2::writeAll() {
     if (binder_) binder_->writeAll();
 }
 
-// single widget -> variables
 void TRS2::readSingle(const QString& name) {
     if (binder_) binder_->readSingle(name);
 }
 
-// variables -> single widget
 void TRS2::writeSingle(const QString& name) {
     if (binder_) binder_->writeSingle(name);
 }
 
-// INI save/load
 void TRS2::saveIni(const QString& path) {
     if (binder_) binder_->saveIni(path);
 }
@@ -146,26 +137,22 @@ void TRS2::displayPanel(const QString &namePanel)
     }
 }
 
-// Append output to the Output panel
 void TRS2::appendOutput(const QString& msg)
 {
     ui->outputText->appendPlainText(msg);
 }
 
-// trs2.cpp
 void TRS2::displayPlot(const std::vector<double>& X,
     const std::vector<long>& Y)
 {
     if (!ui || !ui->displayPlot) return;
 
-    // Create the first graph if missing and configure once.
     QCPGraph* g = nullptr;
     if (ui->displayPlot->graphCount() == 0) {
         g = ui->displayPlot->addGraph();
-        g->setLineStyle(QCPGraph::lsNone); // markers only, no line
+        g->setLineStyle(QCPGraph::lsNone);
         g->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssDisc, 4));
 
-        // Axes and labels
         ui->displayPlot->xAxis->setLabel("time (ps)");
         ui->displayPlot->xAxis->setScaleType(QCPAxis::stLinear);
 
@@ -173,14 +160,13 @@ void TRS2::displayPlot(const std::vector<double>& X,
         ui->displayPlot->yAxis->setScaleType(QCPAxis::stLogarithmic);
         QSharedPointer<QCPAxisTickerLog> logTicker(new QCPAxisTickerLog);
         ui->displayPlot->yAxis->setTicker(logTicker);
-        ui->displayPlot->yAxis->setNumberFormat("eb");   // e.g. 1e3
+        ui->displayPlot->yAxis->setNumberFormat("eb");
         ui->displayPlot->yAxis->setNumberPrecision(0);
     }
     else {
         g = ui->displayPlot->graph(0);
     }
 
-    // Convert to QVector and sanitize Y for log scale (skip non-positive).
     const int n = static_cast<int>(std::min(X.size(), Y.size()));
     QVector<double> qx; qx.reserve(n);
     QVector<double> qy; qy.reserve(n);
@@ -189,18 +175,14 @@ void TRS2::displayPlot(const std::vector<double>& X,
         const double xi = X[i];
         double yi = static_cast<double>(Y[i]);
 
-        // For log axis: ensure strictly positive.
-        // Here we clamp everything <= 0 up to 1.
         if (yi <= 0.0) yi = 0.001;
 
         qx.push_back(xi);
         qy.push_back(yi);
     }
 
-    // One-shot refresh of all points
-    g->setData(qx, qy, /*alreadySorted=*/true);
+    g->setData(qx, qy, true);
 
-    // Ranges
     if (!qx.isEmpty()) {
         auto [xminIt, xmaxIt] = std::minmax_element(qx.begin(), qx.end());
         double xmin = std::isfinite(*xminIt) ? *xminIt : 0.0;
@@ -215,11 +197,10 @@ void TRS2::displayPlot(const std::vector<double>& X,
             ymax = std::max(ymax, v);
         }
         if (std::isfinite(ymin) && ymax > 0) {
-            //ui->displayPlot->yAxis->setRange(ymin, ymax);
             ui->displayPlot->yAxis->setRange(1, ymax);
         }
         else {
-            ui->displayPlot->yAxis->setRange(1.0, 10.0); // fallback
+            ui->displayPlot->yAxis->setRange(1.0, 10.0);
         }
     }
 

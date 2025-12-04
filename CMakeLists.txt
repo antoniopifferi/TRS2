@@ -74,6 +74,15 @@ target_sources(TRS2 PRIVATE
 
 target_link_libraries(TRS2 PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::PrintSupport)
 
+# Link only specific prebuilt libraries from lib folder
+# MHARP vendor library (64-bit)
+target_link_libraries(TRS2 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/lib/mhlib64.lib")
+
+# Ensure MSVC treats sources as UTF-8 to avoid illegal character warnings (C4828)
+if (MSVC)
+  target_compile_options(TRS2 PRIVATE /utf-8)
+endif()
+
 target_include_directories(TRS2 PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}/include
