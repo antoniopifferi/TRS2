@@ -18,6 +18,8 @@ import Const;
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
+#include <QCoreApplication>
+#include <QDir>
 
 #include <typeinfo>
 #include <algorithm>
@@ -30,6 +32,25 @@ bool bindIdx1(qtbind::Binder& b, const char* prefix, int zeroBasedIdx, T& var) {
     return b.bind(name, var);
 }
 
+// Always "<Prefix>_<1-based>"
+template <class T>
+bool bindIdx1(qtbind::Binder& b, const char* prefix, T& var) {
+    const QString name = QString::fromLatin1(prefix);
+    return b.bind(name, var);
+}
+
+static QString findProjectRoot()
+{
+    QDir dir(QCoreApplication::applicationDirPath());
+    // Walk up until we find CMakeLists.txt or reach filesystem root
+    while (true) {
+        if (QFile::exists(dir.filePath("CMakeLists.txt")))
+            return dir.absolutePath();
+        if (!dir.cdUp())
+            break;
+    }
+    return QCoreApplication::applicationDirPath();
+}
 
 TRS2::TRS2(QWidget *parent)
     : QMainWindow(parent),
@@ -52,6 +73,33 @@ TRS2::TRS2(QWidget *parent)
     binder_ = std::make_unique<qtbind::Binder>(ui->centralwidget);
 
     // === BINDINGS (underscore + 1-based) ==========================
+    
+    // FILE
+	bindIdx1(*binder_, "FileType", P.File.Type);
+	bindIdx1(*binder_, "FileDir", P.File.Dir);
+	bindIdx1(*binder_, "FilePrefix", P.File.Prefix);
+	bindIdx1(*binder_, "FileExt", P.File.Ext);
+	bindIdx1(*binder_, "FileTag", P.File.Tag);
+	bindIdx1(*binder_, "FileSave", P.File.Save);
+    
+    // SPC
+	bindIdx1(*binder_, "SpcType", P.Spc.Type);
+	bindIdx1(*binder_, "SpcWait", P.Wait.Type);
+	bindIdx1(*binder_, "SpcTimeM", P.Spc.TimeM);
+    bindIdx1(*binder_, "SpcTimeO", P.Spc.TimeO);
+	bindIdx1(*binder_, "SpcFactor", P.Spc.Factor);
+	bindIdx1(*binder_, "SpcCount", P.Spc.Count);
+	bindIdx1(*binder_, "SpcChrono", P.Chrono.Delta);
+    bindIdx1(*binder_, "SpcSpc1", P.Spc.IniFile[0]);
+	bindIdx1(*binder_, "SpcSpc2", P.Spc.IniFile[1]);
+	bindIdx1(*binder_, "SpcSpc3", P.Spc.IniFile[2]);
+	bindIdx1(*binder_, "SpcSpc4", P.Spc.IniFile[3]);
+
+	// CHAN
+	bindIdx1(*binder_, "ChanFirst", P.Chann.First);
+	bindIdx1(*binder_, "ChanLast", P.Chann.Last);
+	bindIdx1(*binder_, "ChanNum", P.Chann.Num);
+
     // LOOP
     for (int iL = 0; iL < MAX_LOOP; ++iL) {
         bindIdx1(*binder_, "LoopHome", iL, P.Loop[iL].Home);
@@ -88,8 +136,8 @@ TRS2::TRS2(QWidget *parent)
         bindIdx1(*binder_, "StepSort", iS, P.Step[iS].Sort);
     }
 
-    // LOAD SETTINGS (INI)
-    loadIni("c:\\Temp\\TRS2.ini");
+    // LOAD SETTINGS (INI) relative to project root (folder containing CMakeLists.txt)
+    loadIni(QDir(findProjectRoot()).filePath("SET/TRS2.TRS"));
 
     // READ ALL
     readAll();
@@ -98,7 +146,7 @@ TRS2::TRS2(QWidget *parent)
 
 TRS2::~TRS2()
 {
-    saveIni("c:\\Temp\\TRS2.ini");
+    saveIni(QDir(findProjectRoot()).filePath("SET/TRS2.TRS"));
     delete ui;
 }
 

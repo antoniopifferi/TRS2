@@ -33,7 +33,6 @@ void runKernel() {
     // GUI
     P.Num.Board = 1;
 	P.Num.Det = 1;
-	P.Chann.Num = 1024;
 	P.Spc.Type = "TEST";
     P.Spc.Factor = 1.0; // ps/bin
 	P.Spc.TimeO = 0.1; // s

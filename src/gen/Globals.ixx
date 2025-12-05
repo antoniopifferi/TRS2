@@ -584,7 +584,7 @@ export struct SpcS {
     double RepRate;
     int	   MaxPage[MAX_BOARD];
     char   Settings[MAX_BOARD][260];
-    char   IniFile[MAX_BOARD][260];
+    std::string IniFile[MAX_BOARD];
     MharpS Mharp[MAX_BOARD];
 };
 
