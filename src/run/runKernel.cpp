@@ -33,10 +33,6 @@ void runKernel() {
     // GUI
     P.Num.Board = 1;
 	P.Num.Det = 1;
-	P.Spc.Type = "TEST";
-    P.Spc.Factor = 1.0; // ps/bin
-	P.Spc.TimeO = 0.1; // s
-	P.Spc.TimeM = 1.0; // s
     P.Contest.Function = CONTEST_OSC;
 
     // define variables

@@ -463,19 +463,19 @@ text=POS
 value=0
 
 [SpcTimeM]
-value=0
+value=0.1
 
 [FileTag]
 value=0
 
 [FileSave]
-checked=false
+checked=true
 
 [ChanLast]
-value=0
+value=1023
 
 [ChanNum]
-value=0
+value=1024
 
 [ChanFirst]
 value=0
@@ -489,20 +489,23 @@ index=0
 text=SPC
 
 [FileDir]
-text=
+text=c:\\temp
 
 [SpcChrono]
 value=0
 
 [SpcTimeO]
-value=0
+value=0.1
 
 [FilePrefix]
 text=aaa
 
 [SpcType]
-index=0
-text=TEST
+index=2
+text=MHARP
 
 [FileExt]
-text=
+text=DAT
+
+[SpcFactor]
+value=10
