@@ -18,7 +18,7 @@
     <item row="0" column="1">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Parm">
        <widget class="QGroupBox" name="groupBox">
@@ -1328,6 +1328,117 @@
             </property>
            </item>
           </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="Mharp">
+       <widget class="QGroupBox" name="Mharp_2">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>140</y>
+          <width>191</width>
+          <height>401</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Mharp</string>
+        </property>
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_28">
+           <property name="text">
+            <string>Binning</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSpinBox" name="MharpBinning"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_29">
+           <property name="text">
+            <string>SyncDivider</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_66">
+           <property name="text">
+            <string>LenCode</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_67">
+           <property name="text">
+            <string>Offset</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_68">
+           <property name="text">
+            <string>SyncOffset</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_69">
+           <property name="text">
+            <string>SyncLevel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_70">
+           <property name="text">
+            <string>SyncEdge</string>
+           </property>
+          </widget>
+         </item>
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_71">
+           <property name="text">
+            <string>SaveTags</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QSpinBox" name="MharpSyncDivider"/>
+         </item>
+         <item row="2" column="1">
+          <widget class="QSpinBox" name="MharpLenCode"/>
+         </item>
+         <item row="3" column="1">
+          <widget class="QSpinBox" name="MharpOffset"/>
+         </item>
+         <item row="4" column="1">
+          <widget class="QSpinBox" name="MharpSyncOffset"/>
+         </item>
+         <item row="5" column="1">
+          <widget class="QSpinBox" name="MharpSyncLevel"/>
+         </item>
+         <item row="6" column="1">
+          <widget class="QSpinBox" name="MharpSyncEdge"/>
+         </item>
+         <item row="7" column="1">
+          <widget class="QCheckBox" name="MharpSaveTags">
+           <property name="text">
+            <string>ON/OFF</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="label_72">
+           <property name="text">
+            <string>PathTags</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="1">
+          <widget class="QLineEdit" name="MharpPathTags"/>
          </item>
         </layout>
        </widget>
@@ -3695,8 +3806,15 @@
     <addaction name="actionStep"/>
     <addaction name="actionOutput"/>
    </widget>
+   <widget class="QMenu" name="menuDevice">
+    <property name="title">
+     <string>Device</string>
+    </property>
+    <addaction name="actionMharp"/>
+   </widget>
    <addaction name="menuRun"/>
    <addaction name="menuWindow"/>
+   <addaction name="menuDevice"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionMeasure">
@@ -3717,6 +3835,11 @@
   <action name="actionOutput">
    <property name="text">
     <string>Output</string>
+   </property>
+  </action>
+  <action name="actionMharp">
+   <property name="text">
+    <string>Mharp</string>
    </property>
   </action>
  </widget>

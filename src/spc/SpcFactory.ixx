@@ -11,6 +11,7 @@ import Globals;
 
 // Concrete devices
 import TestSpc;
+import SpcMharp;
 export std::unique_ptr<Spc> createSpc();
 // Note: We mirror the StepFactory pattern and dispatch by string type (e.g. "TEST")
 export std::unique_ptr<Spc> createSpc() {
@@ -21,9 +22,9 @@ export std::unique_ptr<Spc> createSpc() {
         return std::make_unique<TestSpc>();
     }
 
-    // Add other concrete Spc subclasses here as you port them:
-    // else if (type == "SPC300") return std::make_unique<Spc300>();
-    // ...
+	if (type == "MHARP") {
+        return std::make_unique<SpcMharp>();
+    }
 
     return nullptr;
 }

@@ -501,11 +501,38 @@ value=0.1
 text=aaa
 
 [SpcType]
-index=2
-text=MHARP
+index=0
+text=TEST
 
 [FileExt]
 text=DAT
 
 [SpcFactor]
 value=10
+
+[MharpSyncOffset]
+value=0
+
+[MharpBinning]
+value=4
+
+[MharpSyncDivider]
+value=0
+
+[MharpSaveTags]
+checked=false
+
+[MharpSyncLevel]
+value=0
+
+[MharpLenCode]
+value=0
+
+[MharpSyncEdge]
+value=0
+
+[MharpPathTags]
+text=
+
+[MharpOffset]
+value=0

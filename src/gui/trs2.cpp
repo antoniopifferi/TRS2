@@ -1,8 +1,6 @@
 #include "src/gui/trs2.h"
 #include "src/run/runKernel.h"
 #include "ui_trs2.h"
-//#include "GenSource/Parm.h"
-//#include "GuiSource/Table.h"
 #include "AppLogger.h"
 #include "lib/qcustomplot.h"
 
@@ -63,6 +61,7 @@ TRS2::TRS2(QWidget *parent)
     connect(ui->actionParm, &QAction::triggered, this, [this]() { displayPanel("Parm"); });
     connect(ui->actionStep, &QAction::triggered, this, [this]() { displayPanel("Step"); });
     connect(ui->actionOutput, &QAction::triggered, this, [this]() { displayPanel("Output"); });
+    connect(ui->actionMharp, &QAction::triggered, this, [this]() { displayPanel("Mharp"); });
 
     // Connect logger to the Output box (queued == thread-safe)
     connect(&AppLogger::instance(), &AppLogger::message,this, &TRS2::appendOutput,Qt::QueuedConnection);
@@ -110,8 +109,6 @@ TRS2::TRS2(QWidget *parent)
         bindIdx1(*binder_, "LoopFileBreak", iL, P.Loop[iL].FileBreak);
         bindIdx1(*binder_, "LoopBreak", iL, P.Loop[iL].Break);
         bindIdx1(*binder_, "LoopInvert", iL, P.Loop[iL].Invert);
-        // LoopCont: choose one style — index (int) or label (QString):
-        // bindIdx1(*binder_, "LoopCont",     iL, P.Loop[iL].LoopContIndex);
         bindIdx1(*binder_, "LoopCont",     iL, P.Loop[iL].Cont);
     }
     
@@ -135,6 +132,17 @@ TRS2::TRS2(QWidget *parent)
         bindIdx1(*binder_, "StepFactor", iS, P.Step[iS].Factor);
         bindIdx1(*binder_, "StepSort", iS, P.Step[iS].Sort);
     }
+
+    // MHARP (scalar controls, optional if present in UI)
+    bindIdx1(*binder_, "MharpBinning", P.Spc.Mharp[0].Binning);
+    bindIdx1(*binder_, "MharpSyncDivider", P.Spc.Mharp[0].SyncDivider);
+    bindIdx1(*binder_, "MharpLenCode", P.Spc.Mharp[0].LenCode);
+    bindIdx1(*binder_, "MharpOffset", P.Spc.Mharp[0].Offset);
+    bindIdx1(*binder_, "MharpSyncOffset", P.Spc.Mharp[0].SyncOffset);
+    bindIdx1(*binder_, "MharpSyncLevel", P.Spc.Mharp[0].SyncLevel);
+    bindIdx1(*binder_, "MharpSyncEdge", P.Spc.Mharp[0].SyncEdge);
+    bindIdx1(*binder_, "MharpSaveTags", P.Spc.Mharp[0].SaveTags);
+    bindIdx1(*binder_, "MharpPathTags", P.Spc.Mharp[0].PathTags);
 
     // LOAD SETTINGS (INI) relative to project root (folder containing CMakeLists.txt)
     loadIni(QDir(findProjectRoot()).filePath("SET/TRS2.TRS"));

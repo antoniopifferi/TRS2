@@ -1,3 +1,4 @@
+// INCLUDE-IMPORT-EXPORT:
 module;
 
 #include "src/gui/AppLogger.h"
@@ -11,6 +12,14 @@ extern "C" {
 #include <vector>
 #include <string>
 #include <format>
+#include <QEventLoop>
+#include <QTimer>
+
+export module SpcMharp;
+
+import Spc;
+import Globals;
+
 
 // CONSTANTS
 static constexpr int MHARP_DEV0 = 0; // Use just 1 Device, the software can control more than 1 device (i.e. many HydraHarp) (Board = Channel, not Device)
@@ -19,7 +28,7 @@ static constexpr int MHARP_MAX_BIN = 16384; // Max number of bins
 static constexpr int MHARP_MINDET_SINGLETRANSFER = 3; // minimum number of detectors when single transfer is convenient
 
 
-// Device-specific helper: translate MHARP code, then forward to generic ErrHandler
+// HELPER FUNCTIONS
 inline void errDev(int code, const char* what)
 {
     char buf[256] = {};
@@ -28,12 +37,8 @@ inline void errDev(int code, const char* what)
     ErrHandler("MHARP", code, msg.c_str());
 }
 
-export module SpcMharp;
 
-import Spc;
-import Globals;
-
-// Histogram-only MultiHarp implementation of Spc
+// CLASS DEFINITION
 export class SpcMharp : public Spc
 {
 public:
@@ -48,9 +53,6 @@ public:
     }
 
 protected:
-    // ---- device-specific overrides ----
-
-    // Equivalent of InitMharp(...) called for all boards
     void initDev() override
     {
         for (int ib = 0; ib < P.Num.Board; ++ib) {
@@ -58,7 +60,6 @@ protected:
         }
     }
 
-    // Equivalent of CloseMharp()
     void closeDev() override
     {
         for (int ib = 0; ib < P.Num.Board; ++ib) {
@@ -67,13 +68,11 @@ protected:
         }
     }
 
-    // Equivalent to Pause for MultiHarp: just stop the measurement
     void pauseDev() override
     {
         stopMeasurementOnAllBoards();
     }
 
-    // Equivalent of ClearMharp()
     void clearDev() override
     {
         for (int ib = 0; ib < P.Num.Board; ++ib) {
@@ -82,7 +81,6 @@ protected:
         }
     }
 
-    // Equivalent of StartMharp(...)
     void startDev() override
     {
         for (int ib = 0; ib < P.Num.Board; ++ib) {
@@ -96,21 +94,17 @@ protected:
         startDev();
     }
 
-    // Equivalent of the SPC_MHARP branch in SpcTime(Time):
-    // Spc::setTime(...) already sets P.Spc.TimeM (seconds).
     void setTimeDev(float seconds) override
     {
         // MultiHarp expects an integer acquisition time in ms.
         P.Spc.TimeMharp = static_cast<int>(seconds * 1000.0f + 0.5f);
     }
 
-    // Equivalent of StopMharp(...)
     void stopDev() override
     {
         stopMeasurementOnAllBoards();
     }
 
-    // Equivalent of WaitMharp(...)
     void waitDev() override
     {
         // Poll the CTC status until the measurement is finished
@@ -124,7 +118,6 @@ protected:
         } while (mod_state == 0);
     }
 
-    // Equivalent of GetDataMharp() for histogram mode
     void getDataDev() override
     {
         using std::size_t;
