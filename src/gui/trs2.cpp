@@ -95,9 +95,9 @@ TRS2::TRS2(QWidget *parent)
 	bindIdx1(*binder_, "SpcSpc4", P.Spc.IniFile[3]);
 
 	// CHAN
-	bindIdx1(*binder_, "ChanFirst", P.Chann.First);
-	bindIdx1(*binder_, "ChanLast", P.Chann.Last);
-	bindIdx1(*binder_, "ChanNum", P.Chann.Num);
+	bindIdx1(*binder_, "ChanFirst", P.Bins.First);
+	bindIdx1(*binder_, "ChanLast", P.Bins.Last);
+	bindIdx1(*binder_, "ChanNum", P.Bins.Num);
 
     // LOOP
     for (int iL = 0; iL < MAX_LOOP; ++iL) {

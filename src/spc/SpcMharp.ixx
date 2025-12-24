@@ -132,7 +132,7 @@ protected:
 
         const int nBoards = P.Num.Board;
         const int nDet = P.Num.Det;
-        const int nChan = P.Chann.Num;
+        const int nBins = P.Bins.Num;
 
         for (int ib = 0; ib < nBoards; ++ib) {
             int ret = 0;
@@ -149,7 +149,7 @@ protected:
                 for (int id = 0; id < nDet; ++id) {
                     ret = MH_GetHistogram(
                         MHARP_DEV0,
-                        &data[static_cast<size_t>(id * nChan)],
+                        &data[static_cast<size_t>(id * nBins)],
                         id);
                     if (ret < 0) errDev(ret, "MH_GetHistogram");
                     if (ret < 0)
@@ -157,12 +157,12 @@ protected:
                 }
             }
 
-            // Copy into the generic data buffer D.data[det*ch + ch]
-            D.data.resize(static_cast<size_t>(nDet * nChan));
+            // Copy into the generic data buffer D.data[det*bin + bin]
+            D.data.resize(static_cast<size_t>(nDet * nBins));
             for (int id = 0; id < nDet; ++id) {
-                for (int ic = 0; ic < nChan; ++ic) {
-                    const size_t srcIdx = static_cast<size_t>(ic + id * nChan);
-                    D.data[static_cast<size_t>(ic + id * nChan)] = static_cast<std::uint16_t>(data[srcIdx]);
+                for (int ibin = 0; ibin < nBins; ++ibin) {
+                    const size_t srcIdx = static_cast<size_t>(ibin + id * nBins);
+                    D.data[static_cast<size_t>(ibin + id * nBins)] = static_cast<std::uint32_t>(data[srcIdx]);
                 }
             }
         }

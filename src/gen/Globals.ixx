@@ -155,7 +155,7 @@ export struct TSourceS {
     char Chann[MAX_ROW_SOURCE];
 };
 
-export struct ChannS {
+export struct BinsS {
     long First;
     long Last;
     long Num;
@@ -457,7 +457,7 @@ export struct PowerS {
 };
 
 export struct TrimS {
-    ChannS Range;
+    BinsS Range;
     int Control;
     char Type;
     char Wait;
@@ -697,7 +697,7 @@ export struct OscillS {
     long Last[MAX_ROW_OSCILL];
     long Num[MAX_ROW_OSCILL];
     double Fract[MAX_ROW_OSCILL];
-    ChannS Zoom;
+    BinsS Zoom;
 };
 
 export struct CommandS {
@@ -794,7 +794,7 @@ export struct ParmS {
     FileS File;
     GpibS Gpib[3];
     SpcS Spc;
-    ChannS Chann;
+    BinsS Bins;
     AcqS Acq;
     PageS Page[MAX_PAGE];
     FrameS Frame;

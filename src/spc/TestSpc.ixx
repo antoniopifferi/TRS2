@@ -44,16 +44,17 @@ protected:
     }
 
     void getDataDev() override {
-        const int numCh = P.Chann.Num;
+        const int numBins = P.Bins.Num;
         const int numDet = P.Num.Det;
-        D.data.resize(static_cast<std::size_t>(numCh * numDet));
+        D.data.resize(static_cast<std::size_t>(numBins * numDet));
         for (int id = 0; id < numDet; ++id) {
-            for (int ic = 0; ic < numCh; ++ic) {
-                const long value = static_cast<long>((ic + 1) * (id + 1));
-                D.data[static_cast<std::size_t>(ic + id * numCh)] = static_cast<std::uint16_t>(value);
+            for (int ib = 0; ib < numBins; ++ib) {
+                const long value = static_cast<long>((ib + 1) * (id + 1));
+                D.data[static_cast<std::size_t>(ib + id * numBins)] = static_cast<std::uint16_t>(value);
             }
         }
         outText(std::format("TestSpc filled {} values", D.data.size()));
     }
 };
+
 

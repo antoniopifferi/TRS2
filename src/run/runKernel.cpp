@@ -40,8 +40,8 @@ void runKernel() {
     std::unique_ptr<Step> steps[MAX_STEP];
     std::unique_ptr<Spc> spc[1];
 
-    // allocate data buffer once based on channel count
-    D.data.resize(static_cast<std::size_t>(P.Chann.Num));
+    // allocate data buffer once based on bins count
+    D.data.resize(static_cast<std::size_t>(P.Bins.Num));
 
     // update all GUI
     GUI->readAll();
@@ -80,13 +80,13 @@ void runKernel() {
         
         outText(std::format("Loop = {}", P.Loop[4].Actual));
         
-        std::vector<double> t(static_cast<size_t>(P.Chann.Num));
-        for (int i = 0; i < P.Chann.Num; ++i)
-            t[static_cast<size_t>(i)] = (static_cast<double>(i) + 0.5) * P.Spc.Factor;
+        std::vector<double> t(static_cast<size_t>(P.Bins.Num));
+        for (int ib = 0; ib < P.Bins.Num; ++ib)
+            t[static_cast<size_t>(ib)] = (static_cast<double>(ib) + 0.5) * P.Spc.Factor;
         
         // Plot all points at once (convert D.data to long)
         std::vector<long> y; y.reserve(D.data.size());
-        for (std::uint16_t v : D.data) y.push_back(static_cast<long>(v));
+        for (std::uint32_t v : D.data) y.push_back(static_cast<long>(v));
         GUI->displayPlot(t, y);
 
 		loop++;
