@@ -84,8 +84,10 @@ void runKernel() {
         for (int i = 0; i < P.Chann.Num; ++i)
             t[static_cast<size_t>(i)] = (static_cast<double>(i) + 0.5) * P.Spc.Factor;
         
-        // Plot all points at once (use D.data)
-        GUI->displayPlot(t, D.data);
+        // Plot all points at once (convert D.data to long)
+        std::vector<long> y; y.reserve(D.data.size());
+        for (std::uint16_t v : D.data) y.push_back(static_cast<long>(v));
+        GUI->displayPlot(t, y);
 
 		loop++;
     }

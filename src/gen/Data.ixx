@@ -7,7 +7,7 @@ export module Data;
 
 export class Data {
 public:
-    std::vector<std::uint16_t> data;
+    std::vector<std::uint32_t> data;
 };
 
 export Data D;

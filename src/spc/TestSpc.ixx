@@ -10,6 +10,7 @@ export module TestSpc;
 import Spc;
 import Globals;
 import Data;
+import Const;
 
 // Concrete device: TestSpc (software generator mirroring TestSpc.c)
 export class TestSpc : public Spc {
@@ -55,3 +56,4 @@ protected:
         outText(std::format("TestSpc filled {} values", D.data.size()));
     }
 };
+
