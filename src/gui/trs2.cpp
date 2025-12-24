@@ -22,6 +22,7 @@ import Const;
 #include <typeinfo>
 #include <algorithm>
 #include <limits>
+#include <cstdint>
 
 // Always "<Prefix>_<1-based>"
 template <class T>
@@ -199,7 +200,7 @@ void TRS2::appendOutput(const QString& msg)
 }
 
 void TRS2::displayPlot(const std::vector<double>& X,
-    const std::vector<long>& Y)
+    const std::vector<std::uint32_t>& Y)
 {
     if (!ui || !ui->displayPlot) return;
 

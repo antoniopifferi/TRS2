@@ -12,6 +12,8 @@ import Globals;
 import Data;
 import Const;
 
+using uint32 = std::uint32_t;
+
 // Concrete device: TestSpc (software generator mirroring TestSpc.c)
 export class TestSpc : public Spc {
 public:
@@ -46,15 +48,25 @@ protected:
     void getDataDev() override {
         const int numBins = P.Bins.Num;
         const int numDet = P.Num.Det;
-        D.data.resize(static_cast<std::size_t>(numBins * numDet));
         for (int id = 0; id < numDet; ++id) {
-            for (int ib = 0; ib < numBins; ++ib) {
-                const long value = static_cast<long>((ib + 1) * (id + 1));
-                D.data[static_cast<std::size_t>(ib + id * numBins)] = static_cast<std::uint16_t>(value);
+            const double mus = TEST_MUS / (P.Num.Det * P.Num.Board * (1 / 0.3)) * (1 + 2 * (id + 0 * P.Num.Det));
+            const double mua = TEST_MUA / (P.Num.Det * P.Num.Board * (1 / 0.3)) * (1 + 2 * (id + 0 * P.Num.Det));
+            const double r = TEST_RHO;
+            const double v = TEST_V;
+            std::vector<double> dataD(static_cast<std::size_t>(P.Bins.Num), 0.0);
+            double area = 0.0;
+            for (int ib = 0; ib < P.Bins.Num; ib++) {
+                const double t = (ib + 0.5) * P.Spc.Factor;
+                dataD[ib] = (pow(t, -5.0 / 2.0) / mus) * exp(-mua * v * t) * exp(-(3.0 * r * r * mus) / (4.0 * v * t));
+            }
+            for (int ib = 0; ib < P.Bins.Num; ib++)
+                area += dataD[ib];
+            for (int ib = 0; ib < P.Bins.Num; ib++){
+                const double timeA = (P.Contest.Function == CONTEST_OSC ? P.Spc.TimeO : P.Spc.TimeM);
+                double value = (TEST_AREA * timeA / area * dataD[ib]);
+                value *= (1 - TEST_NOISE + (2.0 * TEST_NOISE * rand()) / RAND_MAX);
+                D.data[static_cast<std::size_t>(ib + id * numBins)] = static_cast<uint32>(value);
             }
         }
-        outText(std::format("TestSpc filled {} values", D.data.size()));
     }
 };
-
-

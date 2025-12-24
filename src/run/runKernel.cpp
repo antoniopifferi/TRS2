@@ -5,6 +5,7 @@
 #include "src/run/runKernel.h"
 #include "src/gui/AppLogger.h"
 #include "src/gui/trs2.h"
+#include <cstdint>
 
 import Const;
 import Globals;
@@ -84,13 +85,10 @@ void runKernel() {
         for (int ib = 0; ib < P.Bins.Num; ++ib)
             t[static_cast<size_t>(ib)] = (static_cast<double>(ib) + 0.5) * P.Spc.Factor;
         
-        // Plot all points at once (convert D.data to long)
-        std::vector<long> y; y.reserve(D.data.size());
-        for (std::uint32_t v : D.data) y.push_back(static_cast<long>(v));
-        GUI->displayPlot(t, y);
+        GUI->displayPlot(t, D.data);
 
 		loop++;
     }
 
-    displayPanel("Parm");
+    GUI->displayPanel("Parm");
 }

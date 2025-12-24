@@ -338,7 +338,7 @@ value=-999999999
 text=
 
 [LoopLast_5]
-value=9
+value=99
 
 [LoopFileBreak_2]
 text=
@@ -463,7 +463,7 @@ text=POS
 value=0
 
 [SpcTimeM]
-value=0.1
+value=0.01
 
 [FileTag]
 value=0
@@ -495,7 +495,7 @@ text=c:\\temp
 value=0
 
 [SpcTimeO]
-value=0.1
+value=0.01
 
 [FilePrefix]
 text=aaa
@@ -508,7 +508,7 @@ text=TEST
 text=DAT
 
 [SpcFactor]
-value=10
+value=3
 
 [MharpSyncOffset]
 value=0
