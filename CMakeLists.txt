@@ -29,6 +29,7 @@ qt_add_executable(TRS2
   # Module interface units (.ixx)
   src/gen/Const.ixx
   src/gen/Globals.ixx
+  src/gen/Data.ixx
   src/spc/Spc.ixx
   src/spc/SpcFactory.ixx
   src/spc/TestSpc.ixx
@@ -61,6 +62,7 @@ target_sources(TRS2 PRIVATE
   FILE_SET cxx_modules TYPE CXX_MODULES FILES
     src/gen/Const.ixx
     src/gen/Globals.ixx
+    src/gen/Data.ixx
     src/spc/Spc.ixx
     src/spc/SpcFactory.ixx
     src/spc/TestSpc.ixx
@@ -93,6 +95,7 @@ target_include_directories(TRS2 PRIVATE
 set_source_files_properties(
   src/gen/Const.ixx
   src/gen/Globals.ixx
+  src/gen/Data.ixx
   src/spc/Spc.ixx
   src/spc/SpcFactory.ixx
   src/spc/TestSpc.ixx

@@ -19,6 +19,7 @@ export module SpcMharp;
 
 import Spc;
 import Globals;
+import Data;
 
 
 // CONSTANTS
@@ -156,12 +157,12 @@ protected:
                 }
             }
 
-            // Copy into the generic data buffer D.Buffer[board][det*ch + ch]
+            // Copy into the generic data buffer D.data[det*ch + ch]
+            D.data.resize(static_cast<size_t>(nDet * nChan));
             for (int id = 0; id < nDet; ++id) {
                 for (int ic = 0; ic < nChan; ++ic) {
                     const size_t srcIdx = static_cast<size_t>(ic + id * nChan);
-                    Data[ic + id * nChan] =
-                        static_cast<unsigned long>(data[srcIdx]);
+                    D.data[static_cast<size_t>(ic + id * nChan)] = static_cast<std::uint16_t>(data[srcIdx]);
                 }
             }
         }

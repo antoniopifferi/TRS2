@@ -15,6 +15,7 @@ import MicroStep;
 import Spc;
 import TestSpc;
 import SpcFactory;
+import Data;
 
 void loopGet(int loop) {
     int l = loop;
@@ -38,8 +39,9 @@ void runKernel() {
     // define variables
     std::unique_ptr<Step> steps[MAX_STEP];
     std::unique_ptr<Spc> spc[1];
-    //std::vector<long> Data(P.Chann.Num);
-    InitData();
+
+    // allocate data buffer once based on channel count
+    D.data.resize(static_cast<std::size_t>(P.Chann.Num));
 
     // update all GUI
     GUI->readAll();
@@ -82,8 +84,8 @@ void runKernel() {
         for (int i = 0; i < P.Chann.Num; ++i)
             t[static_cast<size_t>(i)] = (static_cast<double>(i) + 0.5) * P.Spc.Factor;
         
-        // Plot all points at once
-        GUI->displayPlot(t, Data);
+        // Plot all points at once (use D.data)
+        GUI->displayPlot(t, D.data);
 
 		loop++;
     }
