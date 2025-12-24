@@ -54,6 +54,19 @@ qt_add_executable(TRS2
   src/gui/trs2.ui
 )
 
+# Place final artifacts in the 'output' folder; intermediates remain in the build tree
+set_target_properties(TRS2 PROPERTIES
+  RUNTIME_OUTPUT_DIRECTORY            "${CMAKE_SOURCE_DIR}/output"
+  RUNTIME_OUTPUT_DIRECTORY_DEBUG      "${CMAKE_SOURCE_DIR}/output"
+  RUNTIME_OUTPUT_DIRECTORY_RELEASE    "${CMAKE_SOURCE_DIR}/output"
+  LIBRARY_OUTPUT_DIRECTORY            "${CMAKE_SOURCE_DIR}/output"
+  LIBRARY_OUTPUT_DIRECTORY_DEBUG      "${CMAKE_SOURCE_DIR}/output"
+  LIBRARY_OUTPUT_DIRECTORY_RELEASE    "${CMAKE_SOURCE_DIR}/output"
+  ARCHIVE_OUTPUT_DIRECTORY            "${CMAKE_SOURCE_DIR}/output"
+  ARCHIVE_OUTPUT_DIRECTORY_DEBUG      "${CMAKE_SOURCE_DIR}/output"
+  ARCHIVE_OUTPUT_DIRECTORY_RELEASE    "${CMAKE_SOURCE_DIR}/output"
+)
+
 # Enable module scanning explicitly for this target (belt & suspenders)
 set_property(TARGET TRS2 PROPERTY CXX_SCAN_FOR_MODULES ON)
 

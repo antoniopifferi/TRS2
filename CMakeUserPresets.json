@@ -10,7 +10,7 @@
         "CMAKE_CXX_FLAGS": "-DQT_QML_DEBUG"
       },
       "environment": {
-        "QML_DEBUG_ARGS": "-qmljsdebugger=file:{72cad25e-3c7e-4dc2-8e19-e4074e260e3a},block"
+        "QML_DEBUG_ARGS": "-qmljsdebugger=file:{f6cada6b-bb17-4ed8-abe3-55053030363c},block"
       }
     },
     {
@@ -19,6 +19,16 @@
       "binaryDir": "${sourceDir}/out/build/release",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "hidden": true,
+      "name": "Qt-Default",
+      "inherits": "6.10.1_msvc2022_64",
+      "vendor": {
+        "qt-project.org/Default": {
+          "checksum": "cLQ/XqFjPB+88dGxZGEH1jPOCKQ="
+        }
       }
     },
     {
@@ -38,21 +48,11 @@
           "checksum": "AxmQqVkmQG5rn4QAnKEiCc9i7s4="
         }
       }
-    },
-    {
-      "hidden": true,
-      "name": "Qt-Default",
-      "inherits": "6.10.1_msvc2022_64",
-      "vendor": {
-        "qt-project.org/Default": {
-          "checksum": "cLQ/XqFjPB+88dGxZGEH1jPOCKQ="
-        }
-      }
     }
   ],
   "vendor": {
     "qt-project.org/Presets": {
-      "checksum": "c44PGd7JS9JQBfmlrBZQMDqrCdI="
+      "checksum": "afreV8WFG0YYnZwBm+26vf5G9Ks="
     }
   }
 }
