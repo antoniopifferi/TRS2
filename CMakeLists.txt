@@ -25,23 +25,8 @@ find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets PrintSupport)
 set(CMAKE_CXX_SCAN_FOR_MODULES ${_save_scan})
 
 # ---- Executable ----
-qt_add_executable(TRS2
-  # Module interface units (.ixx)
-  src/gen/Const.ixx
-  src/gen/Globals.ixx
-  src/gen/Data.ixx
-  src/spc/Spc.ixx
-  src/spc/SpcFactory.ixx
-  src/spc/TestSpc.ixx
-  src/spc/SpcMharp.ixx
-  src/step/ArdStep.ixx
-  src/step/MicroStep.ixx
-  src/step/Step.ixx
-  src/step/StepFactory.ixx
-  src/step/TestStep.ixx
-
+qt_add_executable(TRS2 MANUAL_FINALIZATION
   # Ordinary sources
-  #src/gen/Globals.cpp
   src/gui/main.cpp
   src/gui/trs2.cpp
   src/run/runKernel.cpp
@@ -54,23 +39,11 @@ qt_add_executable(TRS2
   src/gui/trs2.ui
 )
 
-# Place final artifacts in the 'output' folder; intermediates remain in the build tree
-set_target_properties(TRS2 PROPERTIES
-  RUNTIME_OUTPUT_DIRECTORY            "${CMAKE_SOURCE_DIR}/output"
-  RUNTIME_OUTPUT_DIRECTORY_DEBUG      "${CMAKE_SOURCE_DIR}/output"
-  RUNTIME_OUTPUT_DIRECTORY_RELEASE    "${CMAKE_SOURCE_DIR}/output"
-  LIBRARY_OUTPUT_DIRECTORY            "${CMAKE_SOURCE_DIR}/output"
-  LIBRARY_OUTPUT_DIRECTORY_DEBUG      "${CMAKE_SOURCE_DIR}/output"
-  LIBRARY_OUTPUT_DIRECTORY_RELEASE    "${CMAKE_SOURCE_DIR}/output"
-  ARCHIVE_OUTPUT_DIRECTORY            "${CMAKE_SOURCE_DIR}/output"
-  ARCHIVE_OUTPUT_DIRECTORY_DEBUG      "${CMAKE_SOURCE_DIR}/output"
-  ARCHIVE_OUTPUT_DIRECTORY_RELEASE    "${CMAKE_SOURCE_DIR}/output"
-)
-
 # Enable module scanning explicitly for this target (belt & suspenders)
 set_property(TARGET TRS2 PROPERTY CXX_SCAN_FOR_MODULES ON)
 
 # Help CMake with BMI ordering by explicitly marking module files
+# Keep module interface units only in the CXX_MODULES file set (do not also list them as regular sources)
 target_sources(TRS2 PRIVATE
   FILE_SET cxx_modules TYPE CXX_MODULES FILES
     src/gen/Const.ixx
@@ -81,11 +54,15 @@ target_sources(TRS2 PRIVATE
     src/spc/TestSpc.ixx
     src/spc/SpcMharp.ixx
     src/step/ArdStep.ixx
+    src/step/StepArd.ixx
     src/step/MicroStep.ixx
     src/step/Step.ixx
     src/step/StepFactory.ixx
     src/step/TestStep.ixx
 )
+
+# Finalize target (Qt Creator integration / deployment helpers)
+qt_finalize_executable(TRS2)
 
 target_link_libraries(TRS2 PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::PrintSupport)
 
@@ -98,10 +75,11 @@ if (MSVC)
   target_compile_options(TRS2 PRIVATE /utf-8)
 endif()
 
+# Quote include dirs because the workspace path contains spaces
 target_include_directories(TRS2 PRIVATE
-  ${CMAKE_CURRENT_SOURCE_DIR}
-  ${CMAKE_CURRENT_SOURCE_DIR}/include
-  ${CMAKE_CURRENT_SOURCE_DIR}/lib    
+  "${CMAKE_CURRENT_SOURCE_DIR}"
+  "${CMAKE_CURRENT_SOURCE_DIR}/include"
+  "${CMAKE_CURRENT_SOURCE_DIR}/lib"
 )
 
 # Keep AUTOMOC away from module interface units
@@ -128,19 +106,6 @@ if (WIN32)
     UNICODE _UNICODE WIN32 _WINDOWS _ENABLE_EXTENDED_ALIGNED_STORAGE
     $<$<CONFIG:Release>:NDEBUG;QT_NO_DEBUG>
   )
-
-  # Copy Qt 6.10.1 DLLs after each build (Debug/Release)
-  # Adjust this path if your Qt 6.10.1 installation is in a different location.
-  set(QT_ROOT "C:/Qt/6.10.1/msvc2022_64")
-
-  add_custom_command(TARGET TRS2 POST_BUILD
-    COMMAND "${QT_ROOT}/bin/windeployqt.exe"
-            --compiler-runtime
-            --no-translations
-            --dir "$<TARGET_FILE_DIR:TRS2>"
-            "$<TARGET_FILE:TRS2>"
-    VERBATIM
-  )
 else()
   # Non-Windows: only keep non-Windows defines
   target_compile_definitions(TRS2 PRIVATE
@@ -150,6 +115,6 @@ endif()
 
 # Help AUTOUIC if .ui files are nested
 set(CMAKE_AUTOUIC_SEARCH_PATHS
-  ${CMAKE_CURRENT_SOURCE_DIR}/src
-  ${CMAKE_CURRENT_SOURCE_DIR}/ui
+  "${CMAKE_CURRENT_SOURCE_DIR}/src"
+  "${CMAKE_CURRENT_SOURCE_DIR}/ui"
 )

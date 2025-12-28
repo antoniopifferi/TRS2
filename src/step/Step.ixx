@@ -133,3 +133,5 @@ long Step::calcGoal() {
 
     return start[static_cast<size_t>(idx)];
 }
+
+export std::unique_ptr<Step> steps[MAX_STEP];

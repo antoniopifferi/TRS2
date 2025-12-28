@@ -19,9 +19,7 @@ public:
         outText("TestStep constructor called");
         this->iS = idx;
     }
-    ~TestStep() override {
-        outText("TestStep destructor called");
-    }
+    ~TestStep() override {;}
     void moveStepDev(long goal) override {
         this->actual = goal;
 

@@ -39,3 +39,9 @@ GENERAL STYLE PREFERENCES
 - keep the GUI minimalist and basic
 - try to separate GUI (only startup and visualization) from execution
 
+CLASS INTERFACES (.ixx)
+- use module interfaces for all new classes
+- keep all the code in a single .ixx file
+- define and export the generic object at the end of the file
+
+

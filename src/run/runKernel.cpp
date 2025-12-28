@@ -38,11 +38,12 @@ void runKernel() {
     P.Contest.Function = CONTEST_OSC;
 
     // define variables
-    std::unique_ptr<Step> steps[MAX_STEP];
-    std::unique_ptr<Spc> spc[1];
+    //std::unique_ptr<Data> D;
+    //std::unique_ptr<Step> steps[MAX_STEP];
+    //std::unique_ptr<Spc> spc[1];
 
     // allocate data buffer once based on bins count
-    D.data.resize(static_cast<std::size_t>(P.Bins.Num));
+    D.init();
 
     // update all GUI
     GUI->readAll();

@@ -18,9 +18,8 @@ public:
         //initPos();             // <-- add this
         // initStep();         // optional, if you want velocity set here
     }
-    ~ArdStep() override {
-        outText("ArdStep destructor called");
-    }
+    ~ArdStep() override {;}
+    
     void moveStepDev(long goal) override {
         std::cout << "ArdStep moving step device to goal: " << goal << std::endl;
         // In real code, command the hardware here.

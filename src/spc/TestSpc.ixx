@@ -18,7 +18,7 @@ using uint32 = std::uint32_t;
 export class TestSpc : public Spc {
 public:
     TestSpc() { outText("TestSpc constructor"); }
-    ~TestSpc() override { outText("TestSpc destructor"); }
+    ~TestSpc() override { /*outText("TestSpc destructor")*/; }
 
 protected:
     // Device primitive impls ---------------------------------------------------

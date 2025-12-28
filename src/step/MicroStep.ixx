@@ -15,9 +15,8 @@ public:
         //initPos();             // <-- add this
         // initStep();         // optional
     }
-    ~MicroStep() override {
-        //std::cout << "MicroStep destructor called" << std::endl;
-    }
+    ~MicroStep() override {;}
+
     void moveStepDev(long goal) override {
         std::cout << "MicroStep moving step device to goal: " << goal << std::endl;
         // In real code, command the hardware here.

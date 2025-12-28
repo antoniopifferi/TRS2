@@ -115,3 +115,5 @@ protected:
     //    }
     }
 };
+
+export std::unique_ptr<Spc> spc[1];
