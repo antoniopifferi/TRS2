@@ -14,10 +14,8 @@ import Globals;
 
 import MicroStep;
 import ArdStep;
-import MicroStep;
 import TestStep;
-export std::unique_ptr<Step> createStep(int iS);
-// Ensure the correct namespace is used for unique_ptr
+
 export std::unique_ptr<Step> createStep(int iS)
 {
     const std::string& type = P.Step[iS].Type;

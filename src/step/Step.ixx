@@ -44,8 +44,15 @@ public:
     void initStep();
     long calcGoal();
 
-    // Device primitive
+protected:
     virtual void moveStepDev(long goal) = 0;
+    virtual void initDev() {}
+    virtual void closeDev() {}
+    virtual void setVelDev(double /*Freq*/) {}
+    virtual void waitDev(long /*Goal*/) {}
+    virtual void tellPosDev(long* /*Actual*/) {}
+    virtual void stopDev() {}
+    virtual void defineHomeDev() {}
 };
 
 // ------------------------------

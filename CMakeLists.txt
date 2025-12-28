@@ -20,7 +20,7 @@ set(CMAKE_AUTORCC ON)
 # Workaround: dependency probes (try_compile) don't need modules; disable briefly.
 set(_save_scan ${CMAKE_CXX_SCAN_FOR_MODULES})
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets PrintSupport)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets PrintSupport SerialPort)
 # (If you add other find_package(...) calls, keep them inside this OFF section.)
 set(CMAKE_CXX_SCAN_FOR_MODULES ${_save_scan})
 
@@ -64,7 +64,7 @@ target_sources(TRS2 PRIVATE
 # Finalize target (Qt Creator integration / deployment helpers)
 qt_finalize_executable(TRS2)
 
-target_link_libraries(TRS2 PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::PrintSupport)
+target_link_libraries(TRS2 PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets Qt6::PrintSupport Qt6::SerialPort)
 
 # Link only specific prebuilt libraries from lib folder
 # MHARP vendor library (64-bit)

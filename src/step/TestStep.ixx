@@ -20,6 +20,8 @@ public:
         this->iS = idx;
     }
     ~TestStep() override {;}
+
+protected:
     void moveStepDev(long goal) override {
         this->actual = goal;
 
