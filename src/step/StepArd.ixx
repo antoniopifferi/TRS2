@@ -46,7 +46,7 @@ public:
     ~StepArd() override = default;
 
 protected:
-    void moveStepDev(long goal) override {
+    void moveDev(long goal) override {
         long v = (goal < 0) ? goal - 1 : goal;
         sendDev(ARD_GOTO, v);
         actual = goal;

@@ -42,14 +42,15 @@ public:
     void setVel(double Freq);
     void initPos();
     void initStep();
+	void waitStep(long Goal);
     long calcGoal();
 
 protected:
-    virtual void moveStepDev(long goal) = 0;
+    virtual void moveDev(long goal) = 0;
     virtual void initDev() {}
     virtual void closeDev() {}
-    virtual void setVelDev(double /*Freq*/) {}
-    virtual void waitDev(long /*Goal*/) {}
+    virtual void setVelDev(double freq) {}
+    virtual void waitDev(long goal) {}
     virtual void tellPosDev(long* /*Actual*/) {}
     virtual void stopDev() {}
     virtual void defineHomeDev() {}
@@ -123,10 +124,10 @@ void Step::moveStep(long* Actual, long Goal, bool Wait, bool /*Status*/) {
         ? std::min<long>(Goal, P.Step[iS].Max)
         : std::max<long>(Goal, P.Step[iS].Min));
 
-    moveStepDev(Goal);
+    moveDev(Goal);
     P.Spc.Trash = true;
 
-    if (Wait) return;
+	if (Wait) waitDev(Goal);
     moving = false;
 }
 
@@ -142,3 +143,7 @@ long Step::calcGoal() {
 }
 
 export std::unique_ptr<Step> steps[MAX_STEP];
+
+void Step::waitStep(long Goal) {
+	waitDev(Goal);
+}

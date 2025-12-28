@@ -12,9 +12,10 @@ export module StepFactory;
 import Step;
 import Globals;
 
-import MicroStep;
-import ArdStep;
-import TestStep;
+import StepMicro;
+import StepArd;
+import StepTest;
+import StepPi;
 
 export std::unique_ptr<Step> createStep(int iS)
 {
@@ -22,13 +23,16 @@ export std::unique_ptr<Step> createStep(int iS)
     outText("Enter the Factory constructor called");
 
     if (type == "MICRO") {
-        return std::make_unique<MicroStep>(iS); // Use std::make_unique for better clarity and safety
+        return std::make_unique<StepMicro>(iS); // Use std::make_unique for better clarity and safety
     }
     else if (type == "ARD") {
-        return std::make_unique<ArdStep>(iS); // Use std::make_unique for better clarity and safety
+        return std::make_unique<StepArd>(iS); // Use std::make_unique for better clarity and safety
     }
     else if (type == "TEST") {
-        return std::make_unique<TestStep>(iS); // Use std::make_unique for better clarity and safety
+        return std::make_unique<StepTest>(iS); // Use std::make_unique for better clarity and safety
+    }
+    else if (type == "PI") {
+        return std::make_unique<StepPi>(iS); // Use std::make_unique for better clarity and safety
     }
     return nullptr;
 }

@@ -6,23 +6,22 @@ module;                              // global module fragment starts
 #include <iostream>
 #include <format> // C++20 format library
 
-export module TestStep;
+export module StepTest;
 
 
 import Step;
 import Globals;
 
-// Concrete device: TestStep
-export class TestStep : public Step {
+export class StepTest : public Step {
 public:
-    explicit TestStep(int idx) {
-        outText("TestStep constructor called");
+    explicit StepTest(int idx) {
+        outText("StepTest constructor called");
         this->iS = idx;
     }
-    ~TestStep() override {;}
+    ~StepTest() override {;}
 
 protected:
-    void moveStepDev(long goal) override {
+    void moveDev(long goal) override {
         this->actual = goal;
 
         // Delay 1s without freezing the GUI:
