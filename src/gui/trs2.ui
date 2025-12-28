@@ -18,7 +18,7 @@
     <item row="0" column="1">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="Parm">
        <widget class="QGroupBox" name="groupBox">
@@ -1503,6 +1503,11 @@
              <string>TEST</string>
             </property>
            </item>
+           <item>
+            <property name="text">
+             <string>PI</string>
+            </property>
+           </item>
           </widget>
          </item>
          <item row="15" column="4">
@@ -1565,6 +1570,11 @@
            <item>
             <property name="text">
              <string>TEST</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PI</string>
             </property>
            </item>
           </widget>
@@ -1888,6 +1898,11 @@
              <string>TEST</string>
             </property>
            </item>
+           <item>
+            <property name="text">
+             <string>PI</string>
+            </property>
+           </item>
           </widget>
          </item>
          <item row="12" column="12">
@@ -2068,6 +2083,11 @@
            <item>
             <property name="text">
              <string>TEST</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PI</string>
             </property>
            </item>
           </widget>
@@ -2256,6 +2276,11 @@
            <item>
             <property name="text">
              <string>TEST</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PI</string>
             </property>
            </item>
           </widget>
@@ -2615,6 +2640,11 @@
            <item>
             <property name="text">
              <string>TEST</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PI</string>
             </property>
            </item>
           </widget>
@@ -3066,6 +3096,11 @@
              <string>TEST</string>
             </property>
            </item>
+           <item>
+            <property name="text">
+             <string>PI</string>
+            </property>
+           </item>
           </widget>
          </item>
          <item row="14" column="2">
@@ -3140,6 +3175,11 @@
            <item>
             <property name="text">
              <string>TEST</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PI</string>
             </property>
            </item>
           </widget>
@@ -3333,6 +3373,11 @@
            <item>
             <property name="text">
              <string>TEST</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PI</string>
             </property>
            </item>
           </widget>
@@ -3608,6 +3653,11 @@
            <item>
             <property name="text">
              <string>TEST</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>PI</string>
             </property>
            </item>
           </widget>
