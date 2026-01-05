@@ -45,12 +45,12 @@ export class SpcMharp : public Spc
 public:
     SpcMharp()
     {
-        outText("SpcMharp constructed");
+        outText(std::string("SpcMharp constructed"));
     }
 
     ~SpcMharp() override
     {
-        outText("SpcMharp destroyed");
+        outText(std::string("SpcMharp destroyed"));
     }
 
 protected:

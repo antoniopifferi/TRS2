@@ -15,7 +15,7 @@ import Globals;
 export class StepTest : public Step {
 public:
     explicit StepTest(int idx) {
-        outText("StepTest constructor called");
+        outText(std::string("StepTest constructor called"));
         this->iS = idx;
     }
     ~StepTest() override {;}

@@ -26,6 +26,7 @@ qt_add_executable(TRS2 MANUAL_FINALIZATION
   # Ordinary sources
   src/gui/main.cpp
   src/gui/trs2.cpp
+  src/gui/AppLogger.cpp
   src/run/runKernel.cpp
   lib/qcustomplot.cpp
 
@@ -55,6 +56,7 @@ target_sources(TRS2 PRIVATE
     src/step/StepMicro.ixx
     src/step/StepPi.ixx
     src/step/StepTest.ixx
+    src/tools/Save.ixx
 )
 
 # Finalize target (Qt Creator integration / deployment helpers)
@@ -96,6 +98,7 @@ set_source_files_properties(
   src/step/StepMicro.ixx
   src/step/StepPi.ixx
   src/step/StepTest.ixx
+  src/tools/Save.ixx
   PROPERTIES SKIP_AUTOMOC ON
 )
 

@@ -35,6 +35,7 @@ void runKernel() {
     // GUI
     P.Num.Board = 1;
 	P.Num.Det = 1;
+	P.Frame.Num = 1;
     P.Contest.Function = CONTEST_OSC;
 
     // define variables
@@ -43,10 +44,12 @@ void runKernel() {
     //std::unique_ptr<Spc> spc[1];
 
     // allocate data buffer once based on bins count
+    // Read GUI to populate global ParmS P before allocating buffers
+    GUI->readAll();
     D.init();
 
     // update all GUI
-    GUI->readAll();
+    // GUI has already been read above
 
     // display Output
     GUI->displayPanel("Output");
@@ -93,3 +96,5 @@ void runKernel() {
 
     GUI->displayPanel("Parm");
 }
+
+void runKernel(void);

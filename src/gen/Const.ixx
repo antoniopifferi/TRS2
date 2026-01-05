@@ -1,5 +1,9 @@
 ﻿/* ########################   CONSTANTS   ################################# */
 
+module;
+#include <cstdint>
+#include <cstddef>
+
 export module Const;
 
 // ADDED CONSTANTS
@@ -10,7 +14,7 @@ export constexpr const char* MESSAGE_ABOUT = "Copyright: POLITECNICO DI MILANO\n
 
 // TYPE OF DATA
 // USE long for TimeHarp, Varro, Silena, USE short for all others SPC boards.
-export using T_DATA = unsigned long;
+export using T_DATA = std::uint32_t;
 export struct sHeader2;
 export using T_HEAD = sHeader2;
 export struct sSubHeader1;
@@ -134,38 +138,38 @@ export constexpr auto STEP_SIGN_NEG = 1;
 export constexpr auto WAIT_FALSE = 0;
 export constexpr auto WAIT_TRUE = 1;
 export constexpr auto NEWP_VEL_CORR = (1.000 / 1.005); // Empirical correction factor for nominal velocity
-export constexpr auto NEWP_FAST_RV = 400;		// Ramp Velocity (um/s) #400
-export constexpr auto NEWP_SLOW_RV = 100;		// Ramp Velocity (um/s) #100
-export constexpr auto NEWP_CONT_RV = 5000;	// Ramp Velocity (um/s) #5000
-export constexpr auto NEWP_FAST_XV = 65000;	// Max  Velocity (um/s) #65000
-export constexpr auto NEWP_SLOW_XV = 1000;	// Max  Velocity (um/s) #1000
-export constexpr auto NEWP_CONT_XV = 100000;	// Max  Velocity (um/s) #100000
-export constexpr auto NEWP_FAST_RW = 1000;	// Ramp Width (ms)      #1000
-export constexpr auto NEWP_SLOW_RW = 500;		// Ramp Width (ms)		#500
-export constexpr auto NEWP_CONT_RW = 500;		// Ramp Width (ms)	    #500
-export constexpr auto NEWP_FAST_SV = 4000;	// Set Velocity (um/s)  #40000
-export constexpr auto NEWP_SLOW_SV = 200;		// Set Velocity (um/s)  #200
-export constexpr auto STEP_EQUAL_POS = 11;		// Maximum number of unchanged pos
+export constexpr auto NEWP_FAST_RV = 400; 		// Ramp Velocity (um/s) #400
+export constexpr auto NEWP_SLOW_RV = 100; 		// Ramp Velocity (um/s) #100
+export constexpr auto NEWP_CONT_RV = 5000; 	// Ramp Velocity (um/s) #5000
+export constexpr auto NEWP_FAST_XV = 65000; 	// Max  Velocity (um/s) #65000
+export constexpr auto NEWP_SLOW_XV = 1000; 	// Max  Velocity (um/s) #1000
+export constexpr auto NEWP_CONT_XV = 100000; 	// Max  Velocity (um/s) #100000
+export constexpr auto NEWP_FAST_RW = 1000; 	// Ramp Width (ms)      #1000
+export constexpr auto NEWP_SLOW_RW = 500; 		// Ramp Width (ms) 		#500
+export constexpr auto NEWP_CONT_RW = 500; 		// Ramp Width (ms) 	    #500
+export constexpr auto NEWP_FAST_SV = 4000; 	// Set Velocity (um/s)  #40000
+export constexpr auto NEWP_SLOW_SV = 200; 		// Set Velocity (um/s)  #200
+export constexpr auto STEP_EQUAL_POS = 11; 		// Maximum number of unchanged pos
 export constexpr auto FACTOR_MONO = 1;
 export constexpr auto FACTOR_TUNE = 100;
-export constexpr auto FACTOR_NEWP = 1;		// Loop Step (um)	#1000
-export constexpr auto FACTOR_TIO = 2;	   //Loop Step factor with TIO board
+export constexpr auto FACTOR_NEWP = 1; 		// Loop Step (um) 	#1000
+export constexpr auto FACTOR_TIO = 2; 	   //Loop Step factor with TIO board
 export constexpr auto MAXITERNEWP = 10;    // Maximum number of iterations in MoveNewp to reach Goal
 export constexpr auto MAX_STEP = 6;
-export constexpr auto LPT1 = 888;	 // PARALLEL PORT ADDRESS (PIN 11,17-25 -> GND)
-export constexpr auto STEP_LPT_ON_1 = 0x01;	 // LSB 	-> PIN 2	(Axis1)
+export constexpr auto LPT1 = 888; 	 // PARALLEL PORT ADDRESS (PIN 11,17-25 -> GND)
+export constexpr auto STEP_LPT_ON_1 = 0x01; 	 // LSB 	-> PIN 2	(Axis1)
 export constexpr auto STEP_LPT_ON_2 = 0x08;  // LSB + 3	-> PIN 5	(Axis2)
 export constexpr auto STEP_LPT_CW_1 = 0x02;  // LSB + 1	-> PIN 3	(Axis1)
-export constexpr auto STEP_LPT_CW_2 = 0x10;	 // LSB + 4	-> PIN 6	(Axis2)
+export constexpr auto STEP_LPT_CW_2 = 0x10; 	 // LSB + 4	-> PIN 6	(Axis2)
 export constexpr auto STEP_LPT_AWO_1 = ~0x04; // LSB + 2	-> PIN 4	(Axis1)
 export constexpr auto STEP_LPT_AWO_2 = ~0x20; // LSB + 5	-> PIN 7	(Axis2)
-export constexpr auto SLEEP_MONO = 0.002;	 // 0.025 Sleep Time for MONO (s)
-export constexpr auto SLEEP_TUNE = 0.008;	 // Sleep Time for TUNE	(s)
+export constexpr auto SLEEP_MONO = 0.002; 	 // 0.025 Sleep Time for MONO (s)
+export constexpr auto SLEEP_TUNE = 0.008; 	 // Sleep Time for TUNE	(s)
 export constexpr auto SLEEP_NEWP = 5;
 export constexpr auto STEPS_MONO = 1;      // Number of Steps Moto for 1 nm  (nanometer)
 export constexpr auto STEPS_TUNE = 8;       // Number of Steps Tune for 0.01 mm  (millimeter)
 export constexpr const char* STEPS_NEWP = "000";   // Number of Steps Newp for 1 mm ("0" = *10 steps)
-export constexpr auto MAXPOS = 10000;	 // Maximum number of step or switch positions
+export constexpr auto MAXPOS = 10000; 	 // Maximum number of step or switch positions
 export constexpr auto EXP_STEP = 1.0;
 export constexpr auto SLEEP_MIN_MVIS = 0.005; //0.010
 export constexpr auto SLEEP_MAX_MVIS = 0.020; //0.040
@@ -175,24 +179,24 @@ export constexpr auto SLEEP_MIN_TUNE = 0.002; //0.002
 export constexpr auto SLEEP_MAX_TUNE = 0.002; //0.002
 export constexpr auto SPEED = 30;  // Newport velocity (mm/s)
 
-// TIO SPECIFIC CONSTANTS
-export constexpr auto STEP_TIO_BOARD1 = 1;		// First Tio Board
-export constexpr auto STEP_TIO_BOARD2 = 2;		// Second Tio Board
-export constexpr const char* STEP_TIO_PORT0 = "0";		// First Port on Tio
-export constexpr const char* STEP_TIO_PORT1 = "1";		// Second Port on Tio
-export constexpr auto STEP_TIO_LINE_DIR = 0;		// Digital Line Direction
-export constexpr auto STEP_TIO_LINE_ENABLE = 1;		// Digital Line Enable
-export constexpr auto STEP_TIO_LINE_HALF = 2;		// Digital Line HalfStep
-export constexpr auto STEP_TIO_COUNT_GATE = 1;		// Counter Gate
-export constexpr auto STEP_TIO_COUNT_CLOCK = 2;		// Counter Clock
-export constexpr auto STEP_TIO_COUNT_COUNT = 3;		// Counter Counter
-export constexpr auto HIGH_LEVEL = 1;		// Digital Level High
-export constexpr auto LOW_LEVEL = 0;		// Digital Level Low
-export constexpr auto STEP_TIO_NUM_LINE = 2;		// Number of Lines used for each Tio Stepper
-export constexpr auto STEP_TIO_NUM_COUNT = 3;		// Number of Counters used for each Tio Stepper
-export constexpr auto STEP_TIO_MAX_LINE = 8;		// Max lines per Tio Board
+/* TIO SPECIFIC CONSTANTS */
+export constexpr auto STEP_TIO_BOARD1 = 1; 		// First Tio Board
+export constexpr auto STEP_TIO_BOARD2 = 2; 		// Second Tio Board
+export constexpr const char* STEP_TIO_PORT0 = "0"; 		// First Port on Tio
+export constexpr const char* STEP_TIO_PORT1 = "1"; 		// Second Port on Tio
+export constexpr auto STEP_TIO_LINE_DIR = 0; 		// Digital Line Direction
+export constexpr auto STEP_TIO_LINE_ENABLE = 1; 		// Digital Line Enable
+export constexpr auto STEP_TIO_LINE_HALF = 2; 		// Digital Line HalfStep
+export constexpr auto STEP_TIO_COUNT_GATE = 1; 		// Counter Gate
+export constexpr auto STEP_TIO_COUNT_CLOCK = 2; 		// Counter Clock
+export constexpr auto STEP_TIO_COUNT_COUNT = 3; 		// Counter Counter
+export constexpr auto HIGH_LEVEL = 1; 		// Digital Level High
+export constexpr auto LOW_LEVEL = 0; 		// Digital Level Low
+export constexpr auto STEP_TIO_NUM_LINE = 2; 		// Number of Lines used for each Tio Stepper
+export constexpr auto STEP_TIO_NUM_COUNT = 3; 		// Number of Counters used for each Tio Stepper
+export constexpr auto STEP_TIO_MAX_LINE = 8; 		// Max lines per Tio Board
 
-// MIO SPECIFIC CONSTANTS
+/* MIO SPECIFIC CONSTANTS */
 export constexpr auto STEP_MIO_MV_V = 1000;   // Factor to change mV to V
 //#define STEP_MIO_BOARD1			 3   // MIO device number
 
@@ -201,7 +205,7 @@ export constexpr auto POWER_ADC_BOARD = 4;   // ADC device number (same as MIO B
 export constexpr auto ADC_FACTOR = 1000000; // conversion factor from Volt to microVolt
 
 // DELAYER_GATE SPECIFIC CONSTANTS
-//#define FILEPATH_CALIB      'C:\\Documents and Settings\\Laboratorio\\Desktop\\Copia di Copy (2) of devTrs\\POS'			 // Folder of the calibration file
+//#define FILEPATH_CALIB      'C:\\Documents and Settings\\Laboratorio\\Desktop\\Copia di Copy (2) of devTrs\\POS' 		 // Folder of the calibration file
 export constexpr auto N_BIT_DELAYER_GATE = 8;       // Number of bits in imput to delayer
 export constexpr auto N_BIT_DELAYER_GATE_COMMAND = 8;
 export constexpr auto STEP_DELAYER_GATE = 25;
@@ -324,7 +328,7 @@ export constexpr auto PI_BAUDRATE = 9600;
 export constexpr auto PI_DEVICE = 1;
 
 
-// AOTF CONSTANTS
+/* AOTF CONSTANTS */
 export constexpr auto AOTF_FREQ_FACTOR = 1000000; //1E9->HZ, 1E6->KHz, 1E3->MHz
 export constexpr auto AOTF_VOLT_FACTOR = 1000;   //1->Volt, 1000->mV
 
@@ -353,9 +357,7 @@ export constexpr auto NKT_LAMBDA_MIN = 0x34;
 export constexpr auto NKT_LAMBDA_MAX = 0x35;
 
 
-
-
-// STANDA SPECIFIC CONSTANTS
+/* STANDA SPECIFIC CONSTANTS */
 export constexpr float STANDA_MaxTemp = 70.0f;
 export constexpr float STANDA_AccelT = 200.0f;
 export constexpr float STANDA_DecelT = 200.0f;
@@ -397,7 +399,7 @@ export constexpr auto MONO_TIMEOUT = 1;
 export constexpr auto MONO_TIMEOUT_OFFSET = 0.5;
 
 
-// MONO_TCP SPECIFIC CONSTANTS
+/* MONO_TCP SPECIFIC CONSTANTS */
 export constexpr auto MONO_TCP_STRLEN = 256;
 export constexpr auto MONO_TCP_WAIT_TIME = 1000;
 export constexpr auto MONO_TCP_PORT = 1;
@@ -409,7 +411,6 @@ export constexpr char MONO_TCP_MOVE_COMMAND = 'm';
 export constexpr char MONO_TCP_VEL_COMMAND = 'v';
 export constexpr char MONO_TCP_TELL_COMMAND = 't';
 export constexpr char MONO_TCP_WAIT_COMMAND = 'w';
-
 
 
 /* PWM SPECIFIC CONSTANTS */
@@ -480,7 +481,7 @@ export constexpr auto SWITCH_LEONI_STOPBITS = 1;
 export constexpr auto SWITCH_THORWHEEL_BAUDRATE = 115200;
 
 
-// SYNC CONSTANT
+ // SYNC CONSTANT
 export constexpr auto SYNC_INPUT = 1;
 export constexpr auto SYNC_OUTPUT = 2;
 export constexpr auto SYNC_ONE = 1;
@@ -973,3 +974,75 @@ export constexpr auto ERR_GENERIC = 5;
 export constexpr auto ERR_SWAB = 6;
 export constexpr auto ERR_BCD = 7;
 export constexpr auto ERR_MHARP = 8;
+
+// Export packed Header/SubHeader definitions (compatible with original MEASURE.H)
+#pragma pack(push,1)
+export struct sHeader2 {
+    short Ver[2];
+    long SubHeader;
+    long SubHeadVer;
+    long SizeHeader;
+    long SizeSubHeader;
+    long SizeData;
+    long Kind;
+    long Appl;
+    long Oma;
+    char Date[10+1];
+    char Time[8+1];
+    long LoopHome[MAX_LOOP - 2];
+    long LoopFirst[MAX_LOOP - 2];
+    long LoopLast[MAX_LOOP - 2];
+    long LoopDelta[MAX_LOOP - 2];
+    long LoopNum[MAX_LOOP - 2];
+    long McaChannNum;
+    long PageNum;
+    long FrameNum;
+    long RamNum;
+    double McaTime;
+    double McaFactor;
+    long MeasNorm;
+    char LabelName[LABEL_MAX][LABEL_NAMELEN];
+    char LabelContent[LABEL_MAX][LABEL_CONTENTLEN];
+    double Constn;
+    double ConstRho;
+    double ConstThick;
+    long MammHeader;
+    long MammIdxFirst[D2];
+    long MammIdxLast[D2];
+    long MammIdxTop[D2];
+    long MammRateMid[D2];
+    long MammRateHigh[D2];
+};
+
+export struct sSubHeader1 {
+    char Geom;
+    char Source;
+    char Fiber;
+    char Det;
+    char Board;
+    char Coord;
+    char Pad;
+    double Xf;
+    double Yf;
+    double Zf;
+    double Rf;
+    double Xs;
+    double Ys;
+    double Zs;
+    double Rs;
+    double Rho;
+    double TimeNom;
+    double TimeEff;
+    double n;
+    long Loop[MAX_LOOP - 2];
+    long Acq;
+    long Page;
+    char RoiNum;
+    short RoiFirst[MAX_ROI_SUB];
+    short RoiLast[MAX_ROI_SUB];
+    double RoiLambda[MAX_ROI_SUB];
+    double RoiPower[MAX_ROI_SUB];
+};
+#pragma pack(pop)
+
+// end of Const.ixx (rest unchanged)

@@ -3,6 +3,7 @@ module;                              // global module fragment
 #include <QEventLoop>
 #include <QTimer>
 #include <format>
+#include <cmath>
 
 export module TestSpc;
 
@@ -17,7 +18,7 @@ using uint32 = std::uint32_t;
 // Concrete device: TestSpc (software generator mirroring TestSpc.c)
 export class TestSpc : public Spc {
 public:
-    TestSpc() { outText("TestSpc constructor"); }
+    TestSpc() { outText(std::string("TestSpc constructor")); }
     ~TestSpc() override { /*outText("TestSpc destructor")*/; }
 
 protected:
@@ -46,8 +47,8 @@ protected:
     }
 
     void getDataDev() override {
-        const int numBins = P.Bins.Num;
-        const int numDet = P.Num.Det;
+        const int numBins = static_cast<int>(P.Bins.Num);
+        const int numDet = static_cast<int>(P.Num.Det);
         for (int id = 0; id < numDet; ++id) {
             const double mus = TEST_MUS / (P.Num.Det * P.Num.Board * (1 / 0.3)) * (1 + 2 * (id + 0 * P.Num.Det));
             const double mua = TEST_MUA / (P.Num.Det * P.Num.Board * (1 / 0.3)) * (1 + 2 * (id + 0 * P.Num.Det));

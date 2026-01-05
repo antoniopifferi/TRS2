@@ -7,13 +7,10 @@
 module;
 #include <stdio.h>                 // brings plain FILE into global namespace
 #include <stddef.h>                // size_t etc., just in case
-//#include <GenSource/Step.h>
 
-//#include "src/gui/trs2.h"
+// Provide minimal legacy macros/types so this header parses even if Const module isn't built yet
+#include "src/gen/ConstLegacy.h"
 
-// If you truly need Qt here, include it in the global fragment.
-// (Not used in the declarations below, so omitted.)
-// #include <QMainWindow>
 #include <QString>
 // Standard library imports used in exported declarations
 #include <string>
@@ -31,13 +28,7 @@ module;
 //------------------------------
 export module Globals;
 
-import Const;
-
-
-
-// Your constants/types come from this module.
-// Re-export so importers of Parm see them without importing Const separately.
-//export import Const;
+// Note: do not import Const here to avoid circular module build order issues; Globals uses the legacy macros provided above.
 
 //------------------------------
 // Exported declarations
@@ -53,6 +44,7 @@ export struct LoopS {
     int Delta;
     int Num;
     int Actual;
+    int Idx; // added for compatibility with legacy code
     std::string FileBreak;
     bool Break;
     bool Invert;
@@ -153,6 +145,13 @@ export struct TSourceS {
     char Source[MAX_ROW_SOURCE];
     char Switch[MAX_ROW_SOURCE];
     char Chann[MAX_ROW_SOURCE];
+};
+
+export struct ChannS {
+    long First;
+    long Last;
+    long Num;
+    double Fract;
 };
 
 export struct BinsS {
@@ -509,27 +508,144 @@ export struct TrimS {
     char RegionActual;
 };
 
-// Ring buffer structures
+export struct SpadS{
+    void* WriterTRS; // CNVWriter placeholder
+    void* SubscriberTDC; // CNVBufferedSubscriber placeholder
+    void* DataTRS; // CNVData placeholder
+    void* DataTDC; // CNVData placeholder
+    double Time;
+    unsigned int* Buffer;
+};
+
+export struct NirsS{
+    std::uint32_t Handle;
+    std::uint32_t IntTime; // ms
+    int	 UirTime; // ms
+    int	 Freq; 	  //MHz
+    int	 Lambda; // 1 -> Laser1 always active, 2 -> Laser2 always active, 3 -> toggling Laser1/Laser2
+    std::uint32_t *Hist;
+    std::uint32_t RegOut[NIRS_REGLEN];
+    int	InitializedBox;
+    int InitializedLaser;
+};
+
+export struct LucaSpcS{
+    std::uint64_t Handle;
+    std::uint32_t IntTime; // ms
+    std::uint32_t CtrTime; // ms
+    int	 Freq; 	  //MHz
+    std::uint32_t Lambda; // 0 -> END, 1->635nm,2->670nm,3->730nm,4->830nm,5->852nm,6->915nm,7->980nm,8->1040nm
+    std::uint32_t *Hist;
+    std::uint32_t RegOut[LUCA_REGLEN];
+    int	InitializedBox;
+    int InitializedLaser;
+};
+
+export struct BcdS{
+    std::uint64_t Handle;
+    int IsInitialized;
+    float Time;
+    char Calibration[STRLEN_LONG];
+    double VDD_CORE;
+    double VDDD_CORE;
+    double VDD_CK;
+    double VHIGH;
+    std::uint8_t RSTDuration;
+    void* LOWPower; // LVBoolean
+    long int Open0; 
+    long int Width0; 
+    long int Sync0; 
+    int PixelDefault;
+    char PixelSingle;
+    char PixelsOrder[STRLEN_LONG];
+    void* SETMap; // LVBooleanArray*
+    std::int32_t NumPixels;
+    std::int64_t Pixel_sequence[BCD_MAXPIX];
+};
+
+export struct SurfaceConceptS{
+    int Refolding;
+    int ScBoard[MAX_BOARD];
+    int ScBoardInitialized[MAX_BOARD];
+    int ScInitializedForMammot[MAX_BOARD];
+    double ScTimeElapsed;
+    float ScAcqTime;
+    int ScAutoTrim;
+    int ScPipeClose;
+    int SelRepNum;
+    int StartDivider;
+    int ScFirstBin;
+    int ScLastBin;
+    int ScDeinit;
+    char ScWait;
+    int Pipe[MAX_BOARD][MAX_DET];
+    unsigned int ScNumBin;
+    char DCR_files[MAX_BOARD][MAX_DET][STRLEN];
+    double *LinArray;
+    FILE *FID;
+    void* NonLinArray; // SC1000_TYPE*
+    void* DCR_raw_count; // SC1000_TYPE*
+    double *DCR_raw_time;
+    double *Buffer;
+    double *Buffer2;
+    void* IRF_raw_count; // SC1000_TYPE*
+    double *IRF_raw_time;
+    int Modulo;
+    double ***NonLinDt;
+    double Binsize;
+    double Period;
+    double Rebin;
+};
+
+export struct SwabS{
+    long long Binwidth;
+    int DetSync;
+    int DetSyncFreqMult;
+    int DetSign[SWAB_MAX_DET];
+    int DetType[SWAB_MAX_DET];
+    double Level[SWAB_MAX_DET];
+    int Hysteresis[SWAB_MAX_DET];
+    int Delay[SWAB_MAX_DET];
+    int Deadtime[SWAB_MAX_DET];
+    void* Ttr;
+    void* Ttv;
+    void* Fm;
+    void* Ttb;
+    void* Corr[SWAB_MAX_DET];
+    void* Hist[SWAB_MAX_DET];
+    void* Fw;
+    void* Except;
+    char* FNameVirt[STRLEN];
+    char* FPathVirt[STRLEN];
+    char* FPathOut[STRLEN];
+    long long TimeSW;
+    int Meas;
+    int isFwRunning;
+    int SaveTags;
+    int Type;
+    int FreqMult;
+    int FileIndex;
+};
+
 export struct RingBufferS {
-    unsigned int* data;
+    unsigned int *data;
     unsigned int front;
     unsigned int rear;
     unsigned int count;
     std::mutex mutex;
     std::condition_variable notEmpty;
-    bool stop;
+    int stop;
 };
 
-// Fixed: was an invalid typedef in the header. Now a normal exported struct.
-export struct RingBufferMA {
-    RingBufferS* bufferM; // Measurement data buffer
-    RingBufferS* bufferA; // Analyzed data buffer
+export struct RingBufferMA{
+    RingBufferS* bufferM;
+    RingBufferS* bufferA;
 };
 
-export struct MharpS {
-    int Mode;                // MHARP_MODE_HIST / MHARP_MODE_T3
-    int SyncRate;            // sync counts
-    std::uint64_t SyncGoal;  // next Tacq delimiter
+export struct MharpS{
+    int Mode;
+    int SyncRate;
+    std::uint64_t SyncGoal;
     int NextAcq;
     int NumRecords;
     int FirstMarker;
@@ -539,11 +655,11 @@ export struct MharpS {
     int Offset;
     int SyncOffset;
     int SyncLevel;
-    int SyncEdge;            // 0=falling, 1=rising
+    int SyncEdge;
     int SyncDeadtime;
     int InputOffset[MHARP_MAX_DET];
     int InputLevel[MHARP_MAX_DET];
-    int InputEdge[MHARP_MAX_DET];     // 0=falling, 1=rising
+    int InputEdge[MHARP_MAX_DET];
     int InputDeadtime[MHARP_MAX_DET];
     int SaveTags;
     char PathTags[PATHLEN];
@@ -610,10 +726,10 @@ export struct FrameS {
     long Actual;
     int Min;
     int Max;
-    int First;   // EDO
-    int Half;    // EDO
-    int Dir;     // EDO
-    int Last;    // EDO
+    int First;
+    int Half;
+    int Dir;
+    int Last;
 };
 
 export struct FilterS {
@@ -794,6 +910,7 @@ export struct ParmS {
     FileS File;
     GpibS Gpib[3];
     SpcS Spc;
+    ChannS Chann; // added to match legacy ParmS
     BinsS Bins;
     AcqS Acq;
     PageS Page[MAX_PAGE];

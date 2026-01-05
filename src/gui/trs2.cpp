@@ -65,8 +65,11 @@ TRS2::TRS2(QWidget *parent)
     connect(ui->actionMharp, &QAction::triggered, this, [this]() { displayPanel("Mharp"); });
 
     // Connect logger to the Output box (queued == thread-safe)
-    connect(&AppLogger::instance(), &AppLogger::message,this, &TRS2::appendOutput,Qt::QueuedConnection);
-    connect(&AppLogger::instance(), &AppLogger::showPanel, this, &TRS2::displayPanel, Qt::QueuedConnection);
+    if (auto loggerObj = AppLoggerObject()) {
+        // connect by signal/slot name to avoid depending on AppLogger type in this translation unit
+        QObject::connect(loggerObj, SIGNAL(message(QString)), this, SLOT(appendOutput(QString)), Qt::QueuedConnection);
+        QObject::connect(loggerObj, SIGNAL(showPanel(QString)), this, SLOT(displayPanel(QString)), Qt::QueuedConnection);
+    }
 
 
     // Create binder
