@@ -6,8 +6,8 @@ import Globals;
 
 import Const;
 
-ParmS P{};
-TRS2* GUI = nullptr;
+// Definitions moved to the module interface (Globals.ixx) to avoid duplicate symbols.
+// This TU only provides other non-global definitions.
 
 std::vector<long> Data;                // single definition
 void InitData() {

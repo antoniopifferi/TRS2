@@ -957,8 +957,7 @@ export struct ParmS {
     FlowS Flow;
 };
 
-// Export the external declaration; define it in a module implementation unit:
-// module Parm;  ParmS P{};
+// Export the external declaration; define it in this module implementation unit.
 export class TRS2;
 export extern ParmS P;
 

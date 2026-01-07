@@ -17,6 +17,7 @@ import Spc;
 import TestSpc;
 import SpcFactory;
 import Data;
+import Save;
 
 void loopGet(int loop) {
     int l = loop;
@@ -68,6 +69,9 @@ void runKernel() {
     spc[0] = createSpc();
     if (spc[0]) spc[0]->init();
 
+    // Initialize file saving (creates file and writes header)
+    InitDataFile();
+
 	int loop = 0;
     while (!P.Command.Abort && loop<P.Loop[0].Num*P.Loop[1].Num * P.Loop[2].Num * P.Loop[3].Num * P.Loop[4].Num) {
 		
@@ -91,8 +95,14 @@ void runKernel() {
         
         GUI->displayPlot(t, D.data);
 
+        // Save acquired data for this iteration
+        DataSave();
+
 		loop++;
     }
+
+    // Close file if needed
+    CloseDataFile();
 
     GUI->displayPanel("Parm");
 }
