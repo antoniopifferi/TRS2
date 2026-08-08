@@ -7,6 +7,7 @@ module;
 #include <functional>
 #include <algorithm>
 #include <ctime>
+#include <format>
 
 #include "src/gui/AppLogger.h"
 
@@ -67,34 +68,16 @@ export void InitDataFile(void) {
         else return;
     }
 
-    // Replace UI text updates with logs
+    // Format Tag as zero-padded 4 digits and build Name/Path
+    std::string tag = std::format("{:04}", P.File.Tag); // padding 4 digits to 0
+    P.File.Name = P.File.Prefix + tag;
+    P.File.Path = P.File.Dir + "\\" + P.File.Name + "." + P.File.Ext;
     outText("Initializing File ");
-    outText(P.File.Path);
+    outText(std::string(P.File.Path));
     outText(" ...");
+    if (std::filesystem::exists(P.File.Path)) EnterName();
 
-    // Check if file exists using std::filesystem
-    try {
-        if (!P.File.Path.empty() && std::filesystem::exists(P.File.Path)) {
-            std::error_code ec;
-            size = static_cast<long>(std::filesystem::file_size(P.File.Path, ec));
-            // if we could obtain info, ask for new name
-            EnterName();
-        }
-    }
-    catch (...) {
-        // ignore filesystem errors and continue
-    }
-
-    // Build full path from Dir, Name and Ext if Path not already set
-    if (P.File.Path.empty()) {
-        std::filesystem::path p = std::filesystem::path(P.File.Dir) / (P.File.Name + "." + P.File.Ext);
-        P.File.Path = p.string();
-    } else {
-        // normalize Path if needed
-        std::filesystem::path p = P.File.Path;
-        P.File.Path = p.string();
-    }
-
+    // Open File
     P.File.File = fopen(P.File.Path.c_str(), "wb");
     outText(P.File.Path.c_str());
     if (P.File.File == NULL) {
