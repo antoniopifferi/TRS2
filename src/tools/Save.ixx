@@ -81,6 +81,7 @@ export void InitDataFile(void) {
         // ignore filesystem errors and continue
     }
 
+    sprintf(P.File.Path, "%s\\%s.%s", P.File.Dir, P.File.Name, P.File.Ext);
     P.File.File = fopen(P.File.Path, "wb");
     if (P.File.File == NULL) {
         ErrHandler("Save", 2, "Error Creating File Data");

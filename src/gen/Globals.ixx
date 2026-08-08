@@ -959,10 +959,6 @@ export struct ParmS {
 
 // Export the external declaration; define it in this module implementation unit.
 export class TRS2;
-export extern ParmS P;
-
-export extern TRS2* GUI;
-
-ParmS P{};
-TRS2* GUI = nullptr;
+export inline ParmS P{};
+export inline TRS2* GUI = nullptr;
 

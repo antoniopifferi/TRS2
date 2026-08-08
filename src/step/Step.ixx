@@ -12,8 +12,6 @@ module;                              // global module fragment (for legacy inclu
 
 export module Step;
 
-
-
 import Const;
 import Globals;
 
