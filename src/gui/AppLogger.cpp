@@ -18,6 +18,12 @@ class AppLogger : public QObject {
     Q_OBJECT
 public:
     static AppLogger& instance() { static AppLogger i; return i; }
+
+    // Use Q_INVOKABLE so QMetaObject::invokeMethod can call these safely
+    Q_INVOKABLE void enqueueLog(const QString& m) { emit message(m); }
+    Q_INVOKABLE void enqueuePanel(const QString& p) { emit showPanel(p); }
+
+    // kept for direct calls when safe
     void log(const QString& m) { emit message(m); }
     void panel(const QString& p) { emit showPanel(p); }
 signals:
@@ -36,14 +42,29 @@ QObject* AppLoggerObject() { return &AppLogger::instance(); }
 extern "C" {
     void outText_c(const char* s) {
         if (!s) return;
-        AppLogger::instance().log(QString::fromUtf8(s));
+        QString q = QString::fromUtf8(s);
+        // If there is a running QCoreApplication and we're not on the app thread,
+        // ensure the log is enqueued on the app thread via invokeMethod (queued).
+        if (auto app = QCoreApplication::instance()) {
+            QMetaObject::invokeMethod(&AppLogger::instance(), "enqueueLog", Qt::QueuedConnection, Q_ARG(QString, q));
+        } else {
+            AppLogger::instance().log(q);
+        }
     }
 
     void ErrHandler_c(const char* device, int code, const char* message) {
         const QString dev = device ? QString::fromUtf8(device) : QString();
         const QString msg = message ? QString::fromUtf8(message) : QString();
-        AppLogger::instance().log(msg);
-        if (code) AppLogger::instance().panel(QStringLiteral("Errors"));
+
+        // Use queued invocation for the panel/log as above
+        if (auto app = QCoreApplication::instance()) {
+            QMetaObject::invokeMethod(&AppLogger::instance(), "enqueueLog", Qt::QueuedConnection, Q_ARG(QString, msg));
+            if (code) QMetaObject::invokeMethod(&AppLogger::instance(), "enqueuePanel", Qt::QueuedConnection, Q_ARG(QString, QStringLiteral("Errors")));
+        } else {
+            AppLogger::instance().log(msg);
+            if (code) AppLogger::instance().panel(QStringLiteral("Errors"));
+        }
+
         // also show modal on UI thread
         auto show = [dev, msg]() {
             QMessageBox m; m.setIcon(QMessageBox::Critical); m.setWindowTitle(QStringLiteral("Error"));
@@ -89,7 +110,12 @@ extern "C" {
 
     void showPanel_c(const char* name) {
         if (!name) return;
-        AppLogger::instance().panel(QString::fromUtf8(name));
+        QString p = QString::fromUtf8(name);
+        if (auto app = QCoreApplication::instance()) {
+            QMetaObject::invokeMethod(&AppLogger::instance(), "enqueuePanel", Qt::QueuedConnection, Q_ARG(QString, p));
+        } else {
+            AppLogger::instance().panel(p);
+        }
     }
 }
 
