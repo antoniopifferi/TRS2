@@ -1,5 +1,4 @@
-export module Save;
-
+module;
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -10,6 +9,8 @@ export module Save;
 #include <ctime>
 
 #include "src/gui/AppLogger.h"
+
+export module Save;
 
 import Const;
 import Globals;
@@ -48,7 +49,10 @@ static const char* TimeStr() {
 /* CLOSE FILE */
 export void CloseDataFile(void) {
     if (!P.File.Save) return;
-    fclose(P.File.File);
+    if (P.File.File) {
+        fclose(P.File.File);
+        P.File.File = nullptr;
+    }
     return;
 }
 
@@ -65,12 +69,12 @@ export void InitDataFile(void) {
 
     // Replace UI text updates with logs
     outText("Initializing File ");
-    outText(std::string(P.File.Path));
+    outText(P.File.Path);
     outText(" ...");
 
     // Check if file exists using std::filesystem
     try {
-        if (std::filesystem::exists(P.File.Path)) {
+        if (!P.File.Path.empty() && std::filesystem::exists(P.File.Path)) {
             std::error_code ec;
             size = static_cast<long>(std::filesystem::file_size(P.File.Path, ec));
             // if we could obtain info, ask for new name
@@ -81,8 +85,18 @@ export void InitDataFile(void) {
         // ignore filesystem errors and continue
     }
 
-    sprintf(P.File.Path, "%s\\%s.%s", P.File.Dir, P.File.Name, P.File.Ext);
-    P.File.File = fopen(P.File.Path, "wb");
+    // Build full path from Dir, Name and Ext if Path not already set
+    if (P.File.Path.empty()) {
+        std::filesystem::path p = std::filesystem::path(P.File.Dir) / (P.File.Name + "." + P.File.Ext);
+        P.File.Path = p.string();
+    } else {
+        // normalize Path if needed
+        std::filesystem::path p = P.File.Path;
+        P.File.Path = p.string();
+    }
+
+    P.File.File = fopen(P.File.Path.c_str(), "wb");
+    outText(P.File.Path.c_str());
     if (P.File.File == NULL) {
         ErrHandler("Save", 2, "Error Creating File Data");
         std::exit(1);
@@ -107,9 +121,9 @@ export void EnterName(void) {
         std::exit(1);
     }
     // copy into P.File.Name and rebuild path
-    strncpy(P.File.Name, newName, STRLEN - 1);
-    P.File.Name[STRLEN - 1] = '\0';
-    sprintf(P.File.Path, "%s\\%s.%s", P.File.Dir, P.File.Name, P.File.Ext);
+    P.File.Name = std::string(newName);
+    std::filesystem::path p = std::filesystem::path(P.File.Dir) / (P.File.Name + "." + P.File.Ext);
+    P.File.Path = p.string();
 }
 
 
@@ -130,10 +144,10 @@ export void DataSave(void) {
         }
 
         FILE* fid;
-        char path[STRLEN];
-        sprintf(path, "%s\\%s.%s", P.File.Dir, P.File.Name, "txt");
-        if (IdY == 0) { fid = fopen(path, "w+"); fprintf(fid, "FrameFirst\tFrameLast\tIdY\n"); }
-        else fid = fopen(path, "a+");
+        std::filesystem::path txtPath = std::filesystem::path(P.File.Dir) / (P.File.Name + ".txt");
+        std::string txtPathStr = txtPath.string();
+        if (IdY == 0) { fid = fopen(txtPathStr.c_str(), "w+"); fprintf(fid, "FrameFirst\tFrameLast\tIdY\n"); }
+        else fid = fopen(txtPathStr.c_str(), "a+");
         fprintf(fid, "%d\t%d\t%d\n", P.Frame.First, P.Frame.Last, IdY);
         fclose(fid);
     }
@@ -197,8 +211,12 @@ export void CompileHeader(void) {
 
     // Label Info
     for (il = 0; il < LABEL_MAX; il++) {
+        // D.Head.LabelName/Content are fixed-size C buffers in D.Head (do not change here).
+        // Copy safely from std::string fields in P.Label (if they are std::string) or existing char buffers.
         strncpy(D.Head.LabelName[il], P.Label[il].Name, LABEL_NAMELEN);
+        D.Head.LabelName[il][LABEL_NAMELEN - 1] = '\0';
         strncpy(D.Head.LabelContent[il], P.Label[il].Content, LABEL_CONTENTLEN);
+        D.Head.LabelContent[il][LABEL_CONTENTLEN - 1] = '\0';
     }
 
     // Const Info	

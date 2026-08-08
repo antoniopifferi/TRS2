@@ -466,10 +466,10 @@ value=0
 value=0.01
 
 [FileTag]
-value=0
+value=7
 
 [FileSave]
-checked=false
+checked=true
 
 [ChanLast]
 value=1023
@@ -498,7 +498,7 @@ value=0
 value=0.01
 
 [FilePrefix]
-text=aaa
+text=bbb
 
 [SpcType]
 index=0

@@ -81,13 +81,13 @@ export struct StepS {
 
 export struct FileS {
     char Type;
-    char Dir[PATHLEN];
-    char Name[PATHLEN];
-    char Ext[PATHLEN];
-    char Prefix[PATHLEN];
-    char Path[PATHLEN];
+    std::string Dir;
+    std::string Name;
+    std::string Ext;
+    std::string Prefix;
+    std::string Path;
     int Tag;
-    char Save;
+    bool Save;
     FILE* File;
 };
 
