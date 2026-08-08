@@ -469,7 +469,7 @@ value=0.01
 value=0
 
 [FileSave]
-checked=true
+checked=false
 
 [ChanLast]
 value=1023

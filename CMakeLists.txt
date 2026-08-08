@@ -120,3 +120,14 @@ set(CMAKE_AUTOUIC_SEARCH_PATHS
   "${CMAKE_CURRENT_SOURCE_DIR}/src"
   "${CMAKE_CURRENT_SOURCE_DIR}/ui"
 )
+
+# Copy all DLLs from <repo-root>/DLL into the target output folder after build
+set(DLL_SOURCE_DIR "${CMAKE_SOURCE_DIR}/DLL")
+
+if(EXISTS "${DLL_SOURCE_DIR}")
+  add_custom_command(TARGET TRS2 POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E echo "Copying DLLs from ${DLL_SOURCE_DIR} to $<TARGET_FILE_DIR:TRS2>"
+    COMMAND ${CMAKE_COMMAND} -E copy_directory "${DLL_SOURCE_DIR}" "$<TARGET_FILE_DIR:TRS2>"
+    COMMENT "Deploying runtime DLLs"
+  )
+endif()
