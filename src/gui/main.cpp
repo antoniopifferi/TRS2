@@ -2,6 +2,7 @@
 #include <QApplication>  
 
 import Globals;
+import Data;
 
 int main(int argc, char *argv[])  
 {  

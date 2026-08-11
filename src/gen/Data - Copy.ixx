@@ -29,7 +29,7 @@ public:
         int pages = 0;   // P.Num.Page
         int boards = 0;   // P.Num.Board
         int det = 0;   // P.Num.Det
-        int ch = 0;   // P.Chann.Num
+        int ch = 0;   // P.Bins.Num
     };
 
     // A minimal feature mask to mirror conditional allocations in the C code

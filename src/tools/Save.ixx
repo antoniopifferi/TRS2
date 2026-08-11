@@ -88,10 +88,9 @@ export void InitDataFile(void) {
         outText("File created");
     }
 
-    CompileHeader();
-    while (fwrite(&D.Head, sizeof(D.Head), 1, P.File.File) < 1);
-    fflush(P.File.File);
-    //  fclose(P.File.File);
+    //**CompileHeader();
+    //**while (fwrite(&D.Head, sizeof(D.Head), 1, P.File.File) < 1);
+    //**fflush(P.File.File);
 }
 
 
@@ -109,111 +108,80 @@ export void EnterName(void) {
     P.File.Path = p.string();
 }
 
-
 /* SAVE DATA TO FILE */
 export void DataSave(void) {
     if (!P.File.Save) return;
-    int ifr;
-
-    const std::size_t width = static_cast<std::size_t>(P.Num.Det) * static_cast<std::size_t>(P.Bins.Num);
-
-    if (P.Mamm.Shrink[X] && P.Mamm.Status) {
-
-        int IdY = P.Loop[P.Mamm.Loop[Y]].Idx;
-        for (ifr = P.Frame.First; ifr <= P.Frame.Last; ifr++) {
-            // write contiguous row
-            std::uint32_t* ptr = D.row(ifr);
-            while (fwrite(ptr, sizeof(T_DATA), width, P.File.File) < width);
-        }
-
-        FILE* fid;
-        std::filesystem::path txtPath = std::filesystem::path(P.File.Dir) / (P.File.Name + ".txt");
-        std::string txtPathStr = txtPath.string();
-        if (IdY == 0) { fid = fopen(txtPathStr.c_str(), "w+"); fprintf(fid, "FrameFirst\tFrameLast\tIdY\n"); }
-        else fid = fopen(txtPathStr.c_str(), "a+");
-        fprintf(fid, "%d\t%d\t%d\n", P.Frame.First, P.Frame.Last, IdY);
-        fclose(fid);
-    }
-    else {
-        for (ifr = 0; ifr < P.Frame.Num; ifr++) {
-            std::uint32_t* ptr = D.row(ifr);
-            while (fwrite(ptr, sizeof(T_DATA), width, P.File.File) < width);
-        }
-    }
-
-    // zero the buffer
-    for (ifr = 0; ifr < P.Frame.Num; ifr++) {
-        std::uint32_t* ptr = D.row(ifr);
-        if (ptr) std::fill(ptr, ptr + width, static_cast<std::uint32_t>(0));
-    }
+    fwrite(D->ArchiveData.data(), sizeof(TYPE_DATA), D->NumSlice * D->NumElem, P.File.File);
+    std::fflush(P.File.File);
 }
+
 
 
 /* COMPILE HEADER (COMMON PART) */
 export void CompileHeader(void) {
-    int id, il;
+    //int id, il;
 
-    // Version Info
-    D.Head.Ver[0] = (short)(-VER_DUE);
-    D.Head.Ver[1] = (short)(P.Mamm.Mamm ? VER_MAMM : VER_GEN);
-    D.Head.SubHeadVer = VER_UNO;
+    //// Version Info
+    //D.Head.Ver[0] = (short)(-VER_DUE);
+    //D.Head.Ver[1] = (short)(P.Mamm.Mamm ? VER_MAMM : VER_GEN);
+    //D.Head.SubHeadVer = VER_UNO;
 
-    // General Info
-    D.Head.SubHeader = P.Info.SubHeader;
-    D.Head.SizeHeader = static_cast<long>(sizeof(D.Head));
-    D.Head.SizeSubHeader = static_cast<long>(sizeof(T_SUB));
-    D.Head.SizeData = static_cast<long>(sizeof(T_DATA));
-    D.Head.Kind = P.Info.Kind;
-    D.Head.Appl = P.Info.Appl;
-    D.Head.Oma = P.Oma.Oma;
+    //// General Info
+    //D.Head.SubHeader = P.Info.SubHeader;
+    //D.Head.SizeHeader = static_cast<long>(sizeof(D.Head));
+    //D.Head.SizeSubHeader = static_cast<long>(sizeof(T_SUB));
+    //D.Head.SizeData = static_cast<long>(sizeof(T_DATA));
+    //D.Head.Kind = P.Info.Kind;
+    //D.Head.Appl = P.Info.Appl;
+    //D.Head.Oma = P.Oma.Oma;
 
-    // Time Info
-    strncpy(D.Head.Date, DateStr(), 10 + 1);
-    strncpy(D.Head.Time, TimeStr(), 8 + 1);
+    //// Time Info
+    //strncpy(D.Head.Date, DateStr(), 10 + 1);
+    //strncpy(D.Head.Time, TimeStr(), 8 + 1);
 
-    // Loop Info
-    for (il = 0; il < MAX_LOOP - 2; il++) {
-        D.Head.LoopHome[il] = P.Loop[il + 2].Home;
-        D.Head.LoopFirst[il] = P.Loop[il + 2].First;
-        D.Head.LoopLast[il] = P.Loop[il + 2].Last;
-        D.Head.LoopDelta[il] = P.Loop[il + 2].Delta;
-        D.Head.LoopNum[il] = P.Loop[il + 2].Num;
-    }
+    //// Loop Info
+    //for (il = 0; il < MAX_LOOP - 2; il++) {
+    //    D.Head.LoopHome[il] = P.Loop[il + 2].Home;
+    //    D.Head.LoopFirst[il] = P.Loop[il + 2].First;
+    //    D.Head.LoopLast[il] = P.Loop[il + 2].Last;
+    //    D.Head.LoopDelta[il] = P.Loop[il + 2].Delta;
+    //    D.Head.LoopNum[il] = P.Loop[il + 2].Num;
+    //}
 
-    // Spc Info	
-    // Note: original code used P.Chann.Num - ensure ChannS exists with member Num
-    D.Head.McaChannNum = static_cast<long>(P.Chann.Num);
-    D.Head.McaTime = P.Spc.TimeM;
-    D.Head.McaFactor = P.Spc.Factor;
-    D.Head.MeasNorm = FALSE;
+    //// Spc Info	
+    //// Note: original code used P.Bins.Num - ensure ChannS exists with member Num
+    //D.Head.McaChannNum = static_cast<long>(P.Bins.Num);
+    //D.Head.McaTime = P.Spc.TimeM;
+    //D.Head.McaFactor = P.Spc.Factor;
+    //D.Head.MeasNorm = FALSE;
 
-    // Frame Info
-    D.Head.PageNum = P.Num.Page;
-    D.Head.FrameNum = P.Frame.Num;
-    D.Head.RamNum = P.Ram.Num;
+    //// Frame Info
+    //D.Head.PageNum = P.Num.Page;
+    //D.Head.FrameNum = P.Frame.Num;
+    //D.Head.RamNum = P.Ram.Num;
 
-    // Label Info
-    for (il = 0; il < LABEL_MAX; il++) {
-        // D.Head.LabelName/Content are fixed-size C buffers in D.Head (do not change here).
-        // Copy safely from std::string fields in P.Label (if they are std::string) or existing char buffers.
-        strncpy(D.Head.LabelName[il], P.Label[il].Name, LABEL_NAMELEN);
-        D.Head.LabelName[il][LABEL_NAMELEN - 1] = '\0';
-        strncpy(D.Head.LabelContent[il], P.Label[il].Content, LABEL_CONTENTLEN);
-        D.Head.LabelContent[il][LABEL_CONTENTLEN - 1] = '\0';
-    }
+    //// Label Info
+    //for (il = 0; il < LABEL_MAX; il++) {
+    //    // D.Head.LabelName/Content are fixed-size C buffers in D.Head (do not change here).
+    //    // Copy safely from std::string fields in P.Label (if they are std::string) or existing char buffers.
+    //    strncpy(D.Head.LabelName[il], P.Label[il].Name, LABEL_NAMELEN);
+    //    D.Head.LabelName[il][LABEL_NAMELEN - 1] = '\0';
+    //    strncpy(D.Head.LabelContent[il], P.Label[il].Content, LABEL_CONTENTLEN);
+    //    D.Head.LabelContent[il][LABEL_CONTENTLEN - 1] = '\0';
+    //}
 
-    // Const Info	
-    D.Head.Constn = P.Const.N;
-    D.Head.ConstRho = P.Const.Rho;
-    D.Head.ConstThick = P.Const.Thick;
+    //// Const Info	
+    //D.Head.Constn = P.Const.N;
+    //D.Head.ConstRho = P.Const.Rho;
+    //D.Head.ConstThick = P.Const.Thick;
 
-    // Mamm Info
-    D.Head.MammHeader = VER_MAMM_HEADER;
-    for (id = 0; id < D2; id++) {
-        D.Head.MammIdxFirst[id] = P.Mamm.Idx[id].First;
-        D.Head.MammIdxLast[id] = P.Mamm.Idx[id].Last;
-        D.Head.MammIdxTop[id] = P.Mamm.Idx[id].Top[MAMM_VIS];
-        D.Head.MammRateMid[id] = static_cast<long>(P.Mamm.Rate.Mid[id]);
-        D.Head.MammRateHigh[id] = static_cast<long>(P.Mamm.Rate.High[id]);
-    }
+    //// Mamm Info
+    //D.Head.MammHeader = VER_MAMM_HEADER;
+    //for (id = 0; id < D2; id++) {
+    //    D.Head.MammIdxFirst[id] = P.Mamm.Idx[id].First;
+    //    D.Head.MammIdxLast[id] = P.Mamm.Idx[id].Last;
+    //    D.Head.MammIdxTop[id] = P.Mamm.Idx[id].Top[MAMM_VIS];
+    //    D.Head.MammRateMid[id] = static_cast<long>(P.Mamm.Rate.Mid[id]);
+    //    D.Head.MammRateHigh[id] = static_cast<long>(P.Mamm.Rate.High[id]);
+    //}
 }

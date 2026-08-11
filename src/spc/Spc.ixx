@@ -95,8 +95,8 @@ protected:
     //    if (!is_meas) {
     //        for (int ib = 0; ib < P.Num.Board; ++ib)
     //            for (int id = 0; id < P.Num.Det; ++id)
-    //                for (int ic = 0; ic < P.Chann.Num; ++ic)
-    //                    D.Osc[id + ib * P.Num.Det][ic] = D.Buffer[ib][ic + id * P.Chann.Num];
+    //                for (int ic = 0; ic < P.Bins.Num; ++ic)
+    //                    D.Osc[id + ib * P.Num.Det][ic] = D.Buffer[ib][ic + id * P.Bins.Num];
     //    }
     //    else {
     //        for (int ib = 0; ib < P.Num.Board; ++ib) {
@@ -106,8 +106,8 @@ protected:
     //                    P.Page[page].Acq = P.Acq.Actual;
     //                    P.Page[page].TimeNom = P.Spc.TimeM;
     //                    P.Page[page].TimeEff = P.Spc.EffTime[ib];
-    //                    for (int ic = 0; ic < P.Chann.Num; ++ic)
-    //                        D.Data[P.Frame.Actual][page][ic] += D.Buffer[ib][ic + id * P.Chann.Num];
+    //                    for (int ic = 0; ic < P.Bins.Num; ++ic)
+    //                        D.Data[P.Frame.Actual][page][ic] += D.Buffer[ib][ic + id * P.Bins.Num];
     //                    if (P.Info.SubHeader) CompileSub(P.Ram.Actual, P.Frame.Actual, page);
     //                }
     //            }

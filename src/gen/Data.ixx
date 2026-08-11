@@ -1,54 +1,104 @@
-module;  // global module fragment for legacy includes if any
+module;
 
-#include <vector>
+#include <atomic>
 #include <cstdint>
 #include <cstring>
-
-// do not import other modules from the global fragment
+#include <thread>
+#include <vector>
+#include <mutex>
+#include <memory>
 
 export module Data;
 
 import Globals;
 import Const;
 
-// Export types expected by other modules
-export using T_HEAD = sHeader2;
-export using T_SUB = sSubHeader1;
+export
+{
+    using TYPE_DATA = std::uint32_t;
 
-export class Data {
-public:
-    T_HEAD Head{};
+    class Data
+    {
+    public:
 
-    // contiguous storage for all data: frames * (det * bins)
-    std::vector<std::uint32_t> data;
+        int NumElem=P.Num.Board*P.Num.Det*P.Bins.Num;
+        int NumAcq=128;
+        int NumSlice=P.Loop[4].Num;
 
-    // Legacy-compatible row pointers: D.Data[frame] -> pointer to first element of that row
-    std::vector<std::uint32_t*> Data;
+        std::vector<TYPE_DATA*> Ring;
+        std::vector<TYPE_DATA*> Archive;
+        std::vector<TYPE_DATA> Temp;
 
-    int frames = 0;
-    std::size_t width = 0; // det * bins
 
-    // initialise data with dimensions from P
-    void init() {
-        frames = static_cast<int>(P.Frame.Num);
-        const int det = static_cast<int>(P.Num.Det);
-        const std::size_t bins = static_cast<std::size_t>(P.Bins.Num);
-        width = static_cast<std::size_t>(det) * bins;
-        data.clear();
-        data.resize(static_cast<std::size_t>(frames) * width);
-        // zero-initialized by vector
+        std::vector<TYPE_DATA> RingData;
+        std::vector<TYPE_DATA> ArchiveData;
 
-        Data.assign(frames, nullptr);
-        for (int f = 0; f < frames; ++f) {
-            Data[f] = data.data() + static_cast<std::size_t>(f) * width;
+        std::atomic<std::uint64_t> produced{ 0 };
+        std::atomic<std::uint64_t> consumed{ 0 };
+
+
+        Data(void)
+        {
+            // allocate contiguous storage
+            RingData.resize(static_cast<size_t>(NumAcq) * static_cast<size_t>(NumElem));
+            ArchiveData.resize(static_cast<size_t>(NumSlice) * static_cast<size_t>(NumElem));
+            Temp.resize(static_cast<size_t>(NumElem));
+
+            // allocate pointer tables
+            Ring.resize(static_cast<size_t>(NumAcq));
+            Archive.resize(static_cast<size_t>(NumSlice));
+
+            // set pointers into the contiguous storage
+            for (int i = 0; i < NumAcq; ++i)
+                Ring[static_cast<size_t>(i)] = RingData.data() + static_cast<size_t>(i) * static_cast<size_t>(NumElem);
+
+            for (int i = 0; i < NumSlice; ++i)
+                Archive[static_cast<size_t>(i)] = ArchiveData.data() + static_cast<size_t>(i) * static_cast<size_t>(NumElem);
         }
+
+        // default destructor is fine (vectors free memory automatically)
+
+        void Reset()
+        {
+            produced.store(0, std::memory_order_relaxed);
+            consumed.store(0, std::memory_order_relaxed);
+        }
+
+    };
+
+
+    // ========================================================
+    // Copy oldest unread acquisition Ring -> Archive
+    // ========================================================
+
+    inline void CopyNext(Data* D, int target_slice)
+    {
+        std::uint64_t n = D->consumed.load(std::memory_order_relaxed);
+
+        while (n >= D->produced.load(std::memory_order_acquire)) // Wait until an acquisition is available
+            std::this_thread::yield();
+        int first_acq = int(n % D->NumAcq);
+        std::memcpy(D->Archive[static_cast<size_t>(target_slice)], D->Ring[static_cast<size_t>(first_acq)], D->NumElem * sizeof(TYPE_DATA));
+        std::memcpy(D->Temp.data(), D->Ring[static_cast<size_t>(first_acq)], D->NumElem * sizeof(TYPE_DATA));
+        D->consumed.store(n + 1, std::memory_order_relaxed); // This acquisition has now been consumed
     }
 
-    // convenience to get pointer to row
-    std::uint32_t* row(int ifr) {
-        if (ifr < 0 || ifr >= frames) return nullptr;
-        return Data[ifr];
-    }
-};
+    // --------------------------------------------------------
+    // Create Data
+    // -------------------------------------------------------
 
-export Data D;
+    // Global unique pointer to Data instance (exported via the module export block)
+    inline std::unique_ptr<Data> D;
+
+    inline Data* initData(void)
+    {
+        D = std::make_unique<Data>();
+        return D.get();
+    }
+
+    inline void closeData(void)
+    {
+        D.reset(); // free the Data instance
+    }
+
+} // End of export

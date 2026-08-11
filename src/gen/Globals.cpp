@@ -11,5 +11,5 @@ import Const;
 
 std::vector<long> Data;                // single definition
 void InitData() {
-    Data.resize(static_cast<std::size_t>(P.Chann.Num));
+    Data.resize(static_cast<std::size_t>(P.Bins.Num));
 }

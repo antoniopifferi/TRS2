@@ -47,7 +47,6 @@ void runKernel() {
     // allocate data buffer once based on bins count
     // Read GUI to populate global ParmS P before allocating buffers
     GUI->readAll();
-    D.init();
 
     // update all GUI
     // GUI has already been read above
@@ -58,7 +57,10 @@ void runKernel() {
     // InitLoop
     for(int iL=0;iL<5;iL++) P.Loop[iL].Num=(P.Loop[iL].Last-P.Loop[iL].First)/P.Loop[iL].Delta+1;
 
-	 //InitSteps
+    // InitData
+    initData();
+    
+    //InitSteps
     for (int iS = 0; iS < MAX_STEP; ++iS) {
         steps[iS] = createStep(iS);
         if(steps[iS]) steps[iS]->initStep();
@@ -83,26 +85,35 @@ void runKernel() {
             if (s) s->moveStep(&s->actual, s->calcGoal(), P.Step[s->iS].Mode != "MULTI", status);
         }
         if (spc[0]) {
+			spc[0]->setTime(static_cast<float>(P.Spc.TimeM));
+			spc[0]->start();
             spc[0]->wait();
             spc[0]->get();
         }
-        
+
+		CopyNext(D.get(), loop);
+    
         outText(std::format("Loop = {}", P.Loop[4].Actual));
         
         std::vector<double> t(static_cast<size_t>(P.Bins.Num));
         for (int ib = 0; ib < P.Bins.Num; ++ib)
             t[static_cast<size_t>(ib)] = (static_cast<double>(ib) + 0.5) * P.Spc.Factor;
-        
-        GUI->displayPlot(t, D.data);
+
+        GUI->displayPlot(t, D->Temp);
 
         // Save acquired data for this iteration
-        DataSave();
+        if (loop % P.Loop[4].Num == P.Loop[4].Num-1) DataSave();
+        QCoreApplication::processEvents();
 
 		loop++;
     }
 
     // Close file if needed
+	// stop all thread before closing Data
+
+    spc[0]->close();
     CloseDataFile();
+    closeData();
 
     GUI->displayPanel("Parm");
 }

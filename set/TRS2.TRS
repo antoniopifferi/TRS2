@@ -338,7 +338,7 @@ value=-999999999
 text=
 
 [LoopLast_5]
-value=99
+value=999
 
 [LoopFileBreak_2]
 text=
@@ -498,7 +498,7 @@ value=0
 value=0.01
 
 [FilePrefix]
-text=zzz
+text=ttt
 
 [SpcType]
 index=0
