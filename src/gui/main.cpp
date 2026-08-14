@@ -10,5 +10,6 @@ int main(int argc, char *argv[])
     TRS2 w;                   // create the window after QApplication
     GUI = &w;                 // publish it to the world
     w.show();  
-    return a.exec();  
+    GUI->displayPanel("Parm");
+    return a.exec();
 }

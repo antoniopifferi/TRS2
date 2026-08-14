@@ -29,13 +29,11 @@ export
         std::vector<TYPE_DATA*> Archive;
         std::vector<TYPE_DATA> Temp;
 
-
         std::vector<TYPE_DATA> RingData;
         std::vector<TYPE_DATA> ArchiveData;
 
         std::atomic<std::uint64_t> produced{ 0 };
         std::atomic<std::uint64_t> consumed{ 0 };
-
 
         Data(void)
         {
@@ -56,32 +54,28 @@ export
                 Archive[static_cast<size_t>(i)] = ArchiveData.data() + static_cast<size_t>(i) * static_cast<size_t>(NumElem);
         }
 
-        // default destructor is fine (vectors free memory automatically)
-
-        void Reset()
+        // Copy the next unread acquisition from the Ring buffer to the specified Archive slice.
+        void copyArchive(int target_slice)
         {
-            produced.store(0, std::memory_order_relaxed);
-            consumed.store(0, std::memory_order_relaxed);
+            std::uint64_t n = consumed.load(std::memory_order_acquire);
+            while (n >= produced.load(std::memory_order_acquire)) // Wait until an acquisition is available
+                std::this_thread::yield();
+            int first_acq = static_cast<int>(n % NumAcq);
+            std::memcpy(Archive[target_slice], Ring[first_acq], NumElem * sizeof(TYPE_DATA));
+            consumed.store(n + 1, std::memory_order_release); // This acquisition has now been consumed
         }
 
+        // Copy the next unread acquisition from the Ring buffer to Temp
+        void copyTemp()
+        {
+            std::uint64_t n = consumed.load(std::memory_order_acquire);
+            while (n >= produced.load(std::memory_order_acquire)) // Wait until an acquisition is available
+                std::this_thread::yield();
+            int first_acq = static_cast<int>(n % NumAcq);
+            std::memcpy(Temp.data(), Ring[first_acq], NumElem * sizeof(TYPE_DATA));
+            consumed.store(n + 1, std::memory_order_release); // This acquisition has now been consumed
+        }
     };
-
-
-    // ========================================================
-    // Copy oldest unread acquisition Ring -> Archive
-    // ========================================================
-
-    inline void CopyNext(Data* D, int target_slice)
-    {
-        std::uint64_t n = D->consumed.load(std::memory_order_relaxed);
-
-        while (n >= D->produced.load(std::memory_order_acquire)) // Wait until an acquisition is available
-            std::this_thread::yield();
-        int first_acq = int(n % D->NumAcq);
-        std::memcpy(D->Archive[static_cast<size_t>(target_slice)], D->Ring[static_cast<size_t>(first_acq)], D->NumElem * sizeof(TYPE_DATA));
-        std::memcpy(D->Temp.data(), D->Ring[static_cast<size_t>(first_acq)], D->NumElem * sizeof(TYPE_DATA));
-        D->consumed.store(n + 1, std::memory_order_relaxed); // This acquisition has now been consumed
-    }
 
     // --------------------------------------------------------
     // Create Data

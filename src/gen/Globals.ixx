@@ -291,45 +291,41 @@ export struct MammS {
 };
 
 export struct ActionS {
-    char Status;
-    char CheckJump;
-    char DoJump;
-    char MoveSwitch[MAX_SWITCH];
-    char MoveStep[MAX_STEP];
-    char WaitStep[MAX_STEP];
-    char StartCont[MAX_STEP];
-    char WaitCont[MAX_STEP];
-    char Trim[MAX_TRIM];
-    char Break[MAX_LOOP];
-    char StartSync;
-    char StopSync;
-    char SpcReset;
-    char SpcStop;
-    char SpcOut;
-    char WaitEnd;
-    char WaitChrono;
-    char DisplayStatus;
-    char DisplayRoi;
-    char DisplayPlot;
-    char DataSave;
-    char StartOma;
-    char StopOma;
-    char Ophir;
-    char StopAdc;
-    char StartAdc;
-    char WaitAdc;
-    char ReadUIR;
-    char SpcFlow;
-    char StartFlow;
-    char StopFlow;
-    char ReconsPy;
-    char SpcTime;       // EDO
-    char InitMamm;      // EDO
-    char StartMamm;     // EDO
-    char CheckMamm;     // EDO
-    char StopMamm;      // EDO
-    char DoJumpMamm;    // EDO
-    ScReinitS ScReInit; // EDO
+	bool Oscill;   
+    bool Status;
+    bool CheckJump;
+    bool DoJump;
+    bool MoveSwitch[MAX_SWITCH];
+    bool MoveStep[MAX_STEP];
+    bool WaitStep[MAX_STEP];
+    bool StartCont[MAX_STEP];
+    bool WaitCont[MAX_STEP];
+    bool Trim[MAX_TRIM];
+    bool Break[MAX_LOOP];
+    bool StartSync;
+    bool StopSync;
+    bool SpcReset;
+    bool SpcStop;
+    bool SpcOut;
+    bool WaitEnd;
+    bool WaitChrono;
+    bool DisplayStatus;
+    bool DisplayRoi;
+    bool DisplayPlot;
+    bool Save;
+    bool StartOma;
+    bool StopOma;
+    bool Start;
+	bool Stop;
+    bool Ophir;
+    bool StopAdc;
+    bool StartAdc;
+    bool WaitAdc;
+    bool ReadUIR;
+    bool SpcFlow;
+    bool StartFlow;
+    bool StopFlow;
+    bool ReconsPy;
 };
 
 export struct TimeS {
@@ -817,9 +813,9 @@ export struct OscillS {
 };
 
 export struct CommandS {
-    int Abort;
-    int Continue;
-    char ReadUIR;
+    bool Abort;
+    bool Continue;
+    bool ReadUIR;
 };
 
 export struct ContestS {

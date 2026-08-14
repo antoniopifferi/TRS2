@@ -31,27 +31,56 @@ void loopGet(int loop) {
     }
 }
 
-void runKernel() {
+void start(double time) {
+    spc[0]->start(time);
+}
+
+void stop() {
+    spc[0]->stop();
+}
+
+void Oscilloscope(void) {
+    P.Command.Abort = false;
+    spc[0]->start(P.Spc.TimeO);
+    while (!P.Command.Abort) {
+            D->copyTemp();
+            std::vector<double> t(static_cast<size_t>(P.Bins.Num));
+            for (int ib = 0; ib < P.Bins.Num; ++ib)
+                t[static_cast<size_t>(ib)] = (static_cast<double>(ib) + 0.5) * P.Spc.Factor;
+            GUI->displayPlot(t, D->Temp);
+            QCoreApplication::processEvents();
+        }
+    spc[0]->stop();
+	P.Command.Abort = false;
+}
+
+void decideAction(void) {
+	// create bool vectors called firstloop[MAX_LOOP], newloop[MAX_LOOP], lastloop[MAX_LOOP] for the first, new and last loop index depending on loop .Actual and loop.Num
+    bool firstloop[MAX_LOOP] = { false }, newloop[MAX_LOOP] = { false }, lastloop[MAX_LOOP] = { false };
+    for (int iL = 0; iL < MAX_LOOP; iL++) {
+        firstloop[iL] = (P.Loop[iL].Actual == 0);
+        lastloop[iL] = (P.Loop[iL].Actual == P.Loop[iL].Num - 1);
+        if (iL == 0) newloop[iL] = 0; else newloop[iL] = firstloop[iL - 1];
+    }
+	P.Action.Oscill = false;
+	P.Action.Save = lastloop[0];
+	P.Action.Start = firstloop[0];
+	P.Action.Stop = lastloop[0];
+}
+
+
+void runKernel(void) {
 
     // GUI
     P.Num.Board = 1;
 	P.Num.Det = 1;
 	P.Frame.Num = 1;
     P.Contest.Function = CONTEST_OSC;
+	P.Action.Oscill = false;
+	P.Command.Abort = false;
 
-    // define variables
-    //std::unique_ptr<Data> D;
-    //std::unique_ptr<Step> steps[MAX_STEP];
-    //std::unique_ptr<Spc> spc[1];
-
-    // allocate data buffer once based on bins count
-    // Read GUI to populate global ParmS P before allocating buffers
     GUI->readAll();
 
-    // update all GUI
-    // GUI has already been read above
-
-    // display Output
     GUI->displayPanel("Output");
 
     // InitLoop
@@ -74,32 +103,32 @@ void runKernel() {
     // Initialize file saving (creates file and writes header)
     InitDataFile();
 
+    //Oscilloscope();
+
 	int loop = 0;
     while (!P.Command.Abort && loop<P.Loop[0].Num*P.Loop[1].Num * P.Loop[2].Num * P.Loop[3].Num * P.Loop[4].Num) {
-		
         loopGet(loop);
+        decideAction();
+        if (P.Action.Oscill) Oscilloscope();
 
         bool status=false;
 
         for (auto& s : steps) {
             if (s) s->moveStep(&s->actual, s->calcGoal(), P.Step[s->iS].Mode != "MULTI", status);
         }
-        if (spc[0]) {
-			spc[0]->setTime(static_cast<float>(P.Spc.TimeM));
-			spc[0]->start();
-            spc[0]->wait();
-            spc[0]->get();
-        }
 
-		CopyNext(D.get(), loop);
+        start(P.Spc.TimeM);
+
+		D->copyArchive(loop);
     
         outText(std::format("Loop = {}", P.Loop[4].Actual));
         
         std::vector<double> t(static_cast<size_t>(P.Bins.Num));
         for (int ib = 0; ib < P.Bins.Num; ++ib)
             t[static_cast<size_t>(ib)] = (static_cast<double>(ib) + 0.5) * P.Spc.Factor;
-
-        GUI->displayPlot(t, D->Temp);
+		int actualSlice = P.Loop[4].Actual;
+        std::vector<unsigned int> y(D->Archive[actualSlice], D->Archive[actualSlice] + P.Bins.Num);
+        GUI->displayPlot(t, y);
 
         // Save acquired data for this iteration
         if (loop % P.Loop[4].Num == P.Loop[4].Num-1) DataSave();
@@ -117,5 +146,3 @@ void runKernel() {
 
     GUI->displayPanel("Parm");
 }
-
-void runKernel(void);

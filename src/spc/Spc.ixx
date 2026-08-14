@@ -5,12 +5,13 @@ module;                              // global module fragment (for legacy inclu
 #include <vector>
 #include <cmath>
 #include <cstdlib>
+#include <thread>
 
 export module Spc;
 
-
 import Const;
 import Globals;
+import Data;
 
 // Base acquisition device (SPC)
 export class Spc {
@@ -21,28 +22,53 @@ public:
     virtual ~Spc() = default;
 
     // High-level API (device-agnostic orchestration)
-    void init() { initDev(); }
-    void close() { stop(false); closeDev(); }
-    void pause() { pauseDev(); }
-
-    void clear() {
-        clearDev();
-        //P.Spc.Zero = TimerN();
-        P.Spc.Trash = false;
+    void init() {
+        n = 0;
+        initDev();
+    }
+    void close() {
+        stop();
+        closeDev();
     }
 
-    void start() {
+    void start(float seconds) {
+        setTime(seconds);
+        acquisition = std::jthread([this](std::stop_token st)
+            {
+                runAcquire(st);
+            });
         startDev();
-        //P.Spc.Zero = TimerN();
-        P.Spc.Started = true; // fine for TEST; specialized boards could override if needed
     }
 
-    void restart() { restartDev(); }
-    void reset(bool /*status*/, bool doClear, bool doStop) {
-        if (doClear) clear();
-        if (P.Spc.Trash) out(false);
-        if (doStop || !P.Spc.Started) start();
-        P.Spc.Trash = false;
+    void stop(void) {
+        stopDev();
+        acquisition.request_stop();
+        if (acquisition.joinable()) acquisition.join();
+    }
+
+protected:
+    std::jthread acquisition;
+    std::uint64_t n;
+    std::vector<TYPE_DATA> Buffer;
+
+    void runAcquire(std::stop_token st)
+    {
+        while (!st.stop_requested())
+        {
+            waitDev();
+            getDev();
+
+            if (n - D->consumed.load(std::memory_order_relaxed) >= std::uint64_t(D->NumAcq))
+                outText("WARNING: overwriting data\n");
+
+            int next_acq = int(n % D->NumAcq);
+
+            std::memcpy(D->Ring[next_acq], Buffer.data(), D->NumElem * sizeof(TYPE_DATA));
+
+            // Publish completed acquisition
+            D->produced.store(n + 1, std::memory_order_release);
+            ++n;
+        }
     }
 
     void setTime(float seconds) {
@@ -51,69 +77,14 @@ public:
         setTimeDev(seconds);
     }
 
-    void stop(bool /*status*/) {
-        stopDev();
-        calcTime();
-        P.Spc.Started = false;
-    }
-
-    void wait() { waitDev(); }
-    void get() { getDataDev(); }
-
-    void out(bool /*status*/) {
-        if (P.Spc.Started) calcTime();
-        get();
-        dataCopy();
-        // By-architecture reversals/subtractions for VARRO/SILENA are intentionally
-        // not applied for TEST; add here if you later port those devices.
-    }
-
-protected:
     // Device primitives to be implemented by subclasses
     virtual void initDev() = 0;
     virtual void closeDev() = 0;
-    virtual void pauseDev() = 0;
-    virtual void clearDev() = 0;
     virtual void startDev() = 0;
-    virtual void restartDev() = 0;
-    virtual void setTimeDev(float seconds) = 0;
     virtual void stopDev() = 0;
+    virtual void setTimeDev(float seconds) = 0;
     virtual void waitDev() = 0;
-    virtual void getDataDev() = 0;
-
-    // Helpers ported from the C version (generic where possible)
-    void calcTime() {
-        // Generic (TEST/DEMO/others that don't expose board-specific elapsed time):
-        //double now = TimerN();
-        //P.Spc.EffTime[0] = now - P.Spc.Zero;
-        //P.Spc.Zero = now;
-    }
-
-    void dataCopy() {
-    //    const int is_meas = (P.Contest.Function == CONTEST_MEAS);
-
-    //    if (!is_meas) {
-    //        for (int ib = 0; ib < P.Num.Board; ++ib)
-    //            for (int id = 0; id < P.Num.Det; ++id)
-    //                for (int ic = 0; ic < P.Bins.Num; ++ic)
-    //                    D.Osc[id + ib * P.Num.Det][ic] = D.Buffer[ib][ic + id * P.Bins.Num];
-    //    }
-    //    else {
-    //        for (int ib = 0; ib < P.Num.Board; ++ib) {
-    //            for (int id = 0; id < P.Num.Det; ++id) {
-    //                long page = P.Filter.Page[P.Acq.Actual][ib][id];
-    //                if (page != -1) {
-    //                    P.Page[page].Acq = P.Acq.Actual;
-    //                    P.Page[page].TimeNom = P.Spc.TimeM;
-    //                    P.Page[page].TimeEff = P.Spc.EffTime[ib];
-    //                    for (int ic = 0; ic < P.Bins.Num; ++ic)
-    //                        D.Data[P.Frame.Actual][page][ic] += D.Buffer[ib][ic + id * P.Bins.Num];
-    //                    if (P.Info.SubHeader) CompileSub(P.Ram.Actual, P.Frame.Actual, page);
-    //                }
-    //            }
-    //        }
-    //    }
-    }
+    virtual void getDev() = 0;
 };
 
 export std::unique_ptr<Spc> spc[1];
